@@ -29,7 +29,7 @@ export default function Dashboard() {
                 <FaPython className="text-6xl text-blue-300" />
                 <SiPhp className="text-6xl text-purple-900" />
                 <FaJava className="text-6xl text-red-400" />
-                <RiNextjsFill className="text-6xl text-black rounded-full" />
+                <RiNextjsFill className="text-6xl text-white rounded-full" />
                 <SiDjango className="text-6xl text-green-900" />
               </div>
             ))}
