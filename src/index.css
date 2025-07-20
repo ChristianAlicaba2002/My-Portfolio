@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.categories {
+  animation: slide 18s linear infinite alternate;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
