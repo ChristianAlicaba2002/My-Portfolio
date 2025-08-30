@@ -1,9 +1,231 @@
-import React from 'react'
+import React from "react";
 
 export default function Projects() {
+  const projects = [
+    {
+      id: 1,
+      title: "Quantum Ordering",
+      description:
+        "A full-stack e-commerce solution with payment integration, user authentication, and admin dashboard.",
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop",
+      technologies: ["Laravel", "Mysql"],
+      github: "https://github.com/ChristianAlicaba2002/Quantum_Order",
+      featured: true,
+    },
+    {
+      id: 2,
+      title: "Task Master Management",
+      description:
+        "Task Master: To-Do List Take control of your day with Task Master, the ultimate to-do list app designed for simplicity, focus, and productivity.",
+      image:
+        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop",
+      technologies: [
+        "React.js",
+        "Firebase",
+        "Tailwind CSS",
+        "Hono.js",
+        "PostgreSql",
+      ],
+      github: "https://github.com/ChristianAlicaba2002/Task-Master",
+      featured: true,
+    },
+    {
+      id: 3,
+      title: "CrustyBytes",
+      description:
+        "CrustyBytes is a full-featured web-based pizza ordering system designed to streamline the digital operations of a pizza restaurant. It allows customers to browse a delicious menu of pizzas, drinks, and sides, customize their orders, and place them online with ease.",
+      image:
+        "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=400&h=250&fit=crop",
+      technologies: ["React.js", "TypeScript", "Firebase"],
+      github: "https://github.com/ChristianAlicaba2002/CrustyBytes",
+      featured: true,
+    },
+    {
+      id: 4,
+      title: "QuickBuy",
+      description:
+        "QuickBuy Application is a modern and user-friendly ordering system designed for fast, efficient, and seamless transactions. It allows users to browse products, manage orders, and process purchases with ease.",
+      image:
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop",
+      technologies: ["React.js", "TypeScript", "Laravel", "Mysql"],
+      github: "https://github.com/ChristianAlicaba2002/QuickBuy",
+      featured: false,
+    },
+    {
+      id: 5,
+      title: "Veterinanian System",
+      description:
+        "The Veterinarian Management System is a comprehensive web-based platform designed to help veterinary clinics streamline their daily operations. This system enables vets, staff, and pet owners to manage appointments, medical records, and pet information efficiently. With a clean interface and role-based access",
+      image:
+        "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=250&fit=crop",
+      technologies: ["Next.js", "TypeScript"],
+      github: "#",
+      featured: false,
+    },
+    {
+      id: 6,
+      title: "Waste Segregation",
+      description:
+        "A Waste Segregation System is a structured method of managing waste by separating it into different categories to ensure proper disposal, recycling, and treatment. Its main purpose is to reduce environmental impact, improve recycling efficiency, and promote public health. The system typically classifies waste into biodegradable, recyclable, non-recyclable, and hazardous categories.",
+      image:
+        "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=250&fit=crop",
+      technologies: ["Laravel", "Mysql"],
+      github: "https://github.com/ChristianAlicaba2002/Waste_Segregation",
+      featured: false,
+    },
+    {
+      id: 7,
+      title: "Accounting System",
+      description:
+        "An Accounting System is a structured process for recording, managing, and analyzing financial transactions of a business or organization. It provides a systematic way to track income, expenses, assets, liabilities, and equity, ensuring that financial data is accurate and organized.",
+      image:
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop",
+      technologies: ["Laravel", "Mysql"],
+      github: "https://github.com/ChristianAlicaba2002/Accounting_System",
+      featured: false,
+    },
+    {
+      id: 8,
+      title: "ViCo Spaces",
+      description:
+        "ViCoSpaces, a new and user-friendly collaborative co-working space application designed to enhance productivity and foster seamless collaboration among individuals. Built with the Vue 3 Composition API and Firebase, ViCo provides a robust platform for students, individuals and teams to work together in real-time and visualize ideas.",
+      image:
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop",
+      technologies: [
+        "Vue.js",
+        "Firebase",
+        "Pinia",
+        "Fabric.js",
+      ],
+      github: "https://github.com/Neil-urk12/ViCoSpaces",
+      featured: true,
+    },
+  ];
+
   return (
-    <div>
-      
+    <div className="projects-container absolute h-[95vh] w-[80%] overflow-y-scroll ml-80 rounded-2xl bg-gradient-to-br from-gray-800 to-black p-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-200 mb-4">My Projects</h1>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            A collection of projects showcasing my skills in web development,
+            from full-stack applications to interactive user interfaces.
+          </p>
+        </div>
+
+        {/* Featured Projects */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-semibold text-gray-200 mb-6">
+            Featured Projects
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {projects
+              .filter((project) => project.featured)
+              .map((project) => (
+                <div
+                  key={project.id}
+                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+                    <div className="absolute top-4 right-4">
+                      <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                        Featured
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech, index) => (
+                        <span
+                          key={index}
+                          className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex gap-3">
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        className="flex-1 bg-gray-800 text-white text-center py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200"
+                      >
+                        GitHub
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+
+        {/* All Projects Grid */}
+        <div>
+          <h2 className="text-2xl font-semibold text-gray-200 mb-6">
+            All Projects
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {projects.map((project) => (
+              <div
+                key={project.id}
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-10"></div>
+                </div>
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {project.technologies.slice(0, 3).map((tech, index) => (
+                      <span
+                        key={index}
+                        className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technologies.length > 3 && (
+                      <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium">
+                        +{project.technologies.length - 3}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex gap-2">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      className="flex-1 bg-gray-800 text-white text-center py-2 px-3 rounded text-sm hover:bg-gray-700 transition-colors duration-200"
+                    >
+                      Code
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
