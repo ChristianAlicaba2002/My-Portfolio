@@ -11,3 +11,7 @@
     transform: translateX(-50%);
   }
 }
+.about-container,
+.projects-container{
+  scrollbar-width: none;
+}
