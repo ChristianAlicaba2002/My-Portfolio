@@ -14,17 +14,20 @@
 .about-container,
 .projects-container {
   scrollbar-width: none;
-  animation: showCard 0.8s;
+  animation: showCard 2s;
 }
-.sidebar-container{
+.sidebar-container {
   opacity: 1;
-  animation: showCard 0.8s;
+  animation: showCard 2s;
 }
 .dashboard-container {
   animation: showCard 2s;
   opacity: 1;
 }
-
+.welcome-contianer {
+  animation: showCard 2s;
+  opacity: 1;
+}
 @keyframes showCard {
   from {
     opacity: 0;
