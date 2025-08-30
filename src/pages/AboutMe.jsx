@@ -183,7 +183,7 @@ export default function AboutMe() {
 
                 <div className="border-l-2 border-green-500 pl-4">
                   <h3 className="text-white font-medium">Frontend Developer</h3>
-                  <p className="text-green-400 text-sm">2021 - 2025</p>
+                  <p className="text-green-400 text-sm">2023 - 2025</p>
                   <p className="text-gray-300 text-sm mt-1">
                     Built responsive user interfaces and implemented modern web
                     development practices.
@@ -200,6 +200,15 @@ export default function AboutMe() {
                   </p>
                 </div>
 
+                <div className="border-l-2 border-cyan-500 pl-4">
+                  <h3 className="text-white font-medium">Backend Developer</h3>
+                  <p className="text-cyan-400 text-sm">2022 - 2024</p>
+                  <p className="text-gray-300 text-sm mt-1">
+                    Built responsive user interfaces and implemented modern web
+                    development practices.
+                  </p>
+                </div>
+
                 <div className="border-l-2 border-orange-500 pl-4">
                   <h3 className="text-white font-medium">Java Competition</h3>
                   <p className="text-orange-400 text-sm">2023</p>
@@ -208,9 +217,9 @@ export default function AboutMe() {
                   </p>
                 </div>
 
-                <div className="border-l-2 border-purple-500 pl-4">
+                <div className="border-l-2 border-yellow-500 pl-4">
                   <h3 className="text-white font-medium">Web Competition</h3>
-                  <p className="text-purple-400 text-sm">2023</p>
+                  <p className="text-yellow-400 text-sm">2023</p>
                   <p className="text-gray-300 text-sm mt-1">
                     Build a CRUD Job Offer
                   </p>
