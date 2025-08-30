@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 function App() {
   return (
     <div className="w-full min-h-screen bg-black flex flex-col items-center justify-center py-4 px-8">
-      <div className="text-center space-y-8">
+      <div className="welcome-contianer text-center space-y-8">
         <h1 className="text-6xl font-bold text-white mb-4">
           Welcome to My Portfolio
         </h1>
