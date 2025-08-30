@@ -1,10 +1,24 @@
-import Sidebar from "./components/Sidebar";
+import { Link, NavLink } from "react-router-dom";
 
 function App() {
   return (
-    <body className="w-full bg-black flex flex-row justify-between py-4 px-8">
-        <Sidebar />
-    </body>
+    <div className="w-full min-h-screen bg-black flex flex-col items-center justify-center py-4 px-8">
+      <div className="text-center space-y-8">
+        <h1 className="text-6xl font-bold text-white mb-4">
+          Welcome to My Portfolio
+        </h1>
+        <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          Hi, I'm a passionate developer creating amazing digital experiences.
+          Explore my work and discover what I can bring to your next project.
+        </p>
+        <Link
+          to={"/Layouts/dashboard"}
+          className="cursor-pointer bg-white text-black px-8 py-4 rounded-lg font-semibold text-lg duration-200 hover:bg-gray-200 transition-all transform hover:scale-105"
+        >
+          View More
+        </Link>
+      </div>
+    </div>
   );
 }
 
