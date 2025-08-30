@@ -83,7 +83,7 @@ export default function AboutMe() {
                       <span className="text-gray-300 text-sm">TypeScript</span>
                     </div>
                     <div className="flex items-center bg-gray-800 px-3 py-1 rounded-full">
-                      <SiJavascript className="text-sky-400 mr-2" />
+                      <SiJavascript className="text-yellow-400 mr-2" />
                       <span className="text-gray-300 text-sm">Javascript</span>
                     </div>
                     <div className="flex items-center bg-gray-800 px-3 py-1 rounded-full">
@@ -132,6 +132,9 @@ export default function AboutMe() {
                       Firebase
                     </span>
                     <span className="bg-gray-800 px-3 py-1 rounded-full text-gray-300 text-sm">
+                      Clerk
+                    </span>
+                    <span className="bg-gray-800 px-3 py-1 rounded-full text-gray-300 text-sm">
                       Jira
                     </span>
                     <span className="bg-gray-800 px-3 py-1 rounded-full text-gray-300 text-sm">
@@ -145,6 +148,9 @@ export default function AboutMe() {
                     </span>
                     <span className="bg-gray-800 px-3 py-1 rounded-full text-gray-300 text-sm">
                       Figma
+                    </span>
+                    <span className="bg-gray-800 px-3 py-1 rounded-full text-gray-300 text-sm">
+                      Tailwindcss
                     </span>
                   </div>
                 </div>
