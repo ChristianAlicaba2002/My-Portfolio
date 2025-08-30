@@ -1,4 +1,11 @@
 import React from "react";
+import taskMaster from "../assets/images/TaskMaster.webp";
+import Technical from "../assets/images/Technical.webp";
+import CrustyBytes from "../assets/images/CrustyBytes.webp";
+import QuanTum from "../assets/images/QuantumOrder.webp";
+import Waste from "../assets/images/Waste.webp";
+import Veteririan from "../assets/images/Veteririan.webp";
+import Accounting from "../assets/images/Accounting.webp";
 
 export default function Projects() {
   const projects = [
@@ -7,8 +14,7 @@ export default function Projects() {
       title: "Quantum Ordering",
       description:
         "A full-stack e-commerce solution with payment integration, user authentication, and admin dashboard.",
-      image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop",
+      image: QuanTum,
       technologies: ["Laravel", "Mysql"],
       github: "https://github.com/ChristianAlicaba2002/Quantum_Order",
       featured: true,
@@ -18,8 +24,7 @@ export default function Projects() {
       title: "Task Master Management",
       description:
         "Task Master: To-Do List Take control of your day with Task Master, the ultimate to-do list app designed for simplicity, focus, and productivity.",
-      image:
-        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop",
+      image: taskMaster,
       technologies: [
         "React.js",
         "Firebase",
@@ -35,11 +40,10 @@ export default function Projects() {
       title: "CrustyBytes",
       description:
         "CrustyBytes is a full-featured web-based pizza ordering system designed to streamline the digital operations of a pizza restaurant. It allows customers to browse a delicious menu of pizzas, drinks, and sides, customize their orders, and place them online with ease.",
-      image:
-        "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=400&h=250&fit=crop",
+      image: CrustyBytes,
       technologies: ["React.js", "TypeScript", "Firebase"],
       github: "https://github.com/ChristianAlicaba2002/CrustyBytes",
-      featured: true,
+      featured: false,
     },
     {
       id: 4,
@@ -57,8 +61,7 @@ export default function Projects() {
       title: "Veterinanian System",
       description:
         "The Veterinarian Management System is a comprehensive web-based platform designed to help veterinary clinics streamline their daily operations. This system enables vets, staff, and pet owners to manage appointments, medical records, and pet information efficiently. With a clean interface and role-based access",
-      image:
-        "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=250&fit=crop",
+      image: Veteririan,
       technologies: ["Next.js", "TypeScript"],
       github: "#",
       featured: false,
@@ -68,8 +71,7 @@ export default function Projects() {
       title: "Waste Segregation",
       description:
         "A Waste Segregation System is a structured method of managing waste by separating it into different categories to ensure proper disposal, recycling, and treatment. Its main purpose is to reduce environmental impact, improve recycling efficiency, and promote public health. The system typically classifies waste into biodegradable, recyclable, non-recyclable, and hazardous categories.",
-      image:
-        "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=250&fit=crop",
+      image: Waste,
       technologies: ["Laravel", "Mysql"],
       github: "https://github.com/ChristianAlicaba2002/Waste_Segregation",
       featured: false,
@@ -79,8 +81,7 @@ export default function Projects() {
       title: "Accounting System",
       description:
         "An Accounting System is a structured process for recording, managing, and analyzing financial transactions of a business or organization. It provides a systematic way to track income, expenses, assets, liabilities, and equity, ensuring that financial data is accurate and organized.",
-      image:
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop",
+      image: Accounting,
       technologies: ["Laravel", "Mysql"],
       github: "https://github.com/ChristianAlicaba2002/Accounting_System",
       featured: false,
@@ -92,12 +93,17 @@ export default function Projects() {
         "ViCoSpaces, a new and user-friendly collaborative co-working space application designed to enhance productivity and foster seamless collaboration among individuals. Built with the Vue 3 Composition API and Firebase, ViCo provides a robust platform for students, individuals and teams to work together in real-time and visualize ideas.",
       image:
         "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop",
-      technologies: [
-        "Vue.js",
-        "Firebase",
-        "Pinia",
-        "Fabric.js",
-      ],
+      technologies: ["Vue.js", "Firebase", "Pinia", "Fabric.js"],
+      github: "https://github.com/Neil-urk12/ViCoSpaces",
+      featured: true,
+    },
+    {
+      id: 9,
+      title: "Techinical Assets Management",
+      description:
+        "Technical Assets Management refers to the systematic approach of overseeing and managing the lifecycle of an organization’s technical assets. This includes hardware, software, networks, and other IT-related resources that are essential for the company’s day-to-day operations. The main goals of technical asset management are to ensure that these assets are used effectively, are properly maintained, and provide value throughout their entire lifespan.",
+      image: Technical,
+      technologies: ["Vue.js", "Firebase", "Pinia", "Fabric.js"],
       github: "https://github.com/Neil-urk12/ViCoSpaces",
       featured: true,
     },
@@ -133,7 +139,6 @@ export default function Projects() {
                       alt={project.title}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-20"></div>
                     <div className="absolute top-4 right-4">
                       <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
                         Featured
@@ -187,7 +192,6 @@ export default function Projects() {
                     alt={project.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-10"></div>
                 </div>
                 <div className="p-4">
                   <h3 className="text-lg font-semibold text-gray-800 mb-2">
