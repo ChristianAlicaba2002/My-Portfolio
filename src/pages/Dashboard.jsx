@@ -38,6 +38,11 @@ export default function Dashboard() {
             </div>
           </div>
         </header>
+        <div className="mt-50 mx-20 bg-gray-900 rounded-2xl">
+          <h2 className="text-white text-center p-20">
+            This section is under development...
+          </h2>
+        </div>
       </div>
     </>
   );
