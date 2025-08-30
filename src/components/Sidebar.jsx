@@ -4,7 +4,7 @@ import { NavLink, Outlet } from "react-router-dom";
 
 export default function Sidebar() {
   return (
-    <div className="flex flex-col">
+    <div className="sidebar-container flex flex-col">
       <nav className="relative w-72 h-[54rem] rounded-3xl bg-gradient-to-b from-gray-900 to-gray-950 shadow-2xl border border-gray-800">
         {/* Logo Section */}
         <div className="logo h-72 flex flex-col justify-center items-center pt-8">

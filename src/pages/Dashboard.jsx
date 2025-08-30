@@ -15,7 +15,7 @@ import { SiDjango } from "react-icons/si";
 export default function Dashboard() {
   return (
     <>
-      <div className="ml-80 fixed w-[80%] h-[94vh] bg-gray-950 rounded-2xl shadow-[0px_0px_3px_gray]">
+      <div className="dashboard-container ml-80 fixed w-[80%] h-[94vh] bg-gray-950 rounded-2xl shadow-[0px_0px_3px_gray]">
         <header>
           <Badges />
           <div className="programming-languages relative m-6 w-[97%] h-20 overflow-hidden">
