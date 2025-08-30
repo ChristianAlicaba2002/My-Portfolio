@@ -51,7 +51,7 @@ export default function Projects() {
       description:
         "QuickBuy Application is a modern and user-friendly ordering system designed for fast, efficient, and seamless transactions. It allows users to browse products, manage orders, and process purchases with ease.",
       image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop",
+        "https://d6xcmfyh68wv8.cloudfront.net/learn-content/uploads/2024/09/Quick-Buy-banner-e-commerce-trends-1024x576.jpg",
       technologies: ["React.js", "TypeScript", "Laravel", "Mysql"],
       github: "https://github.com/ChristianAlicaba2002/QuickBuy",
       featured: false,
