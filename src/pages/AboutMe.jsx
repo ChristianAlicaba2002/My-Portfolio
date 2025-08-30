@@ -192,7 +192,7 @@ export default function AboutMe() {
 
                 <div className="border-l-2 border-purple-500 pl-4">
                   <h3 className="text-white font-medium">
-                    Hacktober Fiest Bootcamp
+                    Hacktoberfest Bootcamp
                   </h3>
                   <p className="text-purple-400 text-sm">2024</p>
                   <p className="text-gray-300 text-sm mt-1">
