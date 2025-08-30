@@ -13,7 +13,7 @@ function App() {
         </p>
         <Link
           to={"/Layouts/dashboard"}
-          className="cursor-pointer bg-white text-black px-8 py-4 rounded-lg font-semibold text-lg duration-200 hover:bg-gray-200 transition-all transform hover:scale-105"
+          className="cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg duration-200 hover:scale-150"
         >
           View More
         </Link>
