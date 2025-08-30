@@ -100,9 +100,7 @@ export default function Sidebar() {
         {/* Footer Section */}
         <div className="absolute bottom-6 left-6 right-6">
           <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
-            <p className="text-gray-400 text-sm text-center">
-            &copy; 2021 - 2025
-            </p>
+            <p className="text-gray-400 text-sm text-center">&copy; 2024 All rights reserved</p>
           </div>
         </div>
       </nav>
