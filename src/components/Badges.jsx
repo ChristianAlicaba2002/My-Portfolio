@@ -9,14 +9,16 @@ export default function Badges() {
   ];
 
   return (
-    <div className="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+    <div className="p-3 sm:p-4 lg:p-6 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
       {badges.map((badge) => (
         <div
           key={badge.label}
-          className={`rounded-xl p-10 text-white font-semibold shadow-md ${badge.color}`}
+          className={`rounded-xl p-3 sm:p-4 lg:p-6 xl:p-8 text-white font-semibold shadow-md ${badge.color} hover:scale-105 transition-transform duration-200 cursor-pointer`}
         >
-          <div className="text-2xl font-bold">{badge.value}</div>
-          <div className="text-sm">{badge.label}</div>
+          <div className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold">
+            {badge.value}
+          </div>
+          <div className="text-xs sm:text-sm lg:text-base">{badge.label}</div>
         </div>
       ))}
     </div>
