@@ -17,7 +17,7 @@ export default function Dashboard() {
     <div className="lg:w-[82%] h-screen bg-gray-950 p-4 lg:p-6 sm:w-screen">
       <header>
         <Badges />
-        <div className="w-screen mx-auto h-16 lg:h-20 overflow-hidden p-2">
+        <div className="dashbord-container w-screen mx-auto h-16 lg:h-20 overflow-hidden p-2">
           <div className="flex gap-4 lg:gap-10 whitespace-nowrap animate-scroll">
             {[...Array(2)].map((_, i) => (
               <div key={i} className="flex gap-4 lg:gap-10">
@@ -37,7 +37,7 @@ export default function Dashboard() {
           </div>
         </div>
       </header>
-      <div className="mt-6 lg:mt-8 mx-2 lg:mx-4 bg-gray-900 rounded-2xl">
+      <div className="dashbord-container mt-6 lg:mt-8 mx-2 lg:mx-4 bg-gray-900 rounded-2xl">
         <h2 className="text-gray-500 text-center p-6 lg:p-12 text-sm lg:text-base">
           This section is under development...
         </h2>

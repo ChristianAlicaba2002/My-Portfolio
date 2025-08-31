@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="w-full min-h-screen bg-black flex flex-col items-center justify-center py-4 px-8">
       <div className="welcome-contianer text-center space-y-8">
-        <h1 className="text-6xl font-bold text-white mb-4">
+        <h1 className="text-5xl font-bold text-white mb-4">
           Welcome to My Portfolio
         </h1>
         <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
