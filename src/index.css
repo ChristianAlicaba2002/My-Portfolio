@@ -63,6 +63,55 @@ a:focus {
   pointer-events: none;
 }
 
+.welcome-contianer {
+  opacity: 1;
+  animation: slides 1.5s ease-in-out;
+}
+
+@keyframes slides {
+  from {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+}
+
+.dashbord-container,
+.badges-container {
+  animation: shows 1.5s;
+}
+
+@keyframes shows {
+  from {
+    opacity: 0;
+  }
+}
+
+.whoiam-container,
+.projects-container,
+.contact-container {
+  animation: fade1 3s ease-in-out;
+}
+
+.skills-container,
+.feature-container {
+  animation: fade1 3.5s ease-in-out;
+}
+.experience-container,
+.allProjects-container {
+  animation: fade1 4s ease-in-out;
+}
+.education-container {
+  animation: fade1 4.5s ease-in-out;
+}
+.connect-container {
+  animation: fade1 5s ease-in-out;
+}
+
+@keyframes fade1 {
+  from {
+    opacity: 0;
+  }
+}
 @media (hover: hover) {
   .hover\:scale-105:hover {
     transform: scale(1.05);
