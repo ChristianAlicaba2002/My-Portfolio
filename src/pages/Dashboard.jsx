@@ -14,36 +14,34 @@ import { SiDjango } from "react-icons/si";
 
 export default function Dashboard() {
   return (
-    <>
-      <div className="dashboard-container ml-80 fixed w-[80%] h-[94vh] bg-gray-950 rounded-2xl shadow-[0px_0px_3px_gray]">
-        <header>
-          <Badges />
-          <div className="programming-languages relative m-6 w-[97%] h-20 overflow-hidden">
-            <div className="categories flex gap-16 whitespace-nowrap">
-              {[...Array(2)].map((_, i) => (
-                <div key={i} className="flex gap-10">
-                  <FaHtml5 className="text-6xl text-red-800" />
-                  <FaCss3Alt className="text-6xl text-blue-800" />
-                  <FaLaravel className="text-6xl text-red-800" />
-                  <FaReact className="text-6xl text-sky-400" />
-                  <SiTypescript className="text-6xl text-blue-600" />
-                  <SiJavascript className="text-6xl text-yellow-300" />
-                  <FaPython className="text-6xl text-blue-300" />
-                  <SiPhp className="text-6xl text-purple-900" />
-                  <FaJava className="text-6xl text-red-400" />
-                  <RiNextjsFill className="text-6xl text-white rounded-full" />
-                  <SiDjango className="text-6xl text-green-900" />
-                </div>
-              ))}
-            </div>
+    <div className="lg:w-[82%] h-screen bg-gray-950 p-4 lg:p-6 sm:w-screen">
+      <header>
+        <Badges />
+        <div className="w-screen mx-auto h-16 lg:h-20 overflow-hidden p-2">
+          <div className="flex gap-4 lg:gap-10 whitespace-nowrap animate-scroll">
+            {[...Array(2)].map((_, i) => (
+              <div key={i} className="flex gap-4 lg:gap-10">
+                <FaHtml5 className="text-2xl lg:text-6xl text-red-800" />
+                <FaCss3Alt className="text-2xl lg:text-6xl text-blue-800" />
+                <FaLaravel className="text-2xl lg:text-6xl text-red-800" />
+                <FaReact className="text-2xl lg:text-6xl text-sky-400" />
+                <SiTypescript className="text-2xl lg:text-6xl text-blue-600" />
+                <SiJavascript className="text-2xl lg:text-6xl text-yellow-300" />
+                <FaPython className="text-2xl lg:text-6xl text-blue-300" />
+                <SiPhp className="text-2xl lg:text-6xl text-purple-900" />
+                <FaJava className="text-2xl lg:text-6xl text-red-400" />
+                <RiNextjsFill className="text-2xl lg:text-6xl text-white rounded-full" />
+                <SiDjango className="text-2xl lg:text-6xl text-green-900" />
+              </div>
+            ))}
           </div>
-        </header>
-        <div className="mt-50 mx-20 bg-gray-900 rounded-2xl">
-          <h2 className="text-gray-500 text-center p-20">
-            This section is under development...
-          </h2>
         </div>
+      </header>
+      <div className="mt-6 lg:mt-8 mx-2 lg:mx-4 bg-gray-900 rounded-2xl">
+        <h2 className="text-gray-500 text-center p-6 lg:p-12 text-sm lg:text-base">
+          This section is under development...
+        </h2>
       </div>
-    </>
+    </div>
   );
 }
