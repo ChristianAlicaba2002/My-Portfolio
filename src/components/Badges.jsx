@@ -9,7 +9,7 @@ export default function Badges() {
   ];
 
   return (
-    <div className="p-3 sm:p-4 lg:p-6 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+    <div className="pt-14 pb-6 sm:p-4 lg:p-6 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
       {badges.map((badge) => (
         <div
           key={badge.label}
