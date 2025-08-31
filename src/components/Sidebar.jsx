@@ -1,11 +1,75 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/images/logo.webp";
 import { NavLink, Outlet } from "react-router-dom";
 
 export default function Sidebar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <div className="sidebar-container flex flex-col">
-      <nav className="relative w-72 h-[54rem] rounded-3xl bg-gradient-to-b from-gray-900 to-gray-950 shadow-2xl border border-gray-800">
+    <div className="flex flex-col lg:flex-row">
+      {/* Mobile Hamburger Menu */}
+      <div className="lg:hidden fixed top-4 left-4 z-50">
+        <button
+          onClick={toggleMobileMenu}
+          className="p-2 rounded-lg bg-gray-800/90 backdrop-blur-sm border border-gray-700 text-white hover:bg-gray-700/90 transition-colors shadow-lg"
+          aria-label="Toggle mobile menu"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            {isMobileMenuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
+      </div>
+
+      {/* Mobile Overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+          onClick={closeMobileMenu}
+        />
+      )}
+
+      {/* Sidebar */}
+      <nav
+        className={`
+          fixed lg:relative z-40
+          w-80 h-full lg:h-screen lg:max-h-screen
+          bg-gradient-to-b from-gray-900 to-gray-950
+          transform transition-transform duration-300 ease-in-out
+          ${
+            isMobileMenuOpen
+              ? "translate-x-0"
+              : "-translate-x-full lg:translate-x-0"
+          }
+          ${isMobileMenuOpen ? "top-0 left-0" : "lg:top-auto lg:left-auto"}
+        `}
+      >
         {/* Logo Section */}
         <div className="logo h-72 flex flex-col justify-center items-center pt-8">
           <div className="relative">
@@ -37,6 +101,7 @@ export default function Sidebar() {
                   }`
                 }
                 to={"dashboard"}
+                onClick={closeMobileMenu}
               >
                 <svg
                   className="w-5 h-5"
@@ -58,6 +123,7 @@ export default function Sidebar() {
                   }`
                 }
                 to={"aboutme"}
+                onClick={closeMobileMenu}
               >
                 <svg
                   className="w-5 h-5"
@@ -83,6 +149,7 @@ export default function Sidebar() {
                   }`
                 }
                 to={"projects"}
+                onClick={closeMobileMenu}
               >
                 <svg
                   className="w-5 h-5"
@@ -94,17 +161,46 @@ export default function Sidebar() {
                 Projects
               </NavLink>
             </li>
+            <li className="w-full">
+              <NavLink
+                className={({ isActive }) =>
+                  `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
+                    isActive
+                      ? "text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg shadow-blue-500/25"
+                      : "text-gray-400 hover:text-white hover:bg-gray-800/50"
+                  }`
+                }
+                to={"contactme"}
+                onClick={closeMobileMenu}
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+                Contact Me
+              </NavLink>
+            </li>
           </ul>
         </div>
 
         {/* Footer Section */}
         <div className="absolute bottom-6 left-6 right-6">
           <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
-            <p className="text-gray-400 text-sm text-center">&copy; 2024 All rights reserved</p>
+            <p className="text-gray-400 text-sm text-center">
+              &copy; 2024 All rights reserved
+            </p>
           </div>
         </div>
       </nav>
-      <Outlet />
+
+      {/* Main Content Area */}
+      <div className="flex-1 h-screen">
+        <Outlet />
+      </div>
     </div>
   );
 }
