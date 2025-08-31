@@ -101,7 +101,7 @@ export default function Projects() {
       id: 9,
       title: "Techinical Assets Management",
       description:
-        "Technical Assets Management refers to the systematic approach of overseeing and managing the lifecycle of an organization’s technical assets. This includes hardware, software, networks, and other IT-related resources that are essential for the company’s day-to-day operations. The main goals of technical asset management are to ensure that these assets are used effectively, are properly maintained, and provide value throughout their entire lifespan.",
+        "Technical Assets Management refers to the systematic approach of overseeing and managing the lifecycle of an organization's technical assets. This includes hardware, software, networks, and other IT-related resources that are essential for the company's day-to-day operations. The main goals of technical asset management are to ensure that these assets are used effectively, are properly maintained, and provide value throughout their entire lifespan.",
       image: Technical,
       technologies: ["Vue.js", "Firebase", "Pinia", "Fabric.js"],
       github: "https://github.com/Neil-urk12/ViCoSpaces",
@@ -110,22 +110,24 @@ export default function Projects() {
   ];
 
   return (
-    <div className="projects-container absolute h-[95vh] w-[80%] overflow-y-scroll ml-80 rounded-2xl bg-gradient-to-br from-gray-800 to-black p-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-200 mb-4">My Projects</h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+    <div className="w-screen h-screen bg-gradient-to-br from-gray-800 to-black overflow-y-scroll p-4 lg:p-6">
+      <div className="max-w-7xl lg:ml-36 sm:mx-auto">
+        <div className="text-center mb-8 lg:mb-12">
+          <h1 className="text-2xl lg:text-4xl font-bold text-gray-200 mb-3 lg:mb-4">
+            My Projects
+          </h1>
+          <p className="text-sm lg:text-lg text-gray-300 max-w-2xl mx-auto px-4">
             A collection of projects showcasing my skills in web development,
             from full-stack applications to interactive user interfaces.
           </p>
         </div>
 
         {/* Featured Projects */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-semibold text-gray-200 mb-6">
+        <div className="mb-8 lg:mb-12">
+          <h2 className="text-xl lg:text-2xl font-semibold text-gray-200 mb-4 lg:mb-6 px-4 lg:px-0">
             Featured Projects
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 px-4 lg:px-0">
             {projects
               .filter((project) => project.featured)
               .map((project) => (
@@ -133,28 +135,30 @@ export default function Projects() {
                   key={project.id}
                   className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
                 >
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-40 lg:h-48 overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute top-4 right-4">
-                      <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <div className="absolute top-3 lg:top-4 right-3 lg:right-4">
+                      <span className="bg-blue-500 text-white px-2 lg:px-3 py-1 rounded-full text-xs lg:text-sm font-medium">
                         Featured
                       </span>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  <div className="p-4 lg:p-6">
+                    <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2">
                       {project.title}
                     </h3>
-                    <p className="text-gray-600 mb-4">{project.description}</p>
+                    <p className="text-gray-600 mb-4 text-sm lg:text-base">
+                      {project.description}
+                    </p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.technologies.map((tech, index) => (
                         <span
                           key={index}
-                          className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
+                          className="bg-gray-100 text-gray-700 px-2 lg:px-3 py-1 rounded-full text-xs lg:text-sm font-medium"
                         >
                           {tech}
                         </span>
@@ -164,7 +168,8 @@ export default function Projects() {
                       <a
                         href={project.github}
                         target="_blank"
-                        className="flex-1 bg-gray-800 text-white text-center py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200"
+                        rel="noopener noreferrer"
+                        className="flex-1 bg-gray-800 text-white text-center py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 text-sm lg:text-base"
                       >
                         GitHub
                       </a>
@@ -177,27 +182,27 @@ export default function Projects() {
 
         {/* All Projects Grid */}
         <div>
-          <h2 className="text-2xl font-semibold text-gray-200 mb-6">
+          <h2 className="text-xl lg:text-2xl font-semibold text-gray-200 mb-4 lg:mb-6 px-4 lg:px-0">
             All Projects
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6 px-4 lg:px-0">
             {projects.map((project) => (
               <div
                 key={project.id}
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
               >
-                <div className="relative h-40 overflow-hidden">
+                <div className="relative h-32 lg:h-40 overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                <div className="p-3 lg:p-4">
+                  <h3 className="text-base lg:text-lg font-semibold text-gray-800 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                  <p className="text-gray-600 text-xs lg:text-sm mb-3 line-clamp-2">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-1 mb-3">
@@ -219,7 +224,8 @@ export default function Projects() {
                     <a
                       href={project.github}
                       target="_blank"
-                      className="flex-1 bg-gray-800 text-white text-center py-2 px-3 rounded text-sm hover:bg-gray-700 transition-colors duration-200"
+                      rel="noopener noreferrer"
+                      className="flex-1 bg-gray-800 text-white text-center py-2 px-3 rounded text-xs lg:text-sm hover:bg-gray-700 transition-colors duration-200"
                     >
                       Code
                     </a>
