@@ -14,12 +14,12 @@ import { SiDjango } from "react-icons/si";
 
 export default function Dashboard() {
   return (
-    <div className="lg:w-[82%] h-screen bg-gray-950 p-4 lg:p-6 sm:w-screen">
+    <div className="lg:w-[82%] h-screen px-5 bg-gray-950 p-4 lg:p-6 sm:w-screen">
       <header>
         <Badges />
-        <div className="dashbord-container w-screen mx-auto h-16 lg:h-20 overflow-hidden p-2">
-          <div className="flex gap-4 lg:gap-10 whitespace-nowrap animate-scroll">
-            {[...Array(2)].map((_, i) => (
+        <div className="dashbord-container lg:w-screen h-16 lg:h-20 overflow-hidden p-6">
+          <div className="w-screen mx-auto flex gap-4 lg:gap-10 whitespace-nowrap animate-scroll">
+            {[...Array(3)].map((_, i) => (
               <div key={i} className="flex gap-4 lg:gap-10">
                 <FaHtml5 className="text-2xl lg:text-6xl text-red-800" />
                 <FaCss3Alt className="text-2xl lg:text-6xl text-blue-800" />
