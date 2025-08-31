@@ -112,7 +112,7 @@ export default function Projects() {
   return (
     <div className="w-screen h-screen bg-gradient-to-br from-gray-800 to-black overflow-y-scroll p-4 lg:p-6">
       <div className="max-w-7xl lg:ml-36 sm:mx-auto">
-        <div className="text-center mb-8 lg:mb-12">
+        <div className="projects-container text-center mb-8 lg:mb-12">
           <h1 className="text-2xl lg:text-4xl font-bold text-gray-200 mb-3 lg:mb-4">
             My Projects
           </h1>
@@ -123,7 +123,7 @@ export default function Projects() {
         </div>
 
         {/* Featured Projects */}
-        <div className="mb-8 lg:mb-12">
+        <div className="feature-container mb-8 lg:mb-12">
           <h2 className="text-xl lg:text-2xl font-semibold text-gray-200 mb-4 lg:mb-6 px-4 lg:px-0">
             Featured Projects
           </h2>
@@ -181,7 +181,7 @@ export default function Projects() {
         </div>
 
         {/* All Projects Grid */}
-        <div>
+        <div className="allProjects-container">
           <h2 className="text-xl lg:text-2xl font-semibold text-gray-200 mb-4 lg:mb-6 px-4 lg:px-0">
             All Projects
           </h2>
