@@ -25,7 +25,7 @@ export default function AboutMe() {
   return (
     <div className="w-full h-screen bg-gray-950 overflow-y-scroll p-4 lg:p-8">
       {/* Header Section */}
-      <div className="text-center mb-8 lg:mb-12">
+      <div className="whoiam-container text-center mb-8 lg:mb-12">
         <h1 className="text-2xl lg:text-4xl font-bold text-white mb-4">
           About Me
         </h1>
@@ -40,7 +40,7 @@ export default function AboutMe() {
         {/* Left Column */}
         <div className="space-y-6 lg:space-y-8">
           {/* Introduction */}
-          <div className="bg-gray-900 rounded-xl p-4 lg:p-6 shadow-lg">
+          <div className="whoiam-container bg-gray-900 rounded-xl p-4 lg:p-6 shadow-lg">
             <div className="flex items-center mb-4">
               <FaHeart className="text-red-500 text-xl lg:text-2xl mr-3" />
               <h2 className="text-xl lg:text-2xl font-semibold text-white">
@@ -63,7 +63,7 @@ export default function AboutMe() {
           </div>
 
           {/* Skills */}
-          <div className="bg-gray-900 rounded-xl p-4 lg:p-6 shadow-lg">
+          <div className="skills-container bg-gray-900 rounded-xl p-4 lg:p-6 shadow-lg">
             <div className="flex items-center mb-6">
               <FaCode className="text-blue-500 text-xl lg:text-2xl mr-3" />
               <h2 className="text-xl lg:text-2xl font-semibold text-white">
@@ -180,7 +180,7 @@ export default function AboutMe() {
         {/* Right Column */}
         <div className="space-y-6 lg:space-y-8">
           {/* Experience */}
-          <div className="bg-gray-900 rounded-xl p-4 lg:p-6 shadow-lg">
+          <div className="experience-container bg-gray-900 rounded-xl p-4 lg:p-6 shadow-lg">
             <div className="flex items-center mb-6">
               <FaLaptopCode className="text-green-500 text-xl lg:text-2xl mr-3" />
               <h2 className="text-xl lg:text-2xl font-semibold text-white">
@@ -257,7 +257,7 @@ export default function AboutMe() {
           </div>
 
           {/* Education */}
-          <div className="bg-gray-900 rounded-xl p-4 lg:p-6 shadow-lg">
+          <div className="education-container bg-gray-900 rounded-xl p-4 lg:p-6 shadow-lg">
             <div className="flex items-center mb-4">
               <FaRocket className="text-yellow-500 text-xl lg:text-2xl mr-3" />
               <h2 className="text-xl lg:text-2xl font-semibold text-white">
@@ -279,7 +279,7 @@ export default function AboutMe() {
         </div>
       </div>
 
-      <div className="bg-gray-900 rounded-xl p-4 lg:p-6 m-2 mt-6 shadow-lg">
+      <div className="connect-container bg-gray-900 rounded-xl p-4 lg:p-6 m-2 mt-6 shadow-lg">
         <h2 className="text-xl lg:text-2xl font-semibold text-white mb-4">
           Let's Connect
         </h2>
@@ -305,7 +305,7 @@ export default function AboutMe() {
       </div>
 
       {/* Bottom Section - Personal Interests */}
-      <div className="mt-6 lg:mt-8 bg-gray-900 rounded-xl p-4 lg:p-6 shadow-lg">
+      <div className="connect-container mt-6 lg:mt-8 bg-gray-900 rounded-xl p-4 lg:p-6 shadow-lg">
         <h2 className="text-xl lg:text-2xl font-semibold text-white mb-4">
           Beyond Coding
         </h2>
