@@ -163,7 +163,7 @@ export default function AboutMe() {
                     PostgreSQL
                   </span>
                   <span className="bg-gray-800 px-2 lg:px-3 py-1 rounded-full text-gray-300 text-xs lg:text-sm">
-                    Mysql
+                    MySQL
                   </span>
                   <span className="bg-gray-800 px-2 lg:px-3 py-1 rounded-full text-gray-300 text-xs lg:text-sm">
                     Figma
