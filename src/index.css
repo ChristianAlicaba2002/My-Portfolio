@@ -1,9 +1,23 @@
 @import "tailwindcss";
 
-.categories {
-  animation: slide 18s linear infinite alternate;
+::-webkit-scrollbar {
+  width: 8px;
 }
-@keyframes slide {
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+@keyframes scroll {
   0% {
     transform: translateX(0);
   }
@@ -11,26 +25,62 @@
     transform: translateX(-50%);
   }
 }
-.about-container,
-.projects-container {
-  scrollbar-width: none;
-  animation: showCard 2s;
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
 }
-.sidebar-container {
-  opacity: 1;
-  animation: showCard 2s;
+
+@media (max-width: 768px) {
+  .animate-scroll {
+    animation-duration: 15s;
+  }
 }
-.dashboard-container {
-  animation: showCard 2s;
-  opacity: 1;
+
+html {
+  scroll-behavior: smooth;
 }
-.welcome-contianer {
-  animation: showCard 2s;
-  opacity: 1;
+
+@media (max-width: 768px) {
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
-@keyframes showCard {
-  from {
-    opacity: 0;
-    transform: scale(0.5);
+
+body {
+  overflow-x: hidden;
+}
+
+button:focus,
+a:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .hover\:scale-105:hover {
+    transform: scale(1.05);
+  }
+
+  .hover\:-translate-y-1:hover {
+    transform: translateY(-0.25rem);
+  }
+
+  .hover\:-translate-y-2:hover {
+    transform: translateY(-0.5rem);
+  }
+}
+
+@media (hover: none) {
+  .hover\:scale-105:hover,
+  .hover\:-translate-y-1:hover,
+  .hover\:-translate-y-2:hover {
+    transform: none;
   }
 }
