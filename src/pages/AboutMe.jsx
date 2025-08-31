@@ -229,8 +229,9 @@ export default function AboutMe() {
                 </h3>
                 <p className="text-cyan-400 text-xs lg:text-sm">2022 - 2024</p>
                 <p className="text-gray-300 text-xs lg:text-sm mt-1">
-                  Built responsive user interfaces and implemented modern web
-                  development practices.
+                  Experienced Backend Developer skilled in building secure APIs,
+                  managing databases, and optimizing server performance to
+                  support scalable applications.
                 </p>
               </div>
 
