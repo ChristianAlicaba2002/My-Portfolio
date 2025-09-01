@@ -47,9 +47,8 @@ export default function Dashboard() {
       category: "Tools & Software",
       icon: <FaTools className="text-2xl text-orange-500" />,
       skills: [
-        { name: "Git/GitHub", level: 90 },
+        { name: "Git/GitHub", level: 100 },
         { name: "Firebase", level: 50 },
-        { name: "VS Code", level: 100 },
         { name: "Docker", level: 45 },
         { name: "Figma", level: 90 },
         { name: "Jira", level: 60 },
