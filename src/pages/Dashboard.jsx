@@ -52,6 +52,7 @@ export default function Dashboard() {
         { name: "Docker", level: 45 },
         { name: "Figma", level: 90 },
         { name: "Jira", level: 60 },
+        { name: "Trello", level: 95 },
       ],
     },
     {
