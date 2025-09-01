@@ -41,7 +41,7 @@ export default function Projects() {
       description:
         "CrustyBytes is a full-featured web-based pizza ordering system designed to streamline the digital operations of a pizza restaurant. It allows customers to browse a delicious menu of pizzas, drinks, and sides, customize their orders, and place them online with ease.",
       image: CrustyBytes,
-      technologies: ["React.js", "TypeScript", "Firebase"],
+      technologies: ["React.js", "TypeScript", "Firebase", "MySQL"],
       github: "https://github.com/ChristianAlicaba2002/CrustyBytes",
       featured: false,
     },
@@ -52,7 +52,7 @@ export default function Projects() {
         "QuickBuy Application is a modern and user-friendly ordering system designed for fast, efficient, and seamless transactions. It allows users to browse products, manage orders, and process purchases with ease.",
       image:
         "https://d6xcmfyh68wv8.cloudfront.net/learn-content/uploads/2024/09/Quick-Buy-banner-e-commerce-trends-1024x576.jpg",
-      technologies: ["React.js", "TypeScript", "Laravel", "Mysql"],
+      technologies: ["React.js", "TypeScript", "Laravel", "MySQL"],
       github: "https://github.com/ChristianAlicaba2002/QuickBuy",
       featured: false,
     },
@@ -62,7 +62,7 @@ export default function Projects() {
       description:
         "The Veterinarian Management System is a comprehensive web-based platform designed to help veterinary clinics streamline their daily operations. This system enables vets, staff, and pet owners to manage appointments, medical records, and pet information efficiently. With a clean interface and role-based access",
       image: Veteririan,
-      technologies: ["Next.js", "TypeScript"],
+      technologies: ["Next.js", "TypeScript", "MySQL"],
       github: "#",
       featured: false,
     },
@@ -72,7 +72,7 @@ export default function Projects() {
       description:
         "A Waste Segregation System is a structured method of managing waste by separating it into different categories to ensure proper disposal, recycling, and treatment. Its main purpose is to reduce environmental impact, improve recycling efficiency, and promote public health. The system typically classifies waste into biodegradable, recyclable, non-recyclable, and hazardous categories.",
       image: Waste,
-      technologies: ["Laravel", "Mysql"],
+      technologies: ["Laravel", "MySQL"],
       github: "https://github.com/ChristianAlicaba2002/Waste_Segregation",
       featured: false,
     },
@@ -82,7 +82,7 @@ export default function Projects() {
       description:
         "An Accounting System is a structured process for recording, managing, and analyzing financial transactions of a business or organization. It provides a systematic way to track income, expenses, assets, liabilities, and equity, ensuring that financial data is accurate and organized.",
       image: Accounting,
-      technologies: ["Laravel", "Mysql"],
+      technologies: ["Laravel", "MySQL"],
       github: "https://github.com/ChristianAlicaba2002/Accounting_System",
       featured: false,
     },
@@ -103,7 +103,7 @@ export default function Projects() {
       description:
         "Technical Assets Management refers to the systematic approach of overseeing and managing the lifecycle of an organization's technical assets. This includes hardware, software, networks, and other IT-related resources that are essential for the company's day-to-day operations. The main goals of technical asset management are to ensure that these assets are used effectively, are properly maintained, and provide value throughout their entire lifespan.",
       image: Technical,
-      technologies: ["Vue.js", "Firebase", "Pinia", "Fabric.js"],
+      technologies: ["React.js", "TypeScript", "SQL", "ASP.NET"],
       github: "https://github.com/Neil-urk12/ViCoSpaces",
       featured: true,
     },
