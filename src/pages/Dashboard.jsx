@@ -29,12 +29,13 @@ export default function Dashboard() {
         { name: "TypeScript", level: 90 },
         { name: "JavaScript", level: 85 },
         { name: "HTML", level: 85 },
-        { name: "CSS", level: 80 },
+        { name: "Tailwind CSS", level: 80 },
+        { name: "CSS", level: 77 },
       ],
     },
     {
       category: "Backend Development",
-      icon: <FaDatabase className="text-2xl text-green-500" />,
+      icon: <FaCode className="text-2xl text-green-500" />,
       skills: [
         { name: "Laravel/PHP", level: 95 },
         { name: "Python/Django", level: 70 },
@@ -56,16 +57,11 @@ export default function Dashboard() {
     },
     {
       category: "Databases",
-      icon: <FaTools className="text-2xl text-orange-500" />,
+      icon: <FaDatabase className="text-2xl text-orange-500" />,
       skills: [
         { name: "MySQL", level: 95 },
-        { name: "PostgreSQL", level: 80 },
+        { name: "PostgreSQL", level: 75 },
       ],
-    },
-    {
-      category: "CSS Frameworks",
-      icon: <FaTools className="text-2xl text-orange-500" />,
-      skills: [{ name: "Tailwind CSS", level: 95 }],
     },
   ];
 
