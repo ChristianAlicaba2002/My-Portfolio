@@ -12,7 +12,7 @@ function App() {
           Explore my work and discover what I can bring to your next project.
         </p>
         <Link
-          to={"/Layouts/dashboard"}
+          to={"/layouts/dashboard"}
           className="cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg duration-200 hover:scale-150"
         >
           View More
