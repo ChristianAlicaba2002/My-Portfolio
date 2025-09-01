@@ -80,7 +80,7 @@ export default function AboutMe() {
                   <div className="flex items-center bg-gray-800 px-2 lg:px-3 py-1 rounded-full">
                     <SiReact className="text-sky-400 mr-2 text-sm lg:text-base" />
                     <span className="text-gray-300 text-xs lg:text-sm">
-                      React
+                      React.js
                     </span>
                   </div>
                   <div className="flex items-center bg-gray-800 px-2 lg:px-3 py-1 rounded-full">
@@ -92,7 +92,7 @@ export default function AboutMe() {
                   <div className="flex items-center bg-gray-800 px-2 lg:px-3 py-1 rounded-full">
                     <SiJavascript className="text-yellow-400 mr-2 text-sm lg:text-base" />
                     <span className="text-gray-300 text-xs lg:text-sm">
-                      Javascript
+                      JavaScript
                     </span>
                   </div>
                   <div className="flex items-center bg-gray-800 px-2 lg:px-3 py-1 rounded-full">
@@ -202,6 +202,30 @@ export default function AboutMe() {
                 </p>
               </div>
 
+              <div className="border-l-2 border-purple-500 pl-4">
+                <h3 className="text-white font-medium text-sm lg:text-base">
+                  Hacktoberfest Bootcamp
+                </h3>
+                <p className="text-purple-400 text-xs lg:text-sm">2024</p>
+                <p className="text-gray-300 text-xs lg:text-sm mt-1">
+                  Coding Bootcamp • 2024
+                </p>
+              </div>
+
+              <div className="border-l-2 border-orange-500 pl-4">
+                <h3 className="text-white font-medium text-sm lg:text-base">
+                  Java Competition
+                </h3>
+                <p className="text-orange-400 text-xs lg:text-sm">2023</p>
+              </div>
+
+              <div className="border-l-2 border-yellow-500 pl-4">
+                <h3 className="text-white font-medium text-sm lg:text-base">
+                  Web Competition
+                </h3>
+                <p className="text-yellow-400 text-xs lg:text-sm">2023</p>
+              </div>
+
               <div className="border-l-2 border-green-500 pl-4">
                 <h3 className="text-white font-medium text-sm lg:text-base">
                   Frontend Developer
@@ -213,45 +237,15 @@ export default function AboutMe() {
                 </p>
               </div>
 
-              <div className="border-l-2 border-purple-500 pl-4">
-                <h3 className="text-white font-medium text-sm lg:text-base">
-                  Hacktoberfest Bootcamp
-                </h3>
-                <p className="text-purple-400 text-xs lg:text-sm">2024</p>
-                <p className="text-gray-300 text-xs lg:text-sm mt-1">
-                  Coding Bootcamp • 2024
-                </p>
-              </div>
-
               <div className="border-l-2 border-cyan-500 pl-4">
                 <h3 className="text-white font-medium text-sm lg:text-base">
                   Backend Developer
                 </h3>
-                <p className="text-cyan-400 text-xs lg:text-sm">2022 - 2024</p>
+                <p className="text-cyan-400 text-xs lg:text-sm">2022 - 2025</p>
                 <p className="text-gray-300 text-xs lg:text-sm mt-1">
                   Experienced Backend Developer skilled in building secure APIs,
                   managing databases, and optimizing server performance to
                   support scalable applications.
-                </p>
-              </div>
-
-              <div className="border-l-2 border-orange-500 pl-4">
-                <h3 className="text-white font-medium text-sm lg:text-base">
-                  Java Competition
-                </h3>
-                <p className="text-orange-400 text-xs lg:text-sm">2023</p>
-                <p className="text-gray-300 text-xs lg:text-sm mt-1">
-                  Build a CRUD Job Offer
-                </p>
-              </div>
-
-              <div className="border-l-2 border-yellow-500 pl-4">
-                <h3 className="text-white font-medium text-sm lg:text-base">
-                  Web Competition
-                </h3>
-                <p className="text-yellow-400 text-xs lg:text-sm">2023</p>
-                <p className="text-gray-300 text-xs lg:text-sm mt-1">
-                  Build a CRUD Job Offer
                 </p>
               </div>
             </div>
