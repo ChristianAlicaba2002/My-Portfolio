@@ -66,7 +66,7 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="px-5 bg-gray-950 p-4 lg:p-6 lg:w-[82%] sm:w-screen sm:h-screen ">
+    <div className="px-5 bg-gray-800 p-4 lg:p-6 lg:w-[82%] sm:w-screen sm:h-screen ">
       <header>
         <Badges />
         <div className="dashbord-container lg:w-screen h-16 lg:h-20 overflow-hidden p-6">
@@ -89,7 +89,7 @@ export default function Dashboard() {
           </div>
         </div>
       </header>
-      <section className="dashbord-container overflow-y-scroll h-[65vh] mt-6 mx-2 bg-gray-900 rounded-2xl p-4 lg:p-6 lg:mt-8 lg:mx-4">
+      <section className="dashbord-container overflow-y-scroll h-[65vh] mt-6 mx-2 bg-gray-800 rounded-2xl p-4 lg:p-6 lg:mt-8 lg:mx-4">
         {/* Skills & Expertise Section */}
         <div className="bg-gray-900 rounded-2xl p-4 lg:p-6">
           <div className="flex items-center justify-between mb-4 lg:mb-6">
@@ -100,7 +100,7 @@ export default function Dashboard() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {skillsData.map((category, idx) => (
-              <div key={idx} className="bg-gray-800 rounded-xl p-4">
+              <div key={idx} className="bg-gray-700 rounded-xl p-4">
                 <div className="flex items-center gap-3 mb-4">
                   {category.icon}
                   <h3 className="text-white font-semibold text-sm lg:text-base">
@@ -122,7 +122,7 @@ export default function Dashboard() {
                         </div>
                         <div className="w-full bg-gray-700 rounded-full h-2">
                           <div
-                            className="bg-gradient-to-r from-green-300 to-green-600 h-2 rounded-full transition-all duration-300"
+                            className="bg-gradient-to-r from-gray-300 to-gray-600 h-2 rounded-full transition-all duration-300"
                             style={{ width: `${skill.level}%` }}
                           ></div>
                         </div>

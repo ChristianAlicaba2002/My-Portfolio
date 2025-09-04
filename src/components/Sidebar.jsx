@@ -58,7 +58,7 @@ export default function Sidebar() {
         className={`
           fixed lg:relative z-40
           w-80 h-full lg:h-screen lg:max-h-screen
-          bg-gradient-to-b from-gray-900 to-gray-950
+          bg-gradient-to-b from-gray-700 to-gray-800
           transform transition-transform duration-300 ease-in-out
           ${
             isMobileMenuOpen
@@ -93,7 +93,7 @@ export default function Sidebar() {
                 className={({ isActive }) =>
                   `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
                     isActive
-                      ? "text-black bg-gradient-to-r from-blue-200 to-gray-600 shadow-lg shadow-blue-500/25"
+                      ? "text-black bg-gradient-to-r from-gray-200 to-gray-600 shadow-lg shadow-gray-500/25"
                       : "text-gray-400 hover:text-white hover:bg-gray-800/50"
                   }`
                 }
@@ -107,7 +107,7 @@ export default function Sidebar() {
                 className={({ isActive }) =>
                   `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
                     isActive
-                      ? "text-black bg-gradient-to-r font-extrabold from-blue-200 to-gray-600 shadow-lg shadow-blue-500/25"
+                      ? "text-black bg-gradient-to-r font-extrabold from-gray-200 to-gray-600 shadow-lg shadow-gray-500/25"
                       : "text-gray-400 hover:text-white hover:bg-gray-800/50"
                   }`
                 }
@@ -129,7 +129,7 @@ export default function Sidebar() {
                 className={({ isActive }) =>
                   `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
                     isActive
-                      ? "text-black font-extrabold bg-gradient-to-r from-blue-200 to-gray-600 shadow-lg shadow-blue-500/25"
+                      ? "text-black font-extrabold bg-gradient-to-r from-gray-200 to-gray-600 shadow-lg shadow-gray-500/25"
                       : "text-gray-400 hover:text-white hover:bg-gray-800/50"
                   }`
                 }
@@ -155,7 +155,7 @@ export default function Sidebar() {
                 className={({ isActive }) =>
                   `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
                     isActive
-                      ? "text-black font-extrabold bg-gradient-to-r from-blue-200 to-gray-600 shadow-lg shadow-blue-500/25"
+                      ? "text-black font-extrabold bg-gradient-to-r from-gray-200 to-gray-600 shadow-lg shadow-gray-500/25"
                       : "text-gray-400 hover:text-white hover:bg-gray-800/50"
                   }`
                 }
@@ -177,7 +177,7 @@ export default function Sidebar() {
                 className={({ isActive }) =>
                   `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
                     isActive
-                      ? "text-black font-extrabold bg-gradient-to-r from-blue-200 to-gray-600 shadow-lg shadow-blue-500/25"
+                      ? "text-black font-extrabold bg-gradient-to-r from-blue-200 to-gray-600 shadow-lg shadow-gray-500/25"
                       : "text-gray-400 hover:text-white hover:bg-gray-800/50"
                   }`
                 }
