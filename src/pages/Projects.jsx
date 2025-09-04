@@ -1,6 +1,7 @@
 import React from "react";
 import taskMaster from "../assets/images/TaskMaster.webp";
 import Technical from "../assets/images/Technical.webp";
+import poke from "../assets/images/poke.webp";
 import CrustyBytes from "../assets/images/CrustyBytes.webp";
 import QuanTum from "../assets/images/QuantumOrder.webp";
 import Waste from "../assets/images/Waste.webp";
@@ -104,7 +105,17 @@ export default function Projects() {
         "Technical Assets Management refers to the systematic approach of overseeing and managing the lifecycle of an organization's technical assets. This includes hardware, software, networks, and other IT-related resources that are essential for the company's day-to-day operations. The main goals of technical asset management are to ensure that these assets are used effectively, are properly maintained, and provide value throughout their entire lifespan.",
       image: Technical,
       technologies: ["React.js", "TypeScript", "SQL", "ASP.NET"],
-      github: "https://github.com/Neil-urk12/ViCoSpaces",
+      github: "#",
+      featured: true,
+    },
+    {
+      id: 10,
+      title: "PokeVault",
+      description:
+        "PokeVault is a fun and interactive web app that lets users explore the Pokémon world by fetching real-time data from the Pokémon API. It serves as a digital vault where users can search, view, and collect information about their favorite Pokémon. With features like detailed Pokémon stats, abilities, types, and evolutions",
+      image: poke,
+      technologies: ["React.js", "TypeScript", "Tailwind CSS"],
+      github: "https://github.com/ChristianAlicaba2002/PokeVault",
       featured: true,
     },
   ];
