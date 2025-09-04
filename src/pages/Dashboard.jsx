@@ -91,7 +91,7 @@ export default function Dashboard() {
       </header>
       <section className="dashbord-container overflow-y-scroll h-[65vh] mt-6 mx-2 bg-gray-800 rounded-2xl p-4 lg:p-6 lg:mt-8 lg:mx-4">
         {/* Skills & Expertise Section */}
-        <div className="bg-gray-900 rounded-2xl p-4 lg:p-6">
+        <div className="bg-gray-700 rounded-2xl p-4 lg:p-6">
           <div className="flex items-center justify-between mb-4 lg:mb-6">
             <h2 className="text-gray-200 text-lg lg:text-2xl font-semibold flex items-center gap-3">
               <FaCode className="text-blue-500" />
@@ -100,7 +100,7 @@ export default function Dashboard() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {skillsData.map((category, idx) => (
-              <div key={idx} className="bg-gray-700 rounded-xl p-4">
+              <div key={idx} className="bg-gray-800 rounded-xl p-4">
                 <div className="flex items-center gap-3 mb-4">
                   {category.icon}
                   <h3 className="text-white font-semibold text-sm lg:text-base">

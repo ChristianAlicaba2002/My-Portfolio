@@ -40,7 +40,7 @@ export default function AboutMe() {
         {/* Left Column */}
         <div className="space-y-6 lg:space-y-8">
           {/* Introduction */}
-          <div className="whoiam-container bg-gray-900 rounded-xl p-4 lg:p-6 shadow-lg">
+          <div className="whoiam-container bg-gray-700 rounded-xl p-4 lg:p-6 shadow-lg">
             <div className="flex items-center mb-4">
               <FaHeart className="text-red-500 text-xl lg:text-2xl mr-3" />
               <h2 className="text-xl lg:text-2xl font-semibold text-white">
@@ -63,7 +63,7 @@ export default function AboutMe() {
           </div>
 
           {/* Skills */}
-          <div className="skills-container bg-gray-900 rounded-xl p-4 lg:p-6 shadow-lg">
+          <div className="skills-container bg-gray-700 rounded-xl p-4 lg:p-6 shadow-lg">
             <div className="flex items-center mb-6">
               <FaCode className="text-blue-500 text-xl lg:text-2xl mr-3" />
               <h2 className="text-xl lg:text-2xl font-semibold text-white">
@@ -77,27 +77,27 @@ export default function AboutMe() {
                   Frontend Development
                 </h3>
                 <div className="flex flex-wrap gap-2 lg:gap-3">
-                  <div className="flex items-center bg-gray-800 px-2 lg:px-3 py-1 rounded-full">
+                  <div className="flex items-center bg-gray-600 px-2 lg:px-3 py-1 rounded-full">
                     <SiReact className="text-sky-400 mr-2 text-sm lg:text-base" />
-                    <span className="text-gray-300 text-xs lg:text-sm">
+                    <span className="text-white text-xs lg:text-sm">
                       React.js
                     </span>
                   </div>
-                  <div className="flex items-center bg-gray-800 px-2 lg:px-3 py-1 rounded-full">
+                  <div className="flex items-center bg-gray-600 px-2 lg:px-3 py-1 rounded-full">
                     <SiTypescript className="text-blue-600 mr-2 text-sm lg:text-base" />
-                    <span className="text-gray-300 text-xs lg:text-sm">
+                    <span className="text-white text-xs lg:text-sm">
                       TypeScript
                     </span>
                   </div>
-                  <div className="flex items-center bg-gray-800 px-2 lg:px-3 py-1 rounded-full">
+                  <div className="flex items-center bg-gray-600 px-2 lg:px-3 py-1 rounded-full">
                     <SiJavascript className="text-yellow-400 mr-2 text-sm lg:text-base" />
-                    <span className="text-gray-300 text-xs lg:text-sm">
+                    <span className="text-white text-xs lg:text-sm">
                       JavaScript
                     </span>
                   </div>
-                  <div className="flex items-center bg-gray-800 px-2 lg:px-3 py-1 rounded-full">
+                  <div className="flex items-center bg-gray-600 px-2 lg:px-3 py-1 rounded-full">
                     <SiNextdotjs className="text-white mr-2 text-sm lg:text-base" />
-                    <span className="text-gray-300 text-xs lg:text-sm">
+                    <span className="text-white text-xs lg:text-sm">
                       Next.js
                     </span>
                   </div>
@@ -109,27 +109,27 @@ export default function AboutMe() {
                   Backend Development
                 </h3>
                 <div className="flex flex-wrap gap-2 lg:gap-3">
-                  <div className="flex items-center bg-gray-800 px-2 lg:px-3 py-1 rounded-full">
-                    <SiLaravel className="text-red-800 mr-2 text-sm lg:text-base" />
-                    <span className="text-gray-300 text-xs lg:text-sm">
+                  <div className="flex items-center bg-gray-600 px-2 lg:px-3 py-1 rounded-full">
+                    <SiLaravel className="text-red-600 mr-2 text-sm lg:text-base" />
+                    <span className="text-white text-xs lg:text-sm">
                       Laravel
                     </span>
                   </div>
-                  <div className="flex items-center bg-gray-800 px-2 lg:px-3 py-1 rounded-full">
+                  <div className="flex items-center bg-gray-600 px-2 lg:px-3 py-1 rounded-full">
                     <SiDjango className="text-green-900 mr-2 text-sm lg:text-base" />
-                    <span className="text-gray-300 text-xs lg:text-sm">
+                    <span className="text-white text-xs lg:text-sm">
                       Django
                     </span>
                   </div>
-                  <div className="flex items-center bg-gray-800 px-2 lg:px-3 py-1 rounded-full">
+                  <div className="flex items-center bg-gray-600 px-2 lg:px-3 py-1 rounded-full">
                     <SiExpress className="text-black mr-2 text-sm lg:text-base" />
-                    <span className="text-gray-300 text-xs lg:text-sm">
+                    <span className="text-white text-xs lg:text-sm">
                       Express.js
                     </span>
                   </div>
-                  <div className="flex items-center bg-gray-800 px-2 lg:px-3 py-1 rounded-full">
+                  <div className="flex items-center bg-gray-600 px-2 lg:px-3 py-1 rounded-full">
                     <SiHono className="text-orange-500 mr-2 text-sm lg:text-base" />
-                    <span className="text-gray-300 text-xs lg:text-sm">
+                    <span className="text-white text-xs lg:text-sm">
                       Hono.js
                     </span>
                   </div>
@@ -141,34 +141,34 @@ export default function AboutMe() {
                   Tools & Technologies
                 </h3>
                 <div className="flex flex-wrap gap-2 lg:gap-3">
-                  <span className="bg-gray-800 px-2 lg:px-3 py-1 rounded-full text-gray-300 text-xs lg:text-sm">
+                  <span className="bg-gray-600 px-2 lg:px-3 py-1 rounded-full text-white text-xs lg:text-sm">
                     Git
                   </span>
-                  <span className="bg-gray-800 px-2 lg:px-3 py-1 rounded-full text-gray-300 text-xs lg:text-sm">
+                  <span className="bg-gray-600 px-2 lg:px-3 py-1 rounded-full text-white text-xs lg:text-sm">
                     Docker
                   </span>
-                  <span className="bg-gray-800 px-2 lg:px-3 py-1 rounded-full text-gray-300 text-xs lg:text-sm">
+                  <span className="bg-gray-600 px-2 lg:px-3 py-1 rounded-full text-white text-xs lg:text-sm">
                     Firebase
                   </span>
-                  <span className="bg-gray-800 px-2 lg:px-3 py-1 rounded-full text-gray-300 text-xs lg:text-sm">
+                  <span className="bg-gray-600 px-2 lg:px-3 py-1 rounded-full text-white text-xs lg:text-sm">
                     Clerk
                   </span>
-                  <span className="bg-gray-800 px-2 lg:px-3 py-1 rounded-full text-gray-300 text-xs lg:text-sm">
+                  <span className="bg-gray-600 px-2 lg:px-3 py-1 rounded-full text-white text-xs lg:text-sm">
                     Jira
                   </span>
-                  <span className="bg-gray-800 px-2 lg:px-3 py-1 rounded-full text-gray-300 text-xs lg:text-sm">
+                  <span className="bg-gray-600 px-2 lg:px-3 py-1 rounded-full text-white text-xs lg:text-sm">
                     Trello
                   </span>
-                  <span className="bg-gray-800 px-2 lg:px-3 py-1 rounded-full text-gray-300 text-xs lg:text-sm">
+                  <span className="bg-gray-600 px-2 lg:px-3 py-1 rounded-full text-white text-xs lg:text-sm">
                     PostgreSQL
                   </span>
-                  <span className="bg-gray-800 px-2 lg:px-3 py-1 rounded-full text-gray-300 text-xs lg:text-sm">
+                  <span className="bg-gray-600 px-2 lg:px-3 py-1 rounded-full text-white text-xs lg:text-sm">
                     MySQL
                   </span>
-                  <span className="bg-gray-800 px-2 lg:px-3 py-1 rounded-full text-gray-300 text-xs lg:text-sm">
+                  <span className="bg-gray-600 px-2 lg:px-3 py-1 rounded-full text-white text-xs lg:text-sm">
                     Figma
                   </span>
-                  <span className="bg-gray-800 px-2 lg:px-3 py-1 rounded-full text-gray-300 text-xs lg:text-sm">
+                  <span className="bg-gray-600 px-2 lg:px-3 py-1 rounded-full text-white text-xs lg:text-sm">
                     Tailwindcss
                   </span>
                 </div>
@@ -180,7 +180,7 @@ export default function AboutMe() {
         {/* Right Column */}
         <div className="space-y-6 lg:space-y-8">
           {/* Experience */}
-          <div className="experience-container bg-gray-900 rounded-xl p-4 lg:p-6 shadow-lg">
+          <div className="experience-container bg-gray-700 rounded-xl p-4 lg:p-6 shadow-lg">
             <div className="flex items-center mb-6">
               <FaLaptopCode className="text-green-500 text-xl lg:text-2xl mr-3" />
               <h2 className="text-xl lg:text-2xl font-semibold text-white">
@@ -252,7 +252,7 @@ export default function AboutMe() {
           </div>
 
           {/* Education */}
-          <div className="education-container bg-gray-900 rounded-xl p-4 lg:p-6 shadow-lg">
+          <div className="education-container bg-gray-700 rounded-xl p-4 lg:p-6 shadow-lg">
             <div className="flex items-center mb-4">
               <FaRocket className="text-yellow-500 text-xl lg:text-2xl mr-3" />
               <h2 className="text-xl lg:text-2xl font-semibold text-white">
@@ -274,7 +274,7 @@ export default function AboutMe() {
         </div>
       </div>
 
-      <div className="connect-container bg-gray-900 rounded-xl p-4 lg:p-6 m-2 mt-6 shadow-lg">
+      <div className="connect-container bg-gray-700 rounded-xl p-4 lg:p-6 m-2 mt-6 shadow-lg">
         <h2 className="text-xl lg:text-2xl font-semibold text-white mb-4">
           Let's Connect
         </h2>
@@ -300,7 +300,7 @@ export default function AboutMe() {
       </div>
 
       {/* Bottom Section - Personal Interests */}
-      <div className="connect-container mt-6 lg:mt-8 bg-gray-900 rounded-xl p-4 lg:p-6 shadow-lg">
+      <div className="connect-container mt-6 lg:mt-8 bg-gray-700 rounded-xl p-4 lg:p-6 shadow-lg">
         <h2 className="text-xl lg:text-2xl font-semibold text-white mb-4">
           Beyond Coding
         </h2>

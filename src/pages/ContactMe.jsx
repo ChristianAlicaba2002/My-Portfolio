@@ -44,7 +44,7 @@ export default function ContactMe() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Left: Info */}
-          <div className="bg-gray-900 rounded-xl p-6 lg:p-8 shadow-lg">
+          <div className="bg-gray-700 rounded-xl p-6 lg:p-8 shadow-lg">
             <h2 className="text-xl lg:text-3xl font-bold mb-4 text-white">
               Where Can You Find Me
             </h2>
@@ -83,7 +83,7 @@ export default function ContactMe() {
           </div>
 
           {/* Right: Contact Form */}
-          <div className="bg-gray-900 rounded-xl p-6 lg:p-8 shadow-lg">
+          <div className="bg-gray-700 rounded-xl p-6 lg:p-8 shadow-lg">
             <h2 className="text-xl lg:text-3xl font-bold mb-4 text-white">
               Contact Me
             </h2>
@@ -104,7 +104,7 @@ export default function ContactMe() {
                   name="user_name"
                   type="text"
                   placeholder="Your Name"
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+                  className="w-full px-4 py-3 bg-gray-600 border border-gray-700 rounded-lg text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
                   required
                 />
               </div>
@@ -121,7 +121,7 @@ export default function ContactMe() {
                   name="user_email"
                   type="email"
                   placeholder="you@example.com"
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+                  className="w-full px-4 py-3 bg-gray-600 border border-gray-700 rounded-lg text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
                   required
                 />
               </div>
@@ -138,7 +138,7 @@ export default function ContactMe() {
                   name="message"
                   rows={5}
                   placeholder="Your message..."
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-gray-600 border border-gray-700 rounded-lg text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors resize-none"
                   required
                 />
               </div>
