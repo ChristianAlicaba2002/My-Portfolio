@@ -1,4 +1,3 @@
-import React from "react";
 import taskMaster from "../assets/images/TaskMaster.webp";
 import Technical from "../assets/images/Technical.webp";
 import poke from "../assets/images/poke.webp";
@@ -7,6 +6,7 @@ import QuanTum from "../assets/images/QuantumOrder.webp";
 import Waste from "../assets/images/Waste.webp";
 import Veteririan from "../assets/images/Veteririan.webp";
 import Accounting from "../assets/images/Accounting.webp";
+import { FaGithub } from "react-icons/fa";
 
 export default function Projects() {
   const projects = [
@@ -182,7 +182,7 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         className="flex-1 bg-gray-800 text-white text-center py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 text-sm lg:text-base"
                       >
-                        GitHub
+                        <FaGithub className="inline text-2xl mr-2" />
                       </a>
                     </div>
                   </div>
@@ -238,7 +238,7 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="flex-1 bg-gray-800 text-white text-center py-2 px-3 rounded text-xs lg:text-sm hover:bg-gray-700 transition-colors duration-200"
                     >
-                      Code
+                      <FaGithub className="inline text-2xl mr-2" />
                     </a>
                   </div>
                 </div>
