@@ -122,7 +122,7 @@ export default function Dashboard() {
                         </div>
                         <div className="w-full bg-gray-700 rounded-full h-2">
                           <div
-                            className="bg-gradient-to-r from-yellow-300 to-yellow-600 h-2 rounded-full transition-all duration-300"
+                            className="bg-gradient-to-r from-green-300 to-green-600 h-2 rounded-full transition-all duration-300"
                             style={{ width: `${skill.level}%` }}
                           ></div>
                         </div>
