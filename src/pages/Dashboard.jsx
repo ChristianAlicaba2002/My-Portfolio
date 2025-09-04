@@ -27,10 +27,7 @@ export default function Dashboard() {
       skills: [
         { name: "React/Next.js", level: 100 },
         { name: "TypeScript", level: 100 },
-        { name: "JavaScript", level: 100 },
-        { name: "HTML", level: 100 },
         { name: "Tailwind CSS", level: 100 },
-        { name: "CSS", level: 100 },
       ],
     },
     {
@@ -39,7 +36,6 @@ export default function Dashboard() {
       skills: [
         { name: "Laravel/PHP", level: 100 },
         { name: "Python/Django", level: 100 },
-        { name: "Express/Node.js", level: 100 },
         { name: "Hono/Node.js", level: 100 },
       ],
     },
@@ -51,17 +47,13 @@ export default function Dashboard() {
         { name: "Firebase", level: 100 },
         { name: "Docker", level: 100 },
         { name: "Figma", level: 100 },
-        { name: "Jira", level: 100 },
         { name: "Trello", level: 100 },
       ],
     },
     {
       category: "Databases",
       icon: <FaDatabase className="text-2xl text-orange-500" />,
-      skills: [
-        { name: "MySQL", level: 100 },
-        { name: "PostgreSQL", level: 100 },
-      ],
+      skills: [{ name: "MySQL", level: 100 }],
     },
   ];
 
