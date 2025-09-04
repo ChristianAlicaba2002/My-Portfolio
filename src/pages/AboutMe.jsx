@@ -9,16 +9,12 @@ import {
   FaHeart,
 } from "react-icons/fa";
 import {
-  SiJavascript,
   SiReact,
-  SiPython,
-  SiPhp,
   SiLaravel,
   SiTypescript,
   SiNextdotjs,
   SiDjango,
   SiHono,
-  SiExpress,
 } from "react-icons/si";
 
 export default function AboutMe() {
@@ -90,12 +86,6 @@ export default function AboutMe() {
                     </span>
                   </div>
                   <div className="flex items-center bg-gray-600 px-2 lg:px-3 py-1 rounded-full">
-                    <SiJavascript className="text-yellow-400 mr-2 text-sm lg:text-base" />
-                    <span className="text-white text-xs lg:text-sm">
-                      JavaScript
-                    </span>
-                  </div>
-                  <div className="flex items-center bg-gray-600 px-2 lg:px-3 py-1 rounded-full">
                     <SiNextdotjs className="text-white mr-2 text-sm lg:text-base" />
                     <span className="text-white text-xs lg:text-sm">
                       Next.js
@@ -119,12 +109,6 @@ export default function AboutMe() {
                     <SiDjango className="text-green-900 mr-2 text-sm lg:text-base" />
                     <span className="text-white text-xs lg:text-sm">
                       Django
-                    </span>
-                  </div>
-                  <div className="flex items-center bg-gray-600 px-2 lg:px-3 py-1 rounded-full">
-                    <SiExpress className="text-black mr-2 text-sm lg:text-base" />
-                    <span className="text-white text-xs lg:text-sm">
-                      Express.js
                     </span>
                   </div>
                   <div className="flex items-center bg-gray-600 px-2 lg:px-3 py-1 rounded-full">
@@ -154,13 +138,7 @@ export default function AboutMe() {
                     Clerk
                   </span>
                   <span className="bg-gray-600 px-2 lg:px-3 py-1 rounded-full text-white text-xs lg:text-sm">
-                    Jira
-                  </span>
-                  <span className="bg-gray-600 px-2 lg:px-3 py-1 rounded-full text-white text-xs lg:text-sm">
                     Trello
-                  </span>
-                  <span className="bg-gray-600 px-2 lg:px-3 py-1 rounded-full text-white text-xs lg:text-sm">
-                    PostgreSQL
                   </span>
                   <span className="bg-gray-600 px-2 lg:px-3 py-1 rounded-full text-white text-xs lg:text-sm">
                     MySQL
