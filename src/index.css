@@ -89,22 +89,22 @@ a:focus {
 .whoiam-container,
 .projects-container,
 .contact-container {
-  animation: fade1 3s ease-in-out;
+  animation: fade1 1.5s ease-in-out;
 }
 
 .skills-container,
 .feature-container {
-  animation: fade1 3.5s ease-in-out;
+  animation: fade1 1.5s ease-in-out;
 }
 .experience-container,
 .allProjects-container {
-  animation: fade1 4s ease-in-out;
+  animation: fade1 2s ease-in-out;
 }
 .education-container {
-  animation: fade1 4.5s ease-in-out;
+  animation: fade1 2.5s ease-in-out;
 }
 .connect-container {
-  animation: fade1 5s ease-in-out;
+  animation: fade1 2.7s ease-in-out;
 }
 
 @keyframes fade1 {
