@@ -23,7 +23,7 @@ import {
 
 export default function AboutMe() {
   return (
-    <div className="w-full h-screen bg-gray-950 overflow-y-scroll p-4 lg:p-8">
+    <div className="w-full h-screen bg-gray-800 overflow-y-scroll p-4 lg:p-8">
       {/* Header Section */}
       <div className="whoiam-container text-center mb-8 lg:mb-12">
         <h1 className="text-2xl lg:text-4xl font-bold text-white mb-4">

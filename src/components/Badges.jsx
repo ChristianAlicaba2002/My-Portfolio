@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Badges() {
   const badges = [
-    { label: "Programming Languages", value: 10, color: "bg-blue-500" },
-    { label: "Total Projects", value: 10, color: "bg-green-500" },
-    { label: "Open Source", value: 5, color: "bg-purple-500" },
-    { label: "Years of Experience", value: 5, color: "bg-yellow-500" },
+    { label: "Programming Languages", value: 10, color: "bg-gray-500" },
+    { label: "Total Projects", value: 10, color: "bg-gray-500" },
+    { label: "Open Source", value: 5, color: "bg-gray-500" },
+    { label: "Years of Experience", value: 5, color: "bg-gray-500" },
   ];
 
   return (
