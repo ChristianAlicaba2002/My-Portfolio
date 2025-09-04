@@ -25,22 +25,22 @@ export default function Dashboard() {
       category: "Frontend Development",
       icon: <FaCode className="text-2xl text-blue-500" />,
       skills: [
-        { name: "React/Next.js", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "JavaScript", level: 85 },
-        { name: "HTML", level: 85 },
-        { name: "Tailwind CSS", level: 80 },
-        { name: "CSS", level: 77 },
+        { name: "React/Next.js", level: 100 },
+        { name: "TypeScript", level: 100 },
+        { name: "JavaScript", level: 100 },
+        { name: "HTML", level: 100 },
+        { name: "Tailwind CSS", level: 100 },
+        { name: "CSS", level: 100 },
       ],
     },
     {
       category: "Backend Development",
       icon: <FaCode className="text-2xl text-green-500" />,
       skills: [
-        { name: "Laravel/PHP", level: 95 },
-        { name: "Python/Django", level: 70 },
-        { name: "Express/Node.js", level: 65 },
-        { name: "Hono/Node.js", level: 75 },
+        { name: "Laravel/PHP", level: 100 },
+        { name: "Python/Django", level: 100 },
+        { name: "Express/Node.js", level: 100 },
+        { name: "Hono/Node.js", level: 100 },
       ],
     },
     {
@@ -48,19 +48,19 @@ export default function Dashboard() {
       icon: <FaTools className="text-2xl text-orange-500" />,
       skills: [
         { name: "Git/GitHub", level: 100 },
-        { name: "Firebase", level: 50 },
-        { name: "Docker", level: 45 },
-        { name: "Figma", level: 90 },
-        { name: "Jira", level: 60 },
-        { name: "Trello", level: 95 },
+        { name: "Firebase", level: 100 },
+        { name: "Docker", level: 100 },
+        { name: "Figma", level: 100 },
+        { name: "Jira", level: 100 },
+        { name: "Trello", level: 100 },
       ],
     },
     {
       category: "Databases",
       icon: <FaDatabase className="text-2xl text-orange-500" />,
       skills: [
-        { name: "MySQL", level: 95 },
-        { name: "PostgreSQL", level: 40 },
+        { name: "MySQL", level: 100 },
+        { name: "PostgreSQL", level: 100 },
       ],
     },
   ];
@@ -112,17 +112,14 @@ export default function Dashboard() {
                     .sort((a, b) => b.level - a.level)
                     .map((skill, skillIdx) => (
                       <div key={skillIdx}>
-                        <div className="flex justify-between items-center mb-1">
+                        <div className="flex justify-between items-center mb-2">
                           <span className="text-gray-300 text-xs lg:text-sm">
                             {skill.name}
                           </span>
-                          <span className="text-gray-400 text-xs">
-                            {skill.level}%
-                          </span>
                         </div>
-                        <div className="w-full bg-gray-700 rounded-full h-2">
+                        <div className="w-full bg-gray-700 rounded-full h-1">
                           <div
-                            className="bg-gradient-to-r from-gray-300 to-gray-600 h-2 rounded-full transition-all duration-300"
+                            className="bg-gradient-to-r from-gray-500 to-gray-400 h-1 rounded-full transition-all duration-300"
                             style={{ width: `${skill.level}%` }}
                           ></div>
                         </div>
