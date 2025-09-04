@@ -30,7 +30,7 @@ export default function ContactMe() {
   };
 
   return (
-    <div className="w-screen h-full bg-gray-950 p-4 lg:p-8">
+    <div className="h-full bg-gray-950 p-4 lg:w-screen lg:p-8 sm:w-full">
       <div className="contact-container max-w-6xl lg:ml-36 sm:mx-auto">
         <div className="text-center mb-8 lg:mb-12">
           <h1 className="text-2xl lg:text-4xl font-bold text-white mb-4">

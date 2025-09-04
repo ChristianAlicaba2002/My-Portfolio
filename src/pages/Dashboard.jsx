@@ -60,37 +60,13 @@ export default function Dashboard() {
       icon: <FaDatabase className="text-2xl text-orange-500" />,
       skills: [
         { name: "MySQL", level: 95 },
-        { name: "PostgreSQL", level: 75 },
+        { name: "PostgreSQL", level: 40 },
       ],
     },
   ];
 
-  // const achievements = [
-  //   {
-  //     icon: <FaGraduationCap className="text-3xl text-blue-600" />,
-  //     title: "Computer Science Degree",
-  //     description:
-  //       "Bachelor's in Computer Science with focus on Software Engineering",
-  //     year: "2024",
-  //   },
-  //   {
-  //     icon: <FaAward className="text-3xl text-yellow-500" />,
-  //     title: "Full-Stack Certification",
-  //     description:
-  //       "Certified in modern web development technologies and best practices",
-  //     year: "2023",
-  //   },
-  //   {
-  //     icon: <FaBriefcase className="text-3xl text-green-600" />,
-  //     title: "Freelance Projects",
-  //     description:
-  //       "Successfully delivered 15+ web applications for various clients",
-  //     year: "2023-2024",
-  //   },
-  // ];
-
   return (
-    <div className="lg:w-[82%] h-screen px-5 bg-gray-950 p-4 lg:p-6 sm:w-screen">
+    <div className="px-5 bg-gray-950 p-4 lg:p-6 lg:w-[82%] sm:w-screen sm:h-screen ">
       <header>
         <Badges />
         <div className="dashbord-container lg:w-screen h-16 lg:h-20 overflow-hidden p-6">
@@ -113,7 +89,7 @@ export default function Dashboard() {
           </div>
         </div>
       </header>
-      <section className="dashbord-container overflow-y-scroll h-[65vh] mt-6 lg:mt-8 mx-2 lg:mx-4 bg-gray-900 rounded-2xl p-4 lg:p-6">
+      <section className="dashbord-container overflow-y-scroll h-[65vh] mt-6 mx-2 bg-gray-900 rounded-2xl p-4 lg:p-6 lg:mt-8 lg:mx-4">
         {/* Skills & Expertise Section */}
         <div className="bg-gray-900 rounded-2xl p-4 lg:p-6">
           <div className="flex items-center justify-between mb-4 lg:mb-6">
@@ -157,37 +133,6 @@ export default function Dashboard() {
             ))}
           </div>
         </div>
-
-        {/* Achievements Section */}
-        {/* <div className="bg-gray-900 rounded-2xl p-4 lg:p-6 mt-4 lg:mt-6">
-          <div className="flex items-center justify-between mb-4 lg:mb-6">
-            <h2 className="text-gray-200 text-lg lg:text-2xl font-semibold flex items-center gap-3">
-              <FaAward className="text-yellow-500" />
-              Achievements & Education
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
-            {achievements.map((achievement, idx) => (
-              <div
-                key={idx}
-                className="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-4 lg:p-6 hover:from-gray-700 hover:to-gray-600 transition-all duration-300 transform hover:-translate-y-1"
-              >
-                <div className="flex flex-col items-center text-center">
-                  <div className="mb-4">{achievement.icon}</div>
-                  <h3 className="text-white font-bold text-sm lg:text-base mb-2">
-                    {achievement.title}
-                  </h3>
-                  <p className="text-gray-300 text-xs lg:text-sm mb-3 leading-relaxed">
-                    {achievement.description}
-                  </p>
-                  <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">
-                    {achievement.year}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div> */}
       </section>
     </div>
   );

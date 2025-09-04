@@ -14,7 +14,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className="flex flex-col lg:h-64 lg:flex-row">
       {/* Mobile Hamburger Menu */}
       <div className="lg:hidden fixed top-4 left-4 z-50">
         <button

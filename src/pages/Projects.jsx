@@ -110,7 +110,7 @@ export default function Projects() {
   ];
 
   return (
-    <div className="w-screen h-screen bg-gradient-to-br from-gray-800 to-black overflow-y-scroll p-4 lg:p-6">
+    <div className="h-screen bg-gradient-to-br from-gray-800 to-black overflow-y-scroll lg:w-screen p-4 lg:p-6">
       <div className="max-w-7xl lg:ml-36 sm:mx-auto">
         <div className="projects-container text-center mb-8 lg:mb-12">
           <h1 className="text-2xl lg:text-4xl font-bold text-gray-200 mb-3 lg:mb-4">
