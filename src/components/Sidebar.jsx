@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/images/logo.webp";
 import { NavLink, Outlet } from "react-router-dom";
-
+import { FaHome } from "react-icons/fa";
 export default function Sidebar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -47,7 +47,6 @@ export default function Sidebar() {
         </button>
       </div>
 
-      {/* Mobile Overlay */}
       {isMobileMenuOpen && (
         <div
           className="lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
@@ -55,7 +54,6 @@ export default function Sidebar() {
         />
       )}
 
-      {/* Sidebar */}
       <nav
         className={`
           fixed lg:relative z-40
@@ -70,10 +68,9 @@ export default function Sidebar() {
           ${isMobileMenuOpen ? "top-0 left-0" : "lg:top-auto lg:left-auto"}
         `}
       >
-        {/* Logo Section */}
         <div className="logo h-72 flex flex-col justify-center items-center pt-8">
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-lg opacity-30"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-gray-600 rounded-full blur-lg opacity-30"></div>
             <img
               className="relative w-32 h-32 rounded-full border-4 border-gray-700 shadow-xl"
               src={logo}
@@ -82,7 +79,7 @@ export default function Sidebar() {
               height={128}
             />
           </div>
-          <h1 className="text-white text-xl font-semibold text-center mt-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
+          <h1 className="text-white text-xl font-semibold text-center mt-4 bg-gradient-to-r from-blue-200 to-gray-600 bg-clip-text">
             Christian Dave Alicaba
           </h1>
           <p className="text-gray-400 text-sm mt-1">Full Stack Developer</p>
@@ -96,7 +93,21 @@ export default function Sidebar() {
                 className={({ isActive }) =>
                   `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
                     isActive
-                      ? "text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg shadow-blue-500/25"
+                      ? "text-black bg-gradient-to-r from-blue-200 to-gray-600 shadow-lg shadow-blue-500/25"
+                      : "text-gray-400 hover:text-white hover:bg-gray-800/50"
+                  }`
+                }
+                to={"/"}
+                onClick={closeMobileMenu}
+              >
+                <FaHome className="w-5 h-5" />
+                Go to Home
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
+                    isActive
+                      ? "text-black bg-gradient-to-r font-extrabold from-blue-200 to-gray-600 shadow-lg shadow-blue-500/25"
                       : "text-gray-400 hover:text-white hover:bg-gray-800/50"
                   }`
                 }
@@ -118,7 +129,7 @@ export default function Sidebar() {
                 className={({ isActive }) =>
                   `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
                     isActive
-                      ? "text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg shadow-blue-500/25"
+                      ? "text-black font-extrabold bg-gradient-to-r from-blue-200 to-gray-600 shadow-lg shadow-blue-500/25"
                       : "text-gray-400 hover:text-white hover:bg-gray-800/50"
                   }`
                 }
@@ -144,7 +155,7 @@ export default function Sidebar() {
                 className={({ isActive }) =>
                   `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
                     isActive
-                      ? "text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg shadow-blue-500/25"
+                      ? "text-black font-extrabold bg-gradient-to-r from-blue-200 to-gray-600 shadow-lg shadow-blue-500/25"
                       : "text-gray-400 hover:text-white hover:bg-gray-800/50"
                   }`
                 }
@@ -166,7 +177,7 @@ export default function Sidebar() {
                 className={({ isActive }) =>
                   `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
                     isActive
-                      ? "text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg shadow-blue-500/25"
+                      ? "text-black font-extrabold bg-gradient-to-r from-blue-200 to-gray-600 shadow-lg shadow-blue-500/25"
                       : "text-gray-400 hover:text-white hover:bg-gray-800/50"
                   }`
                 }
@@ -197,7 +208,6 @@ export default function Sidebar() {
         </div>
       </nav>
 
-      {/* Main Content Area */}
       <div className="flex-1 h-screen">
         <Outlet />
       </div>

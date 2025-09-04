@@ -145,7 +145,7 @@ export default function ContactMe() {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 rounded-lg transition duration-300 transform hover:scale-105"
+                className="w-full bg-gradient-to-r from-blue-200 to-gray-600 hover:from-blue-300 hover:to-gray-700 text-white font-semibold py-3 rounded-lg transition duration-300 transform hover:scale-102"
               >
                 Send Message
               </button>
