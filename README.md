@@ -17,7 +17,7 @@ project submitted: https://roadmap.sh/projects/portfolio-website
 
 ## 📦 Tech Stack
 
-- Frontend:React
+- Frontend: React.js
 - Styling: Tailwind CSS  
 - Routing: React Router
 - Deployment: Netlify
