@@ -19,7 +19,7 @@ export default function Sidebar() {
       <div className="lg:hidden fixed top-4 left-4 z-50">
         <button
           onClick={toggleMobileMenu}
-          className="p-2 rounded-lg bg-gray-800/90 backdrop-blur-sm border border-gray-700 text-white hover:bg-gray-700/90 transition-colors shadow-lg"
+          className="p-3 rounded-xl backdrop-blur-xl bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-300 shadow-lg hover:shadow-xl"
           aria-label="Toggle mobile menu"
         >
           <svg
@@ -49,7 +49,7 @@ export default function Sidebar() {
 
       {isMobileMenuOpen && (
         <div
-          className="lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+          className="lg:hidden fixed inset-0 bg-black/70 backdrop-blur-md z-40"
           onClick={closeMobileMenu}
         />
       )}
@@ -58,43 +58,52 @@ export default function Sidebar() {
         className={`
           fixed lg:relative z-40
           w-80 h-full lg:h-screen lg:max-h-screen
-          bg-gradient-to-b from-gray-700 to-gray-800
-          transform transition-transform duration-300 ease-in-out
+          backdrop-blur-xl bg-white/10 border-r border-white/20
+          transform transition-all duration-500 ease-in-out
           ${
             isMobileMenuOpen
               ? "translate-x-0"
               : "-translate-x-full lg:translate-x-0"
           }
           ${isMobileMenuOpen ? "top-0 left-0" : "lg:top-auto lg:left-auto"}
+          shadow-2xl shadow-black/20
         `}
       >
-        <div className="logo h-72 flex flex-col justify-center items-center pt-8">
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-gray-600 rounded-full blur-lg opacity-30"></div>
+        <div className="logo h-80 flex flex-col justify-center items-center pt-8 px-6">
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-to-r from-white to-gray-300 rounded-full blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-white to-gray-300 rounded-full blur-lg opacity-40 animate-pulse"></div>
             <img
-              className="relative w-32 h-32 rounded-full border-4 border-gray-700 shadow-xl"
+              className="relative w-36 h-36 rounded-full border-4 border-white/20 shadow-2xl shadow-white/20 hover:scale-105 transition-transform duration-300"
               src={logo}
               alt="Profile"
-              width={128}
-              height={128}
+              width={144}
+              height={144}
             />
+            <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-white rounded-full border-4 border-white/20 flex items-center justify-center">
+              <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+            </div>
           </div>
-          <h1 className="text-white text-xl font-semibold text-center mt-4 bg-gradient-to-r from-blue-200 to-gray-600 bg-clip-text">
+          <h1 className="text-white text-2xl font-bold text-center mt-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text leading-tight">
             Christian Dave Alicaba
           </h1>
-          <p className="text-gray-400 text-sm mt-1">Full Stack Developer</p>
+          <p className="text-gray-300 text-sm mt-2 font-medium">Full Stack Developer</p>
+          <div className="flex items-center gap-2 mt-3">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-white text-xs font-medium">Available for work</span>
+          </div>
         </div>
 
         {/* Navigation Section */}
         <div className="w-full h-auto px-6 py-6 flex flex-col justify-center">
-          <ul className="flex flex-col justify-center items-start gap-2">
+          <ul className="flex flex-col justify-center items-start gap-3">
             <li className="w-full">
               <NavLink
                 className={({ isActive }) =>
-                  `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
+                  `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 group ${
                     isActive
-                      ? "text-black bg-gradient-to-r from-gray-200 to-gray-600 shadow-lg shadow-gray-500/25"
-                      : "text-gray-400 hover:text-white hover:bg-gray-800/50"
+                      ? "text-black bg-gradient-to-r from-white/80 to-gray-300/80 backdrop-blur-sm shadow-lg shadow-white/25 border border-white/20"
+                      : "text-gray-300 hover:text-white hover:bg-white/10 hover:backdrop-blur-sm border border-transparent hover:border-white/10"
                   }`
                 }
                 to={"/"}
@@ -105,10 +114,10 @@ export default function Sidebar() {
               </NavLink>
               <NavLink
                 className={({ isActive }) =>
-                  `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
+                  `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 group ${
                     isActive
-                      ? "text-black bg-gradient-to-r font-extrabold from-gray-200 to-gray-600 shadow-lg shadow-gray-500/25"
-                      : "text-gray-400 hover:text-white hover:bg-gray-800/50"
+                      ? "text-black bg-gradient-to-r from-white/80 to-gray-300/80 backdrop-blur-sm shadow-lg shadow-white/25 border border-white/20"
+                      : "text-gray-300 hover:text-white hover:bg-white/10 hover:backdrop-blur-sm border border-transparent hover:border-white/10"
                   }`
                 }
                 to={"dashboard"}
@@ -127,10 +136,10 @@ export default function Sidebar() {
             <li className="w-full">
               <NavLink
                 className={({ isActive }) =>
-                  `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
+                  `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 group ${
                     isActive
-                      ? "text-black font-extrabold bg-gradient-to-r from-gray-200 to-gray-600 shadow-lg shadow-gray-500/25"
-                      : "text-gray-400 hover:text-white hover:bg-gray-800/50"
+                      ? "text-black bg-gradient-to-r from-white/80 to-gray-300/80 backdrop-blur-sm shadow-lg shadow-white/25 border border-white/20"
+                      : "text-gray-300 hover:text-white hover:bg-white/10 hover:backdrop-blur-sm border border-transparent hover:border-white/10"
                   }`
                 }
                 to={"aboutme"}
@@ -153,10 +162,10 @@ export default function Sidebar() {
             <li className="w-full">
               <NavLink
                 className={({ isActive }) =>
-                  `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
+                  `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 group ${
                     isActive
-                      ? "text-black font-extrabold bg-gradient-to-r from-gray-200 to-gray-600 shadow-lg shadow-gray-500/25"
-                      : "text-gray-400 hover:text-white hover:bg-gray-800/50"
+                      ? "text-black bg-gradient-to-r from-white/80 to-gray-300/80 backdrop-blur-sm shadow-lg shadow-white/25 border border-white/20"
+                      : "text-gray-300 hover:text-white hover:bg-white/10 hover:backdrop-blur-sm border border-transparent hover:border-white/10"
                   }`
                 }
                 to={"projects"}
@@ -177,7 +186,7 @@ export default function Sidebar() {
                 className={({ isActive }) =>
                   `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
                     isActive
-                      ? "text-black font-extrabold bg-gradient-to-r from-blue-200 to-gray-600 shadow-lg shadow-gray-500/25"
+                      ? "text-black font-extrabold bg-gradient-to-r from-white to-gray-300 shadow-lg shadow-white/25"
                       : "text-gray-400 hover:text-white hover:bg-gray-800/50"
                   }`
                 }
@@ -200,10 +209,17 @@ export default function Sidebar() {
 
         {/* Footer Section */}
         <div className="absolute bottom-6 left-6 right-6">
-          <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
-            <p className="text-gray-400 text-sm text-center">
+          <div className="backdrop-blur-sm bg-white/10 rounded-xl p-4 border border-white/20 shadow-lg">
+            <p className="text-gray-300 text-sm text-center font-medium">
               &copy; 2024 All rights reserved
             </p>
+            <div className="flex justify-center mt-2">
+              <div className="flex gap-2">
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-gray-300 rounded-full animate-pulse animation-delay-2000"></div>
+                <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse animation-delay-4000"></div>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
