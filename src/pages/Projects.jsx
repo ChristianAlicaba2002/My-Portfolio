@@ -121,55 +121,70 @@ export default function Projects() {
   ];
 
   return (
-    <div className="h-screen bg-gradient-to-br from-gray-800 to-gray-900 overflow-y-scroll lg:w-screen p-4 lg:p-6">
-      <div className="max-w-7xl lg:ml-36 sm:mx-auto">
+    <div className="h-screen bg-gradient-to-br from-black via-gray-900 to-black overflow-y-scroll lg:w-screen p-4 lg:p-6 relative">
+      {/* Background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-300 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 w-60 h-60 bg-gray-500 rounded-full mix-blend-multiply filter blur-xl opacity-5 animate-pulse animation-delay-4000"></div>
+      </div>
+
+      <div className="max-w-7xl lg:ml-36 sm:mx-auto relative z-10">
         <div className="projects-container text-center mb-8 lg:mb-12">
-          <h1 className="text-2xl lg:text-4xl font-bold text-gray-200 mb-3 lg:mb-4">
+          <h1 className="text-3xl lg:text-5xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent mb-6">
             My Projects
           </h1>
-          <p className="text-sm lg:text-lg text-gray-300 max-w-2xl mx-auto px-4">
+          <p className="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto px-4 leading-relaxed">
             A collection of projects showcasing my skills in web development,
             from full-stack applications to interactive user interfaces.
           </p>
+          <div className="flex justify-center mt-6">
+            <div className="w-16 h-1 bg-gradient-to-r from-white to-gray-300 rounded-full"></div>
+          </div>
         </div>
 
         {/* Featured Projects */}
         <div className="feature-container mb-8 lg:mb-12">
-          <h2 className="text-xl lg:text-2xl font-semibold text-gray-200 mb-4 lg:mb-6 px-4 lg:px-0">
+          <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6 lg:mb-8 px-4 lg:px-0 flex items-center gap-3">
+            <div className="w-1 h-8 bg-gradient-to-b from-white to-gray-300 rounded-full"></div>
             Featured Projects
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 px-4 lg:px-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 px-4 lg:px-0">
             {projects
               .filter((project) => project.featured)
-              .map((project) => (
+              .map((project, index) => (
                 <div
                   key={project.id}
-                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                  className="group backdrop-blur-sm bg-white/10 rounded-2xl overflow-hidden border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-white/25"
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="relative h-40 lg:h-48 overflow-hidden">
+                  <div className="relative h-48 lg:h-56 overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute top-3 lg:top-4 right-3 lg:right-4">
-                      <span className="bg-blue-500 text-white px-2 lg:px-3 py-1 rounded-full text-xs lg:text-sm font-medium">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div className="absolute top-4 right-4">
+                      <span className="bg-gradient-to-r from-white to-gray-300 text-black px-3 py-1 rounded-full text-xs lg:text-sm font-bold shadow-lg">
                         Featured
                       </span>
                     </div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="text-white text-xl lg:text-2xl font-bold mb-2 drop-shadow-lg">
+                        {project.title}
+                      </h3>
+                    </div>
                   </div>
-                  <div className="p-4 lg:p-6">
-                    <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 text-sm lg:text-base">
+                  <div className="p-6 lg:p-8">
+                    <p className="text-gray-300 mb-6 text-sm lg:text-base leading-relaxed group-hover:text-white transition-colors duration-300">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.map((tech, index) => (
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.technologies.map((tech, techIndex) => (
                         <span
-                          key={index}
-                          className="bg-gray-100 text-gray-700 px-2 lg:px-3 py-1 rounded-full text-xs lg:text-sm font-medium"
+                          key={techIndex}
+                          className="backdrop-blur-sm bg-white/10 text-white px-3 py-1 rounded-full text-xs lg:text-sm font-medium border border-white/20 hover:bg-white/20 transition-all duration-300"
                         >
                           {tech}
                         </span>
@@ -180,9 +195,10 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 bg-gray-800 text-white text-center py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 text-sm lg:text-base"
+                        className="flex-1 bg-gradient-to-r from-white to-gray-300 text-black text-center py-3 px-4 rounded-xl hover:from-gray-200 hover:to-gray-400 transition-all duration-300 text-sm lg:text-base font-semibold shadow-lg hover:shadow-xl group/btn"
                       >
-                        <FaGithub className="inline text-2xl mr-2" />
+                        <FaGithub className="inline text-lg mr-2 group-hover/btn:scale-110 transition-transform duration-300" />
+                        View Code
                       </a>
                     </div>
                   </div>
@@ -193,40 +209,50 @@ export default function Projects() {
 
         {/* All Projects Grid */}
         <div className="allProjects-container">
-          <h2 className="text-xl lg:text-2xl font-semibold text-gray-200 mb-4 lg:mb-6 px-4 lg:px-0">
+          <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6 lg:mb-8 px-4 lg:px-0 flex items-center gap-3">
+            <div className="w-1 h-8 bg-gradient-to-b from-gray-400 to-gray-600 rounded-full"></div>
             All Projects
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6 px-4 lg:px-0">
-            {projects.map((project) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 px-4 lg:px-0">
+            {projects.map((project, index) => (
               <div
                 key={project.id}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                className="group backdrop-blur-sm bg-white/10 rounded-2xl overflow-hidden border border-white/20 shadow-xl hover:bg-white/15 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-gray-500/25"
+                style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <div className="relative h-32 lg:h-40 overflow-hidden">
+                <div className="relative h-40 lg:h-48 overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                  {project.featured && (
+                    <div className="absolute top-3 right-3">
+                      <span className="bg-gradient-to-r from-gray-500 to-gray-700 text-white px-2 py-1 rounded-full text-xs font-bold shadow-lg">
+                        Featured
+                      </span>
+                    </div>
+                  )}
                 </div>
-                <div className="p-3 lg:p-4">
-                  <h3 className="text-base lg:text-lg font-semibold text-gray-800 mb-2">
+                <div className="p-4 lg:p-6">
+                  <h3 className="text-base lg:text-lg font-bold text-white mb-3 group-hover:text-gray-300 transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 text-xs lg:text-sm mb-3 line-clamp-2">
+                  <p className="text-gray-300 text-xs lg:text-sm mb-4 line-clamp-2 group-hover:text-white transition-colors duration-300">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-1 mb-3">
-                    {project.technologies.slice(0, 3).map((tech, index) => (
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.slice(0, 3).map((tech, techIndex) => (
                       <span
-                        key={index}
-                        className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium"
+                        key={techIndex}
+                        className="backdrop-blur-sm bg-white/10 text-white px-2 py-1 rounded-full text-xs font-medium border border-white/20 hover:bg-white/20 transition-all duration-300"
                       >
                         {tech}
                       </span>
                     ))}
                     {project.technologies.length > 3 && (
-                      <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium">
+                      <span className="backdrop-blur-sm bg-white/10 text-white px-2 py-1 rounded-full text-xs font-medium border border-white/20">
                         +{project.technologies.length - 3}
                       </span>
                     )}
@@ -236,9 +262,10 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-gray-800 text-white text-center py-2 px-3 rounded text-xs lg:text-sm hover:bg-gray-700 transition-colors duration-200"
+                      className="flex-1 bg-gradient-to-r from-gray-500 to-gray-700 text-white text-center py-2 px-3 rounded-xl text-xs lg:text-sm font-semibold hover:from-gray-600 hover:to-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl group/btn"
                     >
-                      <FaGithub className="inline text-2xl mr-2" />
+                      <FaGithub className="inline text-sm mr-1 group-hover/btn:scale-110 transition-transform duration-300" />
+                      Code
                     </a>
                   </div>
                 </div>
