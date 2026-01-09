@@ -1,12 +1,12 @@
 import taskMaster from "../assets/images/TaskMaster.webp";
-import Technical from "../assets/images/Technical.webp";
+import Technical from "../assets/images/aclc-technical.webp";
 import poke from "../assets/images/poke.webp";
 import CrustyBytes from "../assets/images/CrustyBytes.webp";
 import QuanTum from "../assets/images/QuantumOrder.webp";
 import Waste from "../assets/images/Waste.webp";
 import Veteririan from "../assets/images/Veteririan.webp";
 import Accounting from "../assets/images/Accounting.webp";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaRocket } from "react-icons/fa";
 
 export default function Projects() {
   const projects = [
@@ -100,16 +100,6 @@ export default function Projects() {
     },
     {
       id: 9,
-      title: "Techinical Assets Management",
-      description:
-        "Technical Assets Management refers to the systematic approach of overseeing and managing the lifecycle of an organization's technical assets. This includes hardware, software, networks, and other IT-related resources that are essential for the company's day-to-day operations. The main goals of technical asset management are to ensure that these assets are used effectively, are properly maintained, and provide value throughout their entire lifespan.",
-      image: Technical,
-      technologies: ["React.js", "TypeScript", "SQL", "ASP.NET"],
-      github: "#",
-      featured: true,
-    },
-    {
-      id: 10,
       title: "PokeVault",
       description:
         "PokeVault is a fun and interactive web app that lets users explore the Pokémon world by fetching real-time data from the Pokémon API. It serves as a digital vault where users can search, view, and collect information about their favorite Pokémon. With features like detailed Pokémon stats, abilities, types, and evolutions",
@@ -117,6 +107,18 @@ export default function Projects() {
       technologies: ["React.js", "TypeScript", "Tailwind CSS"],
       github: "https://github.com/ChristianAlicaba2002/PokeVault",
       featured: true,
+      live: "https://pokevault2024.netlify.app"
+    },
+    {
+      id: 10,
+      title: "Aclc Mandaue Technical System",
+      description:
+        "A simple and efficient web application designed to help schools or organizations manage their technical equipment — such as HDMI cables, projectors, laptops, microphones, and other storage items.This system allows users to easily add, track, and manage borrowed and returned assets for various events or classroom needs",
+      image: Technical,
+      technologies: ["React.js", "TypeScript", "Tailwind CSS", "C# ASP.NET"],
+      github: "https://github.com/Technical-Assets-Management-CS31A",
+      featured: true,
+      live: "https://aclc-mandaue-technical-system.pages.dev/",
     },
   ];
 
@@ -155,14 +157,14 @@ export default function Projects() {
               .map((project, index) => (
                 <div
                   key={project.id}
-                  className="group backdrop-blur-sm bg-white/10 rounded-2xl overflow-hidden border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-white/25"
+                  className="group backdrop-blur-sm bg-white/10 rounded-2xl overflow-hidden border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-500 hover:scale-102 hover:shadow-2xl hover:shadow-white/25"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="relative h-48 lg:h-56 overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                     <div className="absolute top-4 right-4">
@@ -200,6 +202,12 @@ export default function Projects() {
                         <FaGithub className="inline text-lg mr-2 group-hover/btn:scale-110 transition-transform duration-300" />
                         View Code
                       </a>
+                      {project.live ? (
+                        <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex-1 bg-gradient-to-r from-white to-gray-300 text-black text-center py-3 px-4 rounded-xl hover:from-gray-200 hover:to-gray-400 transition-all duration-300 text-sm lg:text-base font-semibold shadow-lg hover:shadow-xl group/btn">
+                          <FaRocket className="inline text-lg mr-2 group-hover/btn:scale-110 transition-transform duration-300" />
+                          Live Demo
+                        </a>
+                      ) : null}
                     </div>
                   </div>
                 </div>
@@ -217,7 +225,7 @@ export default function Projects() {
             {projects.map((project, index) => (
               <div
                 key={project.id}
-                className="group backdrop-blur-sm bg-white/10 rounded-2xl overflow-hidden border border-white/20 shadow-xl hover:bg-white/15 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-gray-500/25"
+                className="group backdrop-blur-sm bg-white/10 rounded-2xl overflow-hidden border border-white/20 shadow-xl hover:bg-white/15 transition-all duration-500 hover:scale-102 hover:shadow-2xl hover:shadow-gray-500/25"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
                 <div className="relative h-40 lg:h-48 overflow-hidden">
@@ -267,6 +275,18 @@ export default function Projects() {
                       <FaGithub className="inline text-sm mr-1 group-hover/btn:scale-110 transition-transform duration-300" />
                       Code
                     </a>
+                    {project.live ? (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 bg-gradient-to-r from-gray-500 to-gray-700 text-white text-center py-2 px-3 rounded-xl text-xs lg:text-sm font-semibold hover:from-gray-600 hover:to-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl group/btn"
+                      >
+                        <FaRocket className="inline text-sm mr-1 group-hover/btn:scale-110 transition-transform duration-300" />
+                        Demo
+                      </a>
+                    ) : null}
+
                   </div>
                 </div>
               </div>
