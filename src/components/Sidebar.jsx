@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/images/logo.webp";
+import logo from "../assets/images/myPicture.webp";
 import { NavLink, Outlet } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 export default function Sidebar() {
@@ -87,7 +87,7 @@ export default function Sidebar() {
           <h1 className="text-white text-2xl font-bold text-center mt-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text leading-tight">
             Christian Dave Alicaba
           </h1>
-          <p className="text-gray-300 text-sm mt-2 font-medium">Full Stack Developer</p>
+          <p className="text-gray-300 text-sm mt-2 font-medium">Software Developer</p>
           <div className="flex items-center gap-2 mt-3">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
             <span className="text-white text-xs font-medium">Available for work</span>

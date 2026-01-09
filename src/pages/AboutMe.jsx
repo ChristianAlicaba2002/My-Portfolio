@@ -13,7 +13,10 @@ import {
   SiTypescript,
   SiNextdotjs,
   SiHono,
+  SiFastapi,
 } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
+
 
 export default function AboutMe() {
   return (
@@ -112,6 +115,12 @@ export default function AboutMe() {
                 </h3>
                 <div className="flex flex-wrap gap-2 lg:gap-3">
                   <div className="flex items-center backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300 group/skill">
+                    <TbBrandCSharp className="text-blue-500 mr-2 text-sm lg:text-base group-hover/skill:scale-110 transition-transform duration-300" />
+                    <span className="text-white text-xs lg:text-sm font-medium">
+                      ASP.NET Core
+                    </span>
+                  </div>
+                  <div className="flex items-center backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300 group/skill">
                     <SiLaravel className="text-red-500 mr-2 text-sm lg:text-base group-hover/skill:scale-110 transition-transform duration-300" />
                     <span className="text-white text-xs lg:text-sm font-medium">
                       Laravel
@@ -121,6 +130,12 @@ export default function AboutMe() {
                     <SiHono className="text-orange-500 mr-2 text-sm lg:text-base group-hover/skill:scale-110 transition-transform duration-300" />
                     <span className="text-white text-xs lg:text-sm font-medium">
                       Hono.js
+                    </span>
+                  </div>
+                  <div className="flex items-center backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300 group/skill">
+                    <SiFastapi className="text-blue-500 mr-2 text-sm lg:text-base group-hover/skill:scale-110 transition-transform duration-300" />
+                    <span className="text-white text-xs lg:text-sm font-medium">
+                      FastAPI
                     </span>
                   </div>
                 </div>
@@ -138,13 +153,13 @@ export default function AboutMe() {
                     Firebase
                   </span>
                   <span className="backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 text-white text-xs lg:text-sm font-medium hover:bg-white/20 transition-all duration-300 group/skill">
-                    Clerk
-                  </span>
-                  <span className="backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 text-white text-xs lg:text-sm font-medium hover:bg-white/20 transition-all duration-300 group/skill">
                     Trello
                   </span>
                   <span className="backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 text-white text-xs lg:text-sm font-medium hover:bg-white/20 transition-all duration-300 group/skill">
                     MySQL
+                  </span>
+                  <span className="backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 text-white text-xs lg:text-sm font-medium hover:bg-white/20 transition-all duration-300 group/skill">
+                    PostgreSQL
                   </span>
                   <span className="backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 text-white text-xs lg:text-sm font-medium hover:bg-white/20 transition-all duration-300 group/skill">
                     Figma
@@ -193,7 +208,7 @@ export default function AboutMe() {
                 </h3>
                 <p className="text-gray-300 text-xs lg:text-sm font-semibold mb-2">2025</p>
                 <p className="text-gray-300 text-xs lg:text-sm leading-relaxed group-hover/exp:text-white transition-colors duration-300">
-                  FDA Checker Product
+                  FDA Checker Product <span className="text-[12px]">( Overall Projects Winner )</span>
                 </p>
               </div>
 

@@ -15,6 +15,7 @@ import {
   FaDatabase,
   FaTools,
 } from "react-icons/fa";
+import { TbBrandCSharp } from "react-icons/tb";
 
 export default function Dashboard() {
   const skillsData = [
@@ -31,8 +32,8 @@ export default function Dashboard() {
       category: "Backend Development",
       icon: <FaCode className="text-2xl text-green-500" />,
       skills: [
-        { name: "Laravel/PHP", level: 100 },
-        { name: "Hono/Node.js", level: 100 },
+        { name: "PHP ( Laravel )", level: 100 },
+        { name: "C# ( ASP.NET Core)", level: 100 },
       ],
     },
     {
@@ -62,9 +63,9 @@ export default function Dashboard() {
 
       <header className="z-10">
         <Badges />
-        <div className="dashbord-container lg:w-screen h-20 lg:h-24 overflow-x-hidden p-4 backdrop-blur-sm bg-white/5 rounded-2xl border border-white/10 mt-6">
-          <div className="w-full mx-auto flex gap-6 lg:gap-12 whitespace-nowrap animate-scroll">
-            {[...Array(3)].map((_, i) => (
+        <div className="dashbord-container w-screen mt-6 lg:mt-8 backdrop-blur-sm bg-white/5 rounded-2xl p-4 lg:p-6 border border-white/10 relative z-10 overflow-hidden">
+          <div className="flex gap-6 lg:gap-12 whitespace-nowrap animate-scroll">
+            {[...Array(2)].map((_, i) => (
               <div key={i} className="flex gap-6 lg:gap-12">
                 <div className="group">
                   <FaHtml5 className="text-3xl lg:text-7xl text-red-500 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg" />
@@ -99,13 +100,15 @@ export default function Dashboard() {
                 <div className="group">
                   <SiDjango className="text-3xl lg:text-7xl text-green-500 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg" />
                 </div>
+                <div className="group">
+                  <TbBrandCSharp className="text-3xl lg:text-7xl text-blue-500 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg" />
+                </div>
               </div>
             ))}
           </div>
         </div>
       </header>
-      <section className="dashbord-container overflow-y-scroll h-[65vh] mt-6 mx-2 backdrop-blur-sm bg-white/5 rounded-2xl p-4 lg:p-6 lg:mt-8 lg:mx-4 border border-white/10 relative z-10">
-        {/* Skills & Expertise Section */}
+      {/* <section className="dashbord-container overflow-y-scroll h-[65vh] mt-6 mx-2 backdrop-blur-sm bg-white/5 rounded-2xl p-4 lg:p-6 lg:mt-8 lg:mx-4 border border-white/10 relative z-10">
         <div className="backdrop-blur-sm bg-white/10 rounded-2xl p-6 lg:p-8 border border-white/20">
           <div className="flex items-center justify-between mb-6 lg:mb-8">
             <h2 className="text-white text-xl lg:text-3xl font-bold flex items-center gap-4">
@@ -150,7 +153,7 @@ export default function Dashboard() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

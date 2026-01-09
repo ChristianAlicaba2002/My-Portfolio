@@ -5,21 +5,21 @@ export default function Badges() {
   const badges = [
     { 
       label: "Programming Languages", 
-      value: 5, 
+      value: 7, 
       icon: <FaCode className="text-2xl" />,
       gradient: "from-white to-gray-300",
       textColor: "text-blue-500",
     },
     { 
       label: "Total Projects", 
-      value: 10, 
+      value: 9, 
       icon: <FaProjectDiagram className="text-2xl" />,
       gradient: "from-gray-300 to-gray-500",
       textColor: "text-green-500",
     },
     { 
       label: "Years of Experience", 
-      value: 5, 
+      value: 3, 
       icon: <FaCalendarAlt className="text-2xl" />,
       gradient: "from-gray-500 to-gray-700",
       textColor: "text-yellow-500",
