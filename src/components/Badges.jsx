@@ -12,7 +12,7 @@ export default function Badges() {
     },
     { 
       label: "Total Projects", 
-      value: 9, 
+      value: 11, 
       icon: <FaProjectDiagram className="text-2xl" />,
       gradient: "from-gray-300 to-gray-500",
       textColor: "text-green-500",
