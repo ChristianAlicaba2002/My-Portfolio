@@ -30,7 +30,7 @@ function App() {
           </h1>
           
           <div className="text-2xl lg:text-3xl font-semibold text-transparent bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text mb-4">
-            Full Stack Developer
+            Software Developer
           </div>
           
           <p className="text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">

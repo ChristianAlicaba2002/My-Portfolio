@@ -6,6 +6,7 @@ import QuanTum from "../assets/images/QuantumOrder.webp";
 import Waste from "../assets/images/Waste.webp";
 import Veteririan from "../assets/images/Veteririan.webp";
 import Accounting from "../assets/images/Accounting.webp";
+import Basketball from "../assets/images/Basketball_Tournament.webp";
 import { FaGithub, FaRocket } from "react-icons/fa";
 
 export default function Projects() {
@@ -120,6 +121,15 @@ export default function Projects() {
       featured: true,
       live: "https://aclc-mandaue-technical-system.pages.dev/",
     },
+    {
+      id: 11,
+      title: "Basketball Tournament",
+      description: "Basketball Tournament Management SystemThis project is a Basketball Tournament Management System designed to organize and manage tournaments with multiple categories, teams, and bracket-based matchups. It provides a clear structure for tracking team progression from early rounds to the finals.",
+      image: Basketball,
+      technologies: ["React.js","TanStack Query","Tailwindcss","C# ASP.NET","Microsoft SQL Server"],
+      github: "https://github.com/ChristianAlicaba2002/Basketball_Tournament-Frontend",
+      featured: true,
+    }
   ];
 
   return (
