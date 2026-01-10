@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaCode, FaRocket, FaHeart } from "react-icons/fa";
 
 function App() {
@@ -28,14 +28,14 @@ function App() {
           <h1 className="text-6xl lg:text-7xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent mb-6 leading-tight">
             Christian
           </h1>
-          
+
           <div className="text-2xl lg:text-3xl font-semibold text-transparent bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text mb-4">
             Software Developer
           </div>
-          
+
           <p className="text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Crafting digital experiences with passion and precision. 
-            <span className="text-transparent bg-gradient-to-r from-white to-gray-300 bg-clip-text font-semibold"> 
+            Crafting digital experiences with passion and precision.
+            <span className="text-transparent bg-gradient-to-r from-white to-gray-300 bg-clip-text font-semibold">
               Building the future, one line of code at a time.
             </span>
           </p>
@@ -48,13 +48,13 @@ function App() {
             <h3 className="text-lg font-semibold text-white mb-2">Clean Code</h3>
             <p className="text-gray-300 text-sm">Writing maintainable, scalable solutions</p>
           </div>
-          
+
           <div className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 group">
             <FaRocket className="text-3xl text-green-500 mb-4 group-hover:scale-110 transition-transform duration-300" />
             <h3 className="text-lg font-semibold text-white mb-2">Innovation</h3>
             <p className="text-gray-300 text-sm">Embracing cutting-edge technologies</p>
           </div>
-          
+
           <div className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 group">
             <FaHeart className="text-3xl text-red-500 mb-4 group-hover:scale-110 transition-transform duration-300" />
             <h3 className="text-lg font-semibold text-white mb-2">Passion</h3>
@@ -66,15 +66,15 @@ function App() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animation-delay-600">
           <Link
             to={"/layouts/dashboard"}
-            className="group relative px-8 py-4 bg-gradient-to-r from-white to-gray-300 text-black font-semibold text-lg rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/25"
+            className="group relative px-8 py-4 bg-gradient-to-r from-white to-gray-300 text-black font-semibold text-lg rounded-2xl overflow-hidden transition-all duration-300 hover:scale-102 hover:shadow-2xl hover:shadow-white/25"
           >
             <span className="relative z-10">Explore My Work</span>
             <div className="absolute inset-0 bg-gradient-to-r from-gray-300 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </Link>
-          
+
           <Link
             to={"/layouts/contactme"}
-            className="px-8 py-4 backdrop-blur-sm bg-white/10 border border-white/20 text-white font-semibold text-lg rounded-2xl hover:bg-white/20 transition-all duration-300 hover:scale-105"
+            className="px-8 py-4 backdrop-blur-sm bg-white/10 border border-white/20 text-white font-semibold text-lg rounded-2xl hover:bg-white/20 transition-all duration-300 hover:scale-102"
           >
             Get In Touch
           </Link>

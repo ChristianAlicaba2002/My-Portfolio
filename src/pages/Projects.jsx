@@ -275,7 +275,7 @@ export default function Projects() {
                       </span>
                     )}
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex justify-center items-center gap-2">
                     <a
                       href={project.github}
                       target="_blank"
