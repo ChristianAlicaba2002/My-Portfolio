@@ -1,5 +1,15 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { FaCode, FaProjectDiagram, FaCalendarAlt } from "react-icons/fa";
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] },
+  }),
+};
 
 export default function Badges() {
   const badges = [
@@ -27,12 +37,20 @@ export default function Badges() {
   ];
 
   return (
-    <div className="pt-14 pb-6 sm:p-4 lg:p-6 grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+    <motion.div
+      className="pt-14 pb-6 sm:p-4 lg:p-6 grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-40px" }}
+      variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+    >
       {badges.map((badge, index) => (
-        <div
+        <motion.div
           key={badge.label}
-          className={`badges-container group relative overflow-hidden rounded-2xl p-4 sm:p-6 lg:p-8 backdrop-blur-sm bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-white/25 animate-fade-in-up`}
-          style={{ animationDelay: `${index * 0.1}s` }}
+          custom={index}
+          variants={cardVariants}
+          whileHover={{ y: -4, scale: 1.02, transition: { duration: 0.2 } }}
+          className="badges-container group relative overflow-hidden rounded-2xl p-4 sm:p-6 lg:p-8 backdrop-blur-sm bg-white/10 border border-white/20 hover:bg-white/20 transition-colors duration-500 hover:shadow-2xl hover:shadow-white/25"
         >
           {/* Background gradient */}
           <div className={`absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
@@ -57,8 +75,8 @@ export default function Badges() {
           
           {/* Hover effect overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 }
