@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import taskMaster from "../assets/images/TaskMaster.webp";
 import Technical from "../assets/images/aclc-technical.webp";
 import poke from "../assets/images/poke.webp";
@@ -133,7 +134,7 @@ export default function Projects() {
   ];
 
   return (
-    <div className="h-screen bg-gradient-to-br from-black via-gray-900 to-black overflow-y-scroll lg:w-screen p-4 lg:p-6 relative">
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black w-full p-4 lg:p-6 relative">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>
@@ -141,8 +142,14 @@ export default function Projects() {
         <div className="absolute top-1/2 left-1/2 w-60 h-60 bg-gray-500 rounded-full mix-blend-multiply filter blur-xl opacity-5 animate-pulse animation-delay-4000"></div>
       </div>
 
-      <div className="max-w-7xl lg:ml-36 sm:mx-auto relative z-10">
-        <div className="projects-container text-center mb-8 lg:mb-12">
+      <div className="max-w-7xl mx-auto relative z-10">
+        <motion.div
+          className="projects-container text-center mb-8 lg:mb-12"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           <h1 className="text-3xl lg:text-5xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent mb-6">
             My Projects
           </h1>
@@ -153,7 +160,7 @@ export default function Projects() {
           <div className="flex justify-center mt-6">
             <div className="w-16 h-1 bg-gradient-to-r from-white to-gray-300 rounded-full"></div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Featured Projects */}
         <div className="feature-container mb-8 lg:mb-12">
