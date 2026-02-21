@@ -41,6 +41,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Scroll padding so sections sit below fixed nav when using scrollIntoView */
+.scroll-pt-16 {
+  scroll-padding-top: 4rem;
+}
+@media (min-width: 1024px) {
+  .lg\:scroll-pt-20 {
+    scroll-padding-top: 5rem;
+  }
+}
+
 @media (max-width: 768px) {
   button,
   a {
@@ -64,7 +74,7 @@ a:focus {
   pointer-events: none;
 }
 
-.welcome-contianer {
+.welcome-container {
   opacity: 1;
   animation: slides 1.5s ease-in-out;
 }
