@@ -1,85 +1,220 @@
-import { Link } from "react-router-dom";
+import { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { FaCode, FaRocket, FaHeart } from "react-icons/fa";
+import Navigation from "./components/Navigation";
+import Dashboard from "./pages/Dashboard";
+import AboutMe from "./pages/AboutMe";
+import Projects from "./pages/Projects";
+import ContactMe from "./pages/ContactMe";
+
+const SECTION_IDS = ["home", "dashboard", "aboutme", "projects", "contactme"];
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 28 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
+};
+
+const stagger = {
+  animate: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.12 },
+  },
+};
 
 function App() {
+  const mainRef = useRef(null);
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          const id = entry.target.id;
+          if (SECTION_IDS.includes(id)) {
+            setActiveSection(id);
+            break;
+          }
+        }
+      },
+      { root: null, rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+    );
+    SECTION_IDS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex flex-col items-center justify-center py-4 px-8 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-300 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse animation-delay-2000"></div>
-        <div className="absolute top-40 left-1/2 w-80 h-80 bg-gray-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse animation-delay-4000"></div>
-      </div>
+    <div className="w-screen min-h-screen bg-black">
+      <Navigation activeSection={activeSection} onNavigate={scrollToSection} />
 
-      <div className="welcome-contianer text-center space-y-8 relative z-10">
-        {/* Hero Section */}
-        <div className="space-y-6 animate-fade-in-up">
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-white to-gray-300 rounded-full blur-lg opacity-75 animate-pulse"></div>
-              <div className="relative bg-gradient-to-r from-white to-gray-300 p-1 rounded-full">
-                <div className="bg-black p-4 rounded-full">
-                  <FaCode className="text-4xl text-blue-500" />
-                </div>
-              </div>
-            </div>
-          </div>
+      <main
+        ref={mainRef}
+        className="overflow-y-auto overflow-x-hidden h-screen pt-16 lg:pt-20 scroll-pt-16 lg:scroll-pt-20"
+      >
+        <section
+          id="home"
+          className="w-full min-h-[calc(100vh-4rem)] lg:min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center py-4 px-6 sm:px-8 relative overflow-hidden scroll-mt-16 lg:scroll-mt-20 bg-black"
+        >
+          {/* Bold vertical accent */}
+          <motion.div
+            className="absolute left-0 top-0 bottom-0 w-1 sm:w-2 bg-white"
+            initial={{ scaleY: 0 }}
+            animate={{ scaleY: 1 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            style={{ transformOrigin: "top" }}
+            aria-hidden
+          />
 
-          <h1 className="text-6xl lg:text-7xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent mb-6 leading-tight">
-            Christian
-          </h1>
-
-          <div className="text-2xl lg:text-3xl font-semibold text-transparent bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text mb-4">
-            Software Developer
-          </div>
-
-          <p className="text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Crafting digital experiences with passion and precision.
-            <span className="text-transparent bg-gradient-to-r from-white to-gray-300 bg-clip-text font-semibold">
-              Building the future, one line of code at a time.
-            </span>
-          </p>
-        </div>
-
-        {/* Feature Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8 animate-fade-in-up animation-delay-300">
-          <div className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 group">
-            <FaCode className="text-3xl text-blue-500 mb-4 group-hover:scale-110 transition-transform duration-300" />
-            <h3 className="text-lg font-semibold text-white mb-2">Clean Code</h3>
-            <p className="text-gray-300 text-sm">Writing maintainable, scalable solutions</p>
-          </div>
-
-          <div className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 group">
-            <FaRocket className="text-3xl text-green-500 mb-4 group-hover:scale-110 transition-transform duration-300" />
-            <h3 className="text-lg font-semibold text-white mb-2">Innovation</h3>
-            <p className="text-gray-300 text-sm">Embracing cutting-edge technologies</p>
-          </div>
-
-          <div className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 group">
-            <FaHeart className="text-3xl text-red-500 mb-4 group-hover:scale-110 transition-transform duration-300" />
-            <h3 className="text-lg font-semibold text-white mb-2">Passion</h3>
-            <p className="text-gray-300 text-sm">Creating with love and dedication</p>
-          </div>
-        </div>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animation-delay-600">
-          <Link
-            to={"/layouts/dashboard"}
-            className="group relative px-8 py-4 bg-gradient-to-r from-white to-gray-300 text-black font-semibold text-lg rounded-2xl overflow-hidden transition-all duration-300 hover:scale-102 hover:shadow-2xl hover:shadow-white/25"
+          <motion.div
+            className="welcome-container text-center sm:text-left max-w-4xl mx-auto relative z-10 pl-6 sm:pl-10"
+            variants={stagger}
+            initial="initial"
+            animate="animate"
           >
-            <span className="relative z-10">Explore My Work</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-300 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </Link>
+            <motion.div className="space-y-6" variants={stagger}>
+              <motion.div
+                className="flex justify-center sm:justify-start mb-6"
+                variants={fadeInUp}
+              >
+                <motion.div
+                  className="relative inline-flex"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                >
+                  <div className="bg-white/10 p-2.5 rounded-2xl border border-white/20">
+                    <FaCode className="text-3xl text-blue-400" />
+                  </div>
+                </motion.div>
+              </motion.div>
 
-          <Link
-            to={"/layouts/contactme"}
-            className="px-8 py-4 backdrop-blur-sm bg-white/10 border border-white/20 text-white font-semibold text-lg rounded-2xl hover:bg-white/20 transition-all duration-300 hover:scale-102"
-          >
-            Get In Touch
-          </Link>
-        </div>
-      </div>
+              <motion.p
+                className="text-sm font-medium uppercase tracking-[0.2em] text-white/70"
+                variants={fadeInUp}
+              >
+                Software Developer
+              </motion.p>
+
+              <motion.h1
+                className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1]"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+                variants={fadeInUp}
+              >
+                Christian
+              </motion.h1>
+
+              <motion.p
+                className="text-lg sm:text-xl text-gray-400 max-w-2xl leading-relaxed"
+                variants={fadeInUp}
+              >
+                Crafting digital experiences with passion and precision.{" "}
+                <span className="text-white font-medium">
+                  Building the future, one line of code at a time.
+                </span>
+              </motion.p>
+            </motion.div>
+
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mt-10 mb-8"
+              variants={stagger}
+            >
+              {[
+                { Icon: FaCode, color: "text-blue-400", title: "Clean Code", desc: "Writing maintainable, scalable solutions" },
+                { Icon: FaRocket, color: "text-emerald-400", title: "Innovation", desc: "Embracing cutting-edge technologies" },
+                { Icon: FaHeart, color: "text-rose-400", title: "Passion", desc: "Creating with love and dedication" },
+              ].map((card, i) => (
+                <motion.div
+                  key={card.title}
+                  variants={fadeInUp}
+                  whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                  className="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group cursor-default"
+                >
+                  <card.Icon className={`text-2xl sm:text-3xl ${card.color} mb-3 group-hover:scale-110 transition-transform duration-300`} />
+                  <h3 className="text-base font-semibold text-white mb-1.5">{card.title}</h3>
+                  <p className="text-gray-400 text-sm">{card.desc}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center sm:justify-start items-center"
+              variants={fadeInUp}
+            >
+              <motion.button
+                type="button"
+                onClick={() => scrollToSection("dashboard")}
+                className="w-full sm:w-auto px-7 py-3.5 bg-blue-600 text-white font-semibold text-base rounded-xl hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-black"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Explore My Work
+              </motion.button>
+              <motion.button
+                type="button"
+                onClick={() => scrollToSection("contactme")}
+                className="w-full sm:w-auto px-7 py-3.5 bg-transparent border-2 border-emerald-400/80 text-emerald-400 font-semibold text-base rounded-xl hover:border-emerald-400 hover:bg-emerald-400/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-400/50 focus:ring-offset-2 focus:ring-offset-black"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Get In Touch
+              </motion.button>
+            </motion.div>
+          </motion.div>
+        </section>
+
+        <motion.section
+          id="dashboard"
+          className="min-h-screen scroll-mt-16 lg:scroll-mt-20 bg-black"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <Dashboard onNavigate={scrollToSection} />
+        </motion.section>
+
+        <motion.section
+          id="aboutme"
+          className="min-h-screen scroll-mt-16 lg:scroll-mt-20 bg-zinc-950"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <AboutMe />
+        </motion.section>
+
+        <motion.section
+          id="projects"
+          className="min-h-screen scroll-mt-16 lg:scroll-mt-20 bg-black"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <Projects />
+        </motion.section>
+
+        <motion.section
+          id="contactme"
+          className="min-h-screen scroll-mt-16 lg:scroll-mt-20 bg-zinc-950"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <ContactMe />
+        </motion.section>
+      </main>
     </div>
   );
 }
