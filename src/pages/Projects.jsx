@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import taskMaster from "../assets/images/TaskMaster.webp";
-import Technical from "../assets/images/aclc-technical.webp";
+import Technical from "../assets/images/aclc_mandaue.webp";
 import poke from "../assets/images/poke.webp";
 import CrustyBytes from "../assets/images/CrustyBytes.webp";
 import QuanTum from "../assets/images/QuantumOrder.webp";
@@ -18,7 +18,7 @@ export default function Projects() {
       description:
         "A full-stack e-commerce solution with payment integration, user authentication, and admin dashboard.",
       image: QuanTum,
-      technologies: ["Laravel", "Mysql"],
+      technologies: ["Laravel", "Mysql", "Sanctum"],
       github: "https://github.com/ChristianAlicaba2002/Quantum_Order",
       featured: true,
     },
@@ -75,7 +75,7 @@ export default function Projects() {
       description:
         "A Waste Segregation System is a structured method of managing waste by separating it into different categories to ensure proper disposal, recycling, and treatment. Its main purpose is to reduce environmental impact, improve recycling efficiency, and promote public health. The system typically classifies waste into biodegradable, recyclable, non-recyclable, and hazardous categories.",
       image: Waste,
-      technologies: ["Laravel", "MySQL"],
+      technologies: ["Laravel", "MySQL", "Sanctum"],
       github: "https://github.com/ChristianAlicaba2002/Waste_Segregation",
       featured: false,
     },
@@ -117,7 +117,7 @@ export default function Projects() {
       description:
         "A simple and efficient web application designed to help schools or organizations manage their technical equipment — such as HDMI cables, projectors, laptops, microphones, and other storage items.This system allows users to easily add, track, and manage borrowed and returned assets for various events or classroom needs",
       image: Technical,
-      technologies: ["React.js", "TypeScript", "Tailwind CSS", "C# ASP.NET"],
+      technologies: ["React.js", "TanStack", "TypeScript", "Tailwind CSS", "C# ASP.NET"],
       github: "https://github.com/Technical-Assets-Management-CS31A",
       featured: true,
       live: "https://aclc-mandaue-technical-system.pages.dev/",
