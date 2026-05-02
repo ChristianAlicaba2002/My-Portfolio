@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Badges from "../components/Badges";
 import { FaHtml5, FaCss3Alt, FaLaravel, FaReact, FaPython, FaJava, FaSearch, FaPenFancy, FaCode, FaRocket, FaLayerGroup, FaBolt, FaHandshake, FaClipboardCheck } from "react-icons/fa";
 import { SiTypescript, SiJavascript, SiPhp, SiDjango, SiFastapi } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
@@ -16,7 +15,6 @@ const techStack = [
   { Icon: SiPhp, name: "PHP", color: "text-indigo-400" },
   { Icon: FaJava, name: "Java", color: "text-orange-500" },
   { Icon: RiNextjsFill, name: "Next.js", color: "text-white" },
-  { Icon: SiDjango, name: "Django", color: "text-green-500" },
   { Icon: SiFastapi, name: "FastAPI", color: "text-green-600" },
   { Icon: TbBrandCSharp, name: "C#", color: "text-blue-500" },
 ];
@@ -103,9 +101,7 @@ export default function Dashboard({ onNavigate }) {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto space-y-10 lg:space-y-14">
-        <Badges />
-
-        <motion.section
+<motion.section
           className="dashbord-container"
           initial="hidden"
           whileInView="visible"
