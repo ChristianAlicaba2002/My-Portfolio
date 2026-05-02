@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaCode, FaProjectDiagram, FaCalendarAlt } from "react-icons/fa";
+import { FaLayerGroup, FaProjectDiagram, FaCalendarAlt } from "react-icons/fa";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -14,9 +14,9 @@ const cardVariants = {
 export default function Badges() {
   const badges = [
     { 
-      label: "Programming Languages", 
-      value: 7, 
-      icon: <FaCode className="text-2xl" />,
+      label: "Tech Stack", 
+      value: 12, 
+      icon: <FaLayerGroup className="text-2xl" />,
       gradient: "from-white to-gray-300",
       textColor: "text-blue-500",
     },

@@ -1,34 +1,11 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, Github, MapPin } from "lucide-react";
-import { useRef } from "react";
-import emailjs from "@emailjs/browser";
+import { Mail, Phone, Github, MapPin, Send, CheckCircle, XCircle, Loader } from "lucide-react";
+import { useForm, ValidationError } from "@formspree/react";
+
+const FORMSPREE = import.meta.env.VITE_FORMSPREE_ID;
 
 export default function ContactMe() {
-  const form = useRef(null);
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    if (!form.current) return;
-
-    emailjs
-      .sendForm(
-        "service_q78pj1h",
-        "template_j2yw4y9",
-        form.current,
-        "TRDXb59UYZlFsDkVG"
-      )
-      .then(
-        () => {
-          alert("Message sent successfully!");
-          form.current.reset();
-        },
-        (error) => {
-          console.error("EmailJS error:", error);
-          alert("Failed to send message. Please try again.");
-        }
-      );
-  };
+  const [state, handleSubmit] = useForm(FORMSPREE);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black p-4 lg:p-8 w-full relative overflow-hidden">
@@ -118,51 +95,92 @@ export default function ContactMe() {
           <div className="backdrop-blur-sm bg-white/10 rounded-2xl p-6 lg:p-8 border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-500 group">
             <h2 className="text-2xl lg:text-3xl font-bold mb-6 text-white flex items-center gap-3">
               <div className="w-1 h-8 bg-gradient-to-b from-gray-400 to-gray-600 rounded-full"></div>
-              Contact Me
+              Send a Message
             </h2>
-            <form
-              ref={form}
-              onSubmit={sendEmail}
-              className="space-y-6"
-            >
+
+            {/* Status banners */}
+            {state.succeeded && (
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="flex items-center gap-3 mb-6 p-4 rounded-xl bg-green-500/15 border border-green-500/30 text-green-400"
+              >
+                <CheckCircle size={18} className="shrink-0" />
+                <span className="text-sm font-medium">Message sent! I'll get back to you soon.</span>
+              </motion.div>
+            )}
+            {state.errors && state.errors.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="flex items-center gap-3 mb-6 p-4 rounded-xl bg-red-500/15 border border-red-500/30 text-red-400"
+              >
+                <XCircle size={18} className="shrink-0" />
+                <span className="text-sm font-medium">Failed to send. Please try again or email me directly.</span>
+              </motion.div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-5" method="post">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-semibold text-gray-300 mb-3 group-hover:text-white transition-colors duration-300"
+                  className="block text-sm font-semibold text-gray-300 mb-2 group-hover:text-white transition-colors duration-300"
                 >
                   Name
                 </label>
                 <input
                   id="name"
-                  name="user_name"
+                  name="name"
                   type="text"
                   placeholder="Your Name"
-                  className="w-full px-4 py-4 backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:bg-white/15"
+                  className="w-full px-4 py-3.5 backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-white/40 transition-all duration-300 hover:bg-white/15"
                   required
+                  disabled={state.submitting}
                 />
+                <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-400 text-xs mt-1" />
               </div>
 
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-semibold text-gray-300 mb-3 group-hover:text-white transition-colors duration-300"
+                  className="block text-sm font-semibold text-gray-300 mb-2 group-hover:text-white transition-colors duration-300"
                 >
                   Email
                 </label>
                 <input
                   id="email"
-                  name="user_email"
+                  name="email"
                   type="email"
                   placeholder="you@example.com"
-                  className="w-full px-4 py-4 backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:bg-white/15"
+                  className="w-full px-4 py-3.5 backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-white/40 transition-all duration-300 hover:bg-white/15"
                   required
+                  disabled={state.submitting}
+                />
+                <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-400 text-xs mt-1" />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="subject"
+                  className="block text-sm font-semibold text-gray-300 mb-2 group-hover:text-white transition-colors duration-300"
+                >
+                  Subject
+                </label>
+                <input
+                  id="subject"
+                  name="subject"
+                  type="text"
+                  placeholder="What's this about?"
+                  className="w-full px-4 py-3.5 backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-white/40 transition-all duration-300 hover:bg-white/15"
+                  required
+                  disabled={state.submitting}
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-semibold text-gray-300 mb-3 group-hover:text-white transition-colors duration-300"
+                  className="block text-sm font-semibold text-gray-300 mb-2 group-hover:text-white transition-colors duration-300"
                 >
                   Message
                 </label>
@@ -171,18 +189,29 @@ export default function ContactMe() {
                   name="message"
                   rows={5}
                   placeholder="Your message..."
-                  className="w-full px-4 py-4 backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:bg-white/15 resize-none"
+                  className="w-full px-4 py-3.5 backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-white/40 transition-all duration-300 hover:bg-white/15 resize-none"
                   required
+                  disabled={state.submitting}
                 />
+                <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-400 text-xs mt-1" />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-white to-gray-300 hover:from-gray-200 hover:to-gray-400 text-black font-bold py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-white/25 group/btn"
+                disabled={state.submitting}
+                className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-white to-gray-300 hover:from-gray-200 hover:to-gray-400 disabled:opacity-60 disabled:cursor-not-allowed text-black font-bold py-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/25"
               >
-                <span className="group-hover/btn:scale-105 transition-transform duration-300 inline-block">
-                  Send Message
-                </span>
+                {state.submitting ? (
+                  <>
+                    <Loader size={18} className="animate-spin" />
+                    Sending…
+                  </>
+                ) : (
+                  <>
+                    <Send size={18} />
+                    Send Message
+                  </>
+                )}
               </button>
             </form>
           </div>
