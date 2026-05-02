@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Mail, Phone, Github, MapPin } from "lucide-react";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
@@ -30,7 +31,7 @@ export default function ContactMe() {
   };
 
   return (
-    <div className="h-full bg-gradient-to-br from-black via-gray-900 to-black p-4 lg:w-screen lg:p-8 sm:w-full relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black p-4 lg:p-8 w-full relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>
@@ -38,8 +39,14 @@ export default function ContactMe() {
         <div className="absolute top-1/2 left-1/2 w-60 h-60 bg-gray-500 rounded-full mix-blend-multiply filter blur-xl opacity-5 animate-pulse animation-delay-4000"></div>
       </div>
 
-      <div className="contact-container max-w-6xl lg:ml-36 sm:mx-auto relative z-10">
-        <div className="text-center mb-8 lg:mb-12">
+      <div className="contact-container max-w-6xl mx-auto relative z-10">
+        <motion.div
+          className="text-center mb-8 lg:mb-12"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           <h1 className="text-3xl lg:text-5xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent mb-6">
             Get In Touch
           </h1>
@@ -50,9 +57,15 @@ export default function ContactMe() {
           <div className="flex justify-center mt-6">
             <div className="w-16 h-1 bg-gradient-to-r from-white to-gray-300 rounded-full"></div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           {/* Left: Info */}
           <div className="backdrop-blur-sm bg-white/10 rounded-2xl p-6 lg:p-8 border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-500 group">
             <h2 className="text-2xl lg:text-3xl font-bold mb-6 text-white flex items-center gap-3">
@@ -173,7 +186,7 @@ export default function ContactMe() {
               </button>
             </form>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

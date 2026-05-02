@@ -1,47 +1,39 @@
 import React, { useState } from "react";
 import logo from "../assets/images/myPicture.webp";
-import { NavLink, Outlet } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
-export default function Sidebar() {
+
+const NAV_ITEMS = [
+  { id: "home", label: "Home", icon: "home" },
+  { id: "dashboard", label: "Dashboard", icon: "dashboard" },
+  { id: "aboutme", label: "About Me", icon: "about" },
+  { id: "projects", label: "Projects", icon: "projects" },
+  { id: "contactme", label: "Contact Me", icon: "contact" },
+];
+
+export default function Sidebar({ activeSection = "home", onNavigate }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
+  const handleNav = (id) => {
+    onNavigate?.(id);
+    closeMobileMenu();
   };
 
   return (
     <div className="flex flex-col lg:h-64 lg:flex-row">
-      {/* Mobile Hamburger Menu */}
       <div className="lg:hidden fixed top-4 left-4 z-50">
         <button
           onClick={toggleMobileMenu}
           className="p-3 rounded-xl backdrop-blur-xl bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-300 shadow-lg hover:shadow-xl"
           aria-label="Toggle mobile menu"
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {isMobileMenuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             )}
           </svg>
         </button>
@@ -60,11 +52,7 @@ export default function Sidebar() {
           w-80 h-full lg:h-screen lg:max-h-screen
           backdrop-blur-xl bg-white/10 border-r border-white/20
           transform transition-all duration-500 ease-in-out
-          ${
-            isMobileMenuOpen
-              ? "translate-x-0"
-              : "-translate-x-full lg:translate-x-0"
-          }
+          ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
           ${isMobileMenuOpen ? "top-0 left-0" : "lg:top-auto lg:left-auto"}
           shadow-2xl shadow-black/20
         `}
@@ -94,124 +82,55 @@ export default function Sidebar() {
           </div>
         </div>
 
-        {/* Navigation Section */}
         <div className="w-full h-auto px-6 py-6 flex flex-col justify-center">
           <ul className="flex flex-col justify-center items-start gap-3">
-            <li className="w-full">
-              <NavLink
-                className={({ isActive }) =>
-                  `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 group ${
-                    isActive
-                      ? "text-black bg-gradient-to-r from-white/80 to-gray-300/80 backdrop-blur-sm shadow-lg shadow-white/25 border border-white/20"
-                      : "text-gray-300 hover:text-white hover:bg-white/10 hover:backdrop-blur-sm border border-transparent hover:border-white/10"
-                  }`
-                }
-                to={"/"}
-                onClick={closeMobileMenu}
-              >
-                <FaHome className="w-5 h-5" />
-                Go to Home
-              </NavLink>
-              <NavLink
-                className={({ isActive }) =>
-                  `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 group ${
-                    isActive
-                      ? "text-black bg-gradient-to-r from-white/80 to-gray-300/80 backdrop-blur-sm shadow-lg shadow-white/25 border border-white/20"
-                      : "text-gray-300 hover:text-white hover:bg-white/10 hover:backdrop-blur-sm border border-transparent hover:border-white/10"
-                  }`
-                }
-                to={"dashboard"}
-                onClick={closeMobileMenu}
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
-                </svg>
-                Dashboard
-              </NavLink>
-            </li>
-            <li className="w-full">
-              <NavLink
-                className={({ isActive }) =>
-                  `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 group ${
-                    isActive
-                      ? "text-black bg-gradient-to-r from-white/80 to-gray-300/80 backdrop-blur-sm shadow-lg shadow-white/25 border border-white/20"
-                      : "text-gray-300 hover:text-white hover:bg-white/10 hover:backdrop-blur-sm border border-transparent hover:border-white/10"
-                  }`
-                }
-                to={"aboutme"}
-                onClick={closeMobileMenu}
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                About Me
-              </NavLink>
-            </li>
-            <li className="w-full">
-              <NavLink
-                className={({ isActive }) =>
-                  `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 group ${
-                    isActive
-                      ? "text-black bg-gradient-to-r from-white/80 to-gray-300/80 backdrop-blur-sm shadow-lg shadow-white/25 border border-white/20"
-                      : "text-gray-300 hover:text-white hover:bg-white/10 hover:backdrop-blur-sm border border-transparent hover:border-white/10"
-                  }`
-                }
-                to={"projects"}
-                onClick={closeMobileMenu}
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
-                </svg>
-                Projects
-              </NavLink>
-            </li>
-            <li className="w-full">
-              <NavLink
-                className={({ isActive }) =>
-                  `flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
-                    isActive
-                      ? "text-black font-extrabold bg-gradient-to-r from-white to-gray-300 shadow-lg shadow-white/25"
-                      : "text-gray-400 hover:text-white hover:bg-gray-800/50"
-                  }`
-                }
-                to={"contactme"}
-                onClick={closeMobileMenu}
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                </svg>
-                Contact Me
-              </NavLink>
-            </li>
+            {NAV_ITEMS.map((item) => {
+              const isActive = activeSection === item.id;
+              return (
+                <li key={item.id} className="w-full">
+                  <button
+                    type="button"
+                    onClick={() => handleNav(item.id)}
+                    className={`
+                      flex items-center gap-4 w-full px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 group text-left
+                      ${isActive
+                        ? "text-black bg-gradient-to-r from-white/80 to-gray-300/80 backdrop-blur-sm shadow-lg shadow-white/25 border border-white/20"
+                        : "text-gray-300 hover:text-white hover:bg-white/10 hover:backdrop-blur-sm border border-transparent hover:border-white/10"
+                      }
+                    `}
+                  >
+                    {item.icon === "home" ? (
+                      <FaHome className="w-5 h-5" />
+                    ) : item.icon === "dashboard" ? (
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                      </svg>
+                    ) : item.icon === "about" ? (
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                      </svg>
+                    ) : item.icon === "projects" ? (
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                      </svg>
+                    ) : (
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                      </svg>
+                    )}
+                    {item.label}
+                  </button>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
-        {/* Footer Section */}
         <div className="absolute bottom-6 left-6 right-6">
           <div className="backdrop-blur-sm bg-white/10 rounded-xl p-4 border border-white/20 shadow-lg">
             <p className="text-gray-300 text-sm text-center font-medium">
-              &copy; 2024 All rights reserved
+              &copy; {new Date().getFullYear()} All rights reserved
             </p>
             <div className="flex justify-center mt-2">
               <div className="flex gap-2">
@@ -223,10 +142,6 @@ export default function Sidebar() {
           </div>
         </div>
       </nav>
-
-      <div className="flex-1 h-screen">
-        <Outlet />
-      </div>
     </div>
   );
 }

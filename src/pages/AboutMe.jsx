@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   FaGithub,
   FaEnvelope,
@@ -20,7 +21,7 @@ import { TbBrandCSharp } from "react-icons/tb";
 
 export default function AboutMe() {
   return (
-    <div className="w-full h-screen bg-gradient-to-br from-black via-gray-900 to-black overflow-y-scroll p-4 lg:p-8 relative">
+    <div className="w-full min-h-screen bg-gradient-to-br from-black via-gray-900 to-black p-4 lg:p-8 relative">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>
@@ -29,7 +30,13 @@ export default function AboutMe() {
       </div>
 
       {/* Header Section */}
-      <div className="whoiam-container text-center mb-8 lg:mb-12 relative z-10">
+      <motion.div
+        className="whoiam-container text-center mb-8 lg:mb-12 relative z-10"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+      >
         <h1 className="text-3xl lg:text-5xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent mb-6">
           About Me
         </h1>
@@ -40,10 +47,16 @@ export default function AboutMe() {
         <div className="flex justify-center mt-6">
           <div className="w-16 h-1 bg-gradient-to-r from-white to-gray-300 rounded-full"></div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Main Content Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 relative z-10">
+      <motion.div
+        className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 relative z-10"
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+      >
         {/* Left Column */}
         <div className="space-y-6 lg:space-y-8">
           {/* Introduction */}
@@ -154,6 +167,9 @@ export default function AboutMe() {
                   </span>
                   <span className="backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 text-white text-xs lg:text-sm font-medium hover:bg-white/20 transition-all duration-300 group/skill">
                     Trello
+                  </span>
+                  <span className="backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 text-white text-xs lg:text-sm font-medium hover:bg-white/20 transition-all duration-300 group/skill">
+                    Jira
                   </span>
                   <span className="backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 text-white text-xs lg:text-sm font-medium hover:bg-white/20 transition-all duration-300 group/skill">
                     MySQL
@@ -289,7 +305,7 @@ export default function AboutMe() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <div className="connect-container backdrop-blur-sm bg-white/10 rounded-2xl p-6 lg:p-8 m-2 mt-6 border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-500 group relative z-10">
         <h2 className="text-xl lg:text-2xl font-bold text-white mb-6">
