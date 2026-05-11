@@ -299,7 +299,7 @@ export default function AboutMe() {
                   Bachelor's in Computer Science
                 </h3>
                 <p className="text-gray-400 text-xs lg:text-sm group-hover/edu:text-white transition-colors duration-300">
-                  ACLC College of Mandaue • 2023 - 2025
+                  ACLC College of Mandaue • 2023 - 2027
                 </p>
               </div>
             </div>
