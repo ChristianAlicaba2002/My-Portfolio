@@ -116,10 +116,7 @@ function App() {
                 className="text-lg sm:text-xl text-gray-400 max-w-2xl leading-relaxed"
                 variants={fadeInUp}
               >
-                Crafting digital experiences with passion and precision.{" "}
-                <span className="text-white font-medium">
-                  Building the future, one line of code at a time.
-                </span>
+               Passionate Software Developer with a love for creating innovative solutions and turning ideas into reality through code.
               </motion.p>
             </motion.div>
 
