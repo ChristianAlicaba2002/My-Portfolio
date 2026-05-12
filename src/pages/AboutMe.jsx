@@ -7,6 +7,7 @@ import {
   FaRocket,
   FaHeart,
 } from "react-icons/fa";
+import {motion} from "framer-motion";
 import {
   SiReact,
   SiLaravel,
@@ -14,6 +15,7 @@ import {
   SiNextdotjs,
   SiHono,
   SiFastapi,
+  SiExpress,
 } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
 
@@ -139,9 +141,9 @@ export default function AboutMe() {
                     </span>
                   </div>
                   <div className="flex items-center backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300 group/skill">
-                    <SiHono className="text-orange-500 mr-2 text-sm lg:text-base group-hover/skill:scale-110 transition-transform duration-300" />
+                    <SiExpress className="text-orange-500 mr-2 text-sm lg:text-base group-hover/skill:scale-110 transition-transform duration-300" />
                     <span className="text-white text-xs lg:text-sm font-medium">
-                      Hono.js
+                      Express.js
                     </span>
                   </div>
                   <div className="flex items-center backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300 group/skill">
@@ -162,6 +164,12 @@ export default function AboutMe() {
                     Git
                   </span>
                   <span className="backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 text-white text-xs lg:text-sm font-medium hover:bg-white/20 transition-all duration-300 group/skill">
+                    GitHub
+                  </span>
+                  <span className="backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 text-white text-xs lg:text-sm font-medium hover:bg-white/20 transition-all duration-300 group/skill">
+                    Docker
+                  </span>
+                  <span className="backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 text-white text-xs lg:text-sm font-medium hover:bg-white/20 transition-all duration-300 group/skill">
                     Firebase
                   </span>
                   <span className="backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 text-white text-xs lg:text-sm font-medium hover:bg-white/20 transition-all duration-300 group/skill">
@@ -179,6 +187,11 @@ export default function AboutMe() {
                   <span className="backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 text-white text-xs lg:text-sm font-medium hover:bg-white/20 transition-all duration-300 group/skill">
                     Figma
                   </span>
+                  <div className="flex items-center backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300 group/skill">
+                    <span className="text-white text-xs lg:text-sm font-medium">
+                      TanStack
+                    </span>
+                  </div>
                   <span className="backdrop-blur-sm bg-white/10 px-3 lg:px-4 py-2 rounded-full border border-white/20 text-white text-xs lg:text-sm font-medium hover:bg-white/20 transition-all duration-300 group/skill">
                     Tailwindcss
                   </span>
@@ -208,7 +221,7 @@ export default function AboutMe() {
                   Full-Stack Developer
                 </h3>
                 <p className="text-white text-xs lg:text-sm font-semibold mb-2">
-                  2025 - Present
+                  2026 - Present
                 </p>
                 <p className="text-gray-300 text-xs lg:text-sm leading-relaxed group-hover/exp:text-white transition-colors duration-300">
                   Developing scalable web applications using React, Laravel,
@@ -271,7 +284,7 @@ export default function AboutMe() {
                 <h3 className="text-white font-bold text-sm lg:text-base mb-2">
                   Backend Developer
                 </h3>
-                <p className="text-gray-300 text-xs lg:text-sm font-semibold mb-2">2022 - 2025</p>
+                <p className="text-gray-300 text-xs lg:text-sm font-semibold mb-2">2022 - 2026</p>
                 <p className="text-gray-300 text-xs lg:text-sm leading-relaxed group-hover/exp:text-white transition-colors duration-300">
                   Experienced Backend Developer skilled in building secure APIs,
                   managing databases, and optimizing server performance to
