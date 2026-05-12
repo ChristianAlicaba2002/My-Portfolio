@@ -270,7 +270,7 @@ export default function AboutMe() {
                 <h3 className="text-white font-bold text-sm lg:text-base mb-2">
                   Frontend Developer
                 </h3>
-                <p className="text-white text-xs lg:text-sm font-semibold mb-2">2023 - 2025</p>
+                <p className="text-white text-xs lg:text-sm font-semibold mb-2">2023 - 2026</p>
                 <p className="text-gray-300 text-xs lg:text-sm leading-relaxed group-hover/exp:text-white transition-colors duration-300">
                   Built responsive user interfaces and implemented modern web
                   development practices.
