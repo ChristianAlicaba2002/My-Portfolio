@@ -41,9 +41,8 @@ export default function AboutMe() {
         <h1 className="text-3xl lg:text-5xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent mb-6">
           About Me
         </h1>
-        <p className="text-gray-300 text-lg lg:text-xl max-w-3xl mx-auto px-4 leading-relaxed">
-          Passionate Full-Stack Developer with a love for creating innovative
-          solutions and turning ideas into reality through code.
+        <p className="text-gray-400 text-base lg:text-lg max-w-3xl mx-auto px-4 leading-relaxed mt-4">
+         I thrive in collaborative environments where ideas turn into impactful products. Beyond coding, I am continuously learning new tools and best practices to build clean, maintainable solutions that solve real-world problems and deliver long-term value.
         </p>
         <div className="flex justify-center mt-6">
           <div className="w-16 h-1 bg-gradient-to-r from-white to-gray-300 rounded-full"></div>
