@@ -66,7 +66,7 @@ export default function Projects() {
         "The Veterinarian Management System is a comprehensive web-based platform designed to help veterinary clinics streamline their daily operations. This system enables vets, staff, and pet owners to manage appointments, medical records, and pet information efficiently. With a clean interface and role-based access",
       image: Veteririan,
       technologies: ["Next.js", "TypeScript", "MySQL"],
-      github: "#",
+      github: "https://github.com/ChristianAlicaba2002/Veterinarian_System_FrontEnd",
       featured: false,
     },
     {
