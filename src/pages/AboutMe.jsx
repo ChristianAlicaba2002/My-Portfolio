@@ -224,8 +224,7 @@ export default function AboutMe() {
                   2026 - Present
                 </p>
                 <p className="text-gray-300 text-xs lg:text-sm leading-relaxed group-hover/exp:text-white transition-colors duration-300">
-                  Developing scalable web applications using React, Laravel,
-                  Hono.js
+                  Developing scalable web applications using React, Laravel, ASP.NET Core
                 </p>
               </div>
 
