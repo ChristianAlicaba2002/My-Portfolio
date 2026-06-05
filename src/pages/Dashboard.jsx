@@ -4,7 +4,7 @@ import {
   FaSearch, FaPenFancy, FaCode, FaRocket, FaLayerGroup, FaBolt,
   FaHandshake, FaClipboardCheck,
 } from "react-icons/fa";
-import { SiTypescript, SiJavascript, SiPhp, SiFastapi } from "react-icons/si";
+import { SiTypescript, SiJavascript, SiPhp, SiFastapi, SiExpo } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import { TbBrandCSharp } from "react-icons/tb";
 import { HiArrowRight } from "react-icons/hi";
@@ -18,7 +18,7 @@ const techStack = [
   { Icon: SiJavascript,  name: "JavaScript",   color: "text-yellow-400", bg: "bg-yellow-500/10 border-yellow-500/20" },
   { Icon: FaPython,      name: "Python",       color: "text-green-400",  bg: "bg-green-500/10 border-green-500/20" },
   { Icon: SiPhp,         name: "PHP",          color: "text-indigo-400", bg: "bg-indigo-500/10 border-indigo-500/20" },
-  { Icon: FaJava,        name: "Java",         color: "text-orange-400", bg: "bg-orange-500/10 border-orange-500/20" },
+  { Icon: SiExpo,        name: "React Native Expo",         color: "text-orange-400", bg: "bg-orange-500/10 border-orange-500/20" },
   { Icon: RiNextjsFill,  name: "Next.js",      color: "text-white",      bg: "bg-white/5 border-white/10" },
   { Icon: SiFastapi,     name: "FastAPI",      color: "text-teal-400",   bg: "bg-teal-500/10 border-teal-500/20" },
   { Icon: TbBrandCSharp, name: "C#",           color: "text-violet-400", bg: "bg-violet-500/10 border-violet-500/20" },
