@@ -8,12 +8,12 @@ export default function ContactMe() {
   const [state, handleSubmit] = useForm(FORMSPREE);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black p-4 lg:p-8 w-full relative overflow-hidden">
+    <div className="min-h-screen bg-[#020817] p-4 lg:p-8 w-full relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-300 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 w-60 h-60 bg-gray-500 rounded-full mix-blend-multiply filter blur-xl opacity-5 animate-pulse animation-delay-4000"></div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-[100px]" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-700/10 rounded-full blur-[100px]" />
+        <div className="absolute top-1/2 left-1/2 w-60 h-60 bg-blue-600/5 rounded-full blur-[80px]" />
       </div>
 
       <div className="contact-container max-w-6xl mx-auto relative z-10">
@@ -199,7 +199,7 @@ export default function ContactMe() {
               <button
                 type="submit"
                 disabled={state.submitting}
-                className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-white to-gray-300 hover:from-gray-200 hover:to-gray-400 disabled:opacity-60 disabled:cursor-not-allowed text-black font-bold py-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/25"
+                className="w-full flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-700 text-white disabled:opacity-60 disabled:cursor-not-allowed font-bold py-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/25"
               >
                 {state.submitting ? (
                   <>
