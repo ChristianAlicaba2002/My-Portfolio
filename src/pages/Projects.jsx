@@ -134,12 +134,12 @@ export default function Projects() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black w-full p-4 lg:p-6 relative">
+    <div className="min-h-screen bg-[#020817] w-full p-4 lg:p-6 relative">
       {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-300 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 w-60 h-60 bg-gray-500 rounded-full mix-blend-multiply filter blur-xl opacity-5 animate-pulse animation-delay-4000"></div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-[100px]" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-700/10 rounded-full blur-[100px]" />
+        <div className="absolute top-1/2 left-1/2 w-60 h-60 bg-blue-600/5 rounded-full blur-[80px]" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
