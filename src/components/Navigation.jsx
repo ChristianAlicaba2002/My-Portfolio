@@ -35,7 +35,7 @@ export default function Navigation({ activeSection, onNavigate }) {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <span className="hidden text-sm font-semibold tracking-tight text-foreground sm:block">
+            <span className="text-sm font-semibold tracking-tight text-foreground sm:block">
               CA
             </span>
           </motion.button>
