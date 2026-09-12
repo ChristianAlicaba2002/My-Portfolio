@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaHome, FaThLarge, FaUser, FaFolderOpen, FaEnvelope } from "react-icons/fa";
 import logo from "../assets/images/myPicture.webp";
+import ThemeToggle from "./ThemeToggle";
 
 const NAV_ITEMS = [
   { id: "home",      label: "Home",      Icon: FaHome },
@@ -24,34 +25,28 @@ export default function Navigation({ activeSection, onNavigate }) {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-2xl bg-[#020817]/90 border-b border-blue-800/30"
+      className="fixed top-0 left-0 right-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-xl"
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-
-          {/* Logo */}
+      <nav className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between lg:h-20">
           <motion.button
             type="button"
             onClick={() => handleNav("home")}
-            className="flex items-center gap-3 group"
+            className="group flex items-center gap-3"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className="relative">
-              <div className="absolute inset-0 rounded-full bg-blue-400/40 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <img
-                src={logo}
-                alt="Christian"
-                className="relative w-9 h-9 rounded-full border-2 border-blue-500/30 object-cover group-hover:border-blue-300/70 transition-colors duration-300"
-              />
-            </div>
-            <span className="text-white font-semibold text-sm hidden sm:block tracking-wide">
+            <img
+              src={logo}
+              alt="Christian"
+              className="h-9 w-9 rounded-full border border-border object-cover"
+            />
+            <span className="hidden text-sm font-semibold tracking-tight text-foreground sm:block">
               Christian
             </span>
           </motion.button>
 
-          {/* Desktop Nav */}
-          <ul className="hidden lg:flex items-center gap-1 p-1 rounded-2xl bg-blue-900/40 border border-blue-700/30">
+          <ul className="hidden items-center gap-1 lg:flex">
             {NAV_ITEMS.map((item, i) => {
               const isActive = activeSection === item.id;
               return (
@@ -59,57 +54,62 @@ export default function Navigation({ activeSection, onNavigate }) {
                   key={item.id}
                   initial={{ opacity: 0, y: -8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.07, duration: 0.4 }}
+                  transition={{ delay: i * 0.06, duration: 0.4 }}
                 >
                   <button
                     type="button"
                     onClick={() => handleNav(item.id)}
-                    className={`
-                      relative flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold tracking-wide transition-all duration-300
-                      ${isActive
-                        ? "text-white bg-blue-500 shadow-lg shadow-blue-500/40"
-                        : "text-blue-300 hover:text-white hover:bg-blue-700/50"
-                      }
-                    `}
+                    className={`relative px-3.5 py-2 text-[13px] font-medium tracking-wide transition-colors duration-200 ${
+                      isActive
+                        ? "text-foreground"
+                        : "text-muted hover:text-foreground"
+                    }`}
                   >
-                    <item.Icon className="w-3.5 h-3.5" />
                     {item.label}
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-underline"
+                        className="absolute inset-x-3 -bottom-0.5 h-px bg-foreground"
+                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      />
+                    )}
                   </button>
                 </motion.li>
               );
             })}
           </ul>
 
-          {/* Mobile hamburger */}
-          <motion.button
-            type="button"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2.5 rounded-xl bg-blue-800/50 border border-blue-600/30 text-blue-300 hover:text-white hover:bg-blue-700/60 transition-all duration-200"
-            aria-label="Toggle menu"
-            whileTap={{ scale: 0.95 }}
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {mobileOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </motion.button>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <motion.button
+              type="button"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="rounded-full border border-border p-2.5 text-foreground lg:hidden"
+              aria-label="Toggle menu"
+              whileTap={{ scale: 0.95 }}
+            >
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {mobileOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </motion.button>
+          </div>
         </div>
       </nav>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="lg:hidden overflow-hidden border-t border-blue-800/30 backdrop-blur-2xl bg-[#020817]/98"
+            transition={{ duration: 0.28, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="overflow-hidden border-t border-border bg-background lg:hidden"
           >
-            <ul className="px-4 py-4 space-y-1">
+            <ul className="space-y-0.5 px-4 py-3">
               {NAV_ITEMS.map((item, i) => {
                 const isActive = activeSection === item.id;
                 return (
@@ -117,20 +117,18 @@ export default function Navigation({ activeSection, onNavigate }) {
                     key={item.id}
                     initial={{ opacity: 0, x: -12 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
+                    transition={{ delay: i * 0.04 }}
                   >
                     <button
                       type="button"
                       onClick={() => handleNav(item.id)}
-                      className={`
-                        flex items-center gap-3 w-full px-4 py-3 rounded-xl text-left text-sm font-medium transition-all duration-300
-                        ${isActive
-                          ? "text-white bg-blue-500 shadow-lg shadow-blue-500/30"
-                          : "text-blue-300 hover:text-white hover:bg-blue-800/60"
-                        }
-                      `}
+                      className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-sm font-medium transition-colors ${
+                        isActive
+                          ? "bg-foreground text-background"
+                          : "text-muted hover:bg-black/[0.04] hover:text-foreground dark:hover:bg-white/[0.05]"
+                      }`}
                     >
-                      <item.Icon className="w-4 h-4 shrink-0" />
+                      <item.Icon className="h-4 w-4 shrink-0" />
                       {item.label}
                     </button>
                   </motion.li>
