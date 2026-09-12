@@ -3,7 +3,14 @@ import { Mail, Phone, Github, MapPin, Send, CheckCircle, XCircle, Loader } from 
 import { useForm, ValidationError } from "@formspree/react";
 import { SectionLabel } from "../components/ui";
 
-const FORMSPREE = import.meta.env.VITE_FORMSPREE_ID;
+function getFormspreeId(value) {
+  if (!value) return "";
+  const trimmed = String(value).trim();
+  const match = trimmed.match(/formspree\.io\/f\/([^/?#]+)/i);
+  return match ? match[1] : trimmed;
+}
+
+const FORMSPREE = getFormspreeId(import.meta.env.VITE_FORMSPREE_ID);
 
 const inputClass =
   "w-full rounded-xl border border-border bg-background px-4 py-3.5 text-foreground placeholder:text-muted/70 outline-none transition-colors hover:border-foreground/20 focus:border-foreground disabled:opacity-60";
