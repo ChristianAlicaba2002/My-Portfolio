@@ -123,8 +123,8 @@ function App() {
               </motion.button>
 
               <motion.a
-                href="/"
-                download="/Christian_Dave_Alicaba_Resume.pdf"
+                href="/Christian_Dave_L_Alicaba_Resume.pdf"
+                download="Christian_Dave_L_Alicaba_Resume.pdf"
                 className="group inline-flex items-center gap-2 rounded-full border border-border bg-card px-7 py-3.5 text-sm font-semibold text-foreground hover:border-foreground/30"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
