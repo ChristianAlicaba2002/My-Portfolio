@@ -7,6 +7,7 @@ import {
   SiExpo,
 } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
+import { SectionLabel, Card } from "../components/ui";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -18,156 +19,125 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
 };
 
-function SectionLabel({ children }) {
-  return (
-    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 mb-4">
-      {children}
-    </span>
-  );
-}
-
-function Card({ children, className = "" }) {
-  return (
-    <div className={`rounded-2xl p-6 lg:p-8 border border-white/[0.07] bg-white/[0.03] hover:bg-white/[0.055] transition-all duration-300 ${className}`}>
-      {children}
-    </div>
-  );
-}
-
 function SkillPill({ icon, label }) {
   return (
-    <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-white/[0.07] bg-white/[0.04] hover:bg-white/[0.08] hover:border-white/10 transition-all duration-300 group">
+    <div className="group flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 hover:border-foreground/20">
       {icon}
-      <span className="text-gray-400 group-hover:text-gray-200 text-xs font-medium transition-colors duration-300">{label}</span>
+      <span className="text-xs font-medium text-muted transition-colors group-hover:text-foreground">{label}</span>
     </div>
   );
 }
 
-function TimelineItem({ title, period, description, dotColor = "bg-indigo-500", lineColor = "border-indigo-500/30", isLast = false }) {
+function TimelineItem({ title, period, description, isLast = false }) {
   return (
     <div className={`relative pl-6 ${!isLast ? "pb-6" : ""}`}>
-      {!isLast && <div className={`absolute left-[7px] top-4 bottom-0 w-px ${lineColor} border-l border-dashed`} />}
-      <div className={`absolute left-0 top-1 w-3.5 h-3.5 rounded-full ${dotColor} border-2 border-[#020817] shadow-lg`} />
-      <h3 className="text-white font-semibold text-sm mb-0.5">{title}</h3>
-      <p className="text-indigo-400/80 text-xs font-mono mb-1">{period}</p>
-      {description && <p className="text-gray-500 text-xs leading-relaxed">{description}</p>}
+      {!isLast && <div className="absolute top-4 bottom-0 left-[7px] w-px border-l border-dashed border-border" />}
+      <div className="absolute top-1 left-0 h-3.5 w-3.5 rounded-full border-2 border-background bg-foreground" />
+      <h3 className="mb-0.5 text-sm font-semibold text-foreground">{title}</h3>
+      <p className="mb-1 font-mono text-xs text-muted">{period}</p>
+      {description && <p className="text-xs leading-relaxed text-muted">{description}</p>}
     </div>
   );
 }
 
 export default function AboutMe() {
   return (
-    <div className="w-full min-h-screen bg-[#020817] p-4 sm:p-6 lg:p-10 relative overflow-hidden">
-      {/* Ambient glow */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[140px]" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-blue-800/10 rounded-full blur-[120px]" />
-      </div>
+    <div className="relative min-h-screen w-full overflow-hidden bg-background p-4 sm:p-6 lg:p-10">
+      <div className="relative z-10 mx-auto max-w-6xl">
 
-      <div className="max-w-6xl mx-auto relative z-10">
-
-        {/* Header */}
         <motion.div
-          className="whoiam-container text-center mb-12"
+          className="whoiam-container mb-12 text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
           variants={fadeUp}
         >
           <SectionLabel>Who I Am</SectionLabel>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
-            About{" "}
-            <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent">
-              Me
-            </span>
+          <h1 className="mb-4 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            About Me
           </h1>
-          <p className="text-gray-500 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
             I thrive in collaborative environments where ideas turn into impactful products. Continuously
             learning new tools and best practices to build clean, maintainable solutions that deliver long-term value.
           </p>
-          <div className="flex justify-center mt-6">
-            <div className="w-12 h-0.5 bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full" />
+          <div className="mt-6 flex justify-center">
+            <div className="h-px w-12 bg-border" />
           </div>
         </motion.div>
 
-        {/* Main Grid */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
+          className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
           variants={stagger}
         >
-          {/* ── Left Column ── */}
           <div className="space-y-6">
-
-            {/* Who I Am */}
             <motion.div variants={fadeUp}>
               <Card>
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="p-2.5 rounded-xl bg-rose-500/10 border border-rose-500/20">
-                    <FaHeart className="text-rose-400 text-lg" />
+                <div className="mb-5 flex items-center gap-3">
+                  <div className="rounded-xl border border-border p-2.5">
+                    <FaHeart className="text-lg text-foreground" />
                   </div>
-                  <h2 className="text-lg font-bold text-white">Who I Am</h2>
+                  <h2 className="text-lg font-bold text-foreground">Who I Am</h2>
                 </div>
-                <p className="text-gray-500 text-sm leading-relaxed mb-3">
-                  I'm a dedicated software developer with a passion for building web
+                <p className="mb-3 text-sm leading-relaxed text-muted">
+                  I&apos;m a dedicated software developer with a passion for building web
                   applications that make a difference. With expertise in both frontend and
                   backend technologies, I enjoy creating seamless user experiences while
                   ensuring robust, scalable backend systems.
                 </p>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  When I'm not coding, you'll find me exploring new technologies,
+                <p className="text-sm leading-relaxed text-muted">
+                  When I&apos;m not coding, you&apos;ll find me exploring new technologies,
                   contributing to open-source projects, or sharing knowledge with the
                   developer community.
                 </p>
               </Card>
             </motion.div>
 
-            {/* Technical Skills */}
             <motion.div variants={fadeUp}>
               <Card className="skills-container">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="p-2.5 rounded-xl bg-blue-500/10 border border-blue-500/20">
-                    <FaCode className="text-blue-400 text-lg" />
+                <div className="mb-5 flex items-center gap-3">
+                  <div className="rounded-xl border border-border p-2.5">
+                    <FaCode className="text-lg text-foreground" />
                   </div>
-                  <h2 className="text-lg font-bold text-white">Technical Skills</h2>
+                  <h2 className="text-lg font-bold text-foreground">Technical Skills</h2>
                 </div>
 
                 <div className="space-y-5">
                   <div>
-                    <h3 className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-3">Frontend</h3>
+                    <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">Frontend</h3>
                     <div className="flex flex-wrap gap-2">
-                      <SkillPill icon={<SiReact className="text-sky-400 text-sm" />} label="React.js" />
-                      <SkillPill icon={<SiTypescript className="text-blue-400 text-sm" />} label="TypeScript" />
-                      <SkillPill icon={<SiNextdotjs className="text-white text-sm" />} label="Next.js" />
+                      <SkillPill icon={<SiReact className="text-sm text-sky-500" />} label="React.js" />
+                      <SkillPill icon={<SiTypescript className="text-sm text-blue-600" />} label="TypeScript" />
+                      <SkillPill icon={<SiNextdotjs className="text-sm text-foreground" />} label="Next.js" />
                     </div>
                   </div>
 
                   <div>
-                    <h3 className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-3">Mobile</h3>
+                    <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">Mobile</h3>
                     <div className="flex flex-wrap gap-2">
-                      <SkillPill icon={<SiExpo className="text-sky-400 text-sm" />} label="React Native (Expo)" />
+                      <SkillPill icon={<SiExpo className="text-sm text-foreground" />} label="React Native (Expo)" />
                     </div>
                   </div>
 
                   <div>
-                    <h3 className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-3">Backend</h3>
+                    <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">Backend</h3>
                     <div className="flex flex-wrap gap-2">
-                      <SkillPill icon={<TbBrandCSharp className="text-violet-400 text-sm" />} label="ASP.NET Core" />
-                      <SkillPill icon={<SiLaravel className="text-red-400 text-sm" />} label="Laravel" />
-                      <SkillPill icon={<SiExpress className="text-gray-300 text-sm" />} label="Express.js" />
-                      <SkillPill icon={<SiFastapi className="text-teal-400 text-sm" />} label="FastAPI" />
+                      <SkillPill icon={<TbBrandCSharp className="text-sm text-violet-500" />} label="ASP.NET Core" />
+                      <SkillPill icon={<SiLaravel className="text-sm text-red-500" />} label="Laravel" />
+                      <SkillPill icon={<SiExpress className="text-sm text-foreground" />} label="Express.js" />
+                      <SkillPill icon={<SiFastapi className="text-sm text-teal-600" />} label="FastAPI" />
                     </div>
                   </div>
 
                   <div>
-                    <h3 className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-3">Tools &amp; Databases</h3>
+                    <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">Tools &amp; Databases</h3>
                     <div className="flex flex-wrap gap-2">
                       {["Git", "GitHub", "Docker", "Firebase", "MySQL", "PostgreSQL", "Figma", "TanStack", "Tailwind CSS", "Trello", "Jira"].map((tool) => (
                         <span
                           key={tool}
-                          className="px-3 py-1.5 rounded-xl border border-white/[0.07] bg-white/[0.04] hover:bg-white/[0.08] text-gray-400 hover:text-gray-200 text-xs font-medium transition-all duration-300 cursor-default"
+                          className="cursor-default rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted hover:border-foreground/20 hover:text-foreground"
                         >
                           {tool}
                         </span>
@@ -177,20 +147,16 @@ export default function AboutMe() {
                 </div>
               </Card>
             </motion.div>
-
           </div>
 
-          {/* ── Right Column ── */}
           <div className="space-y-6">
-
-            {/* Experience */}
             <motion.div variants={fadeUp}>
               <Card className="experience-container">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
-                    <FaLaptopCode className="text-emerald-400 text-lg" />
+                <div className="mb-6 flex items-center gap-3">
+                  <div className="rounded-xl border border-border p-2.5">
+                    <FaLaptopCode className="text-lg text-foreground" />
                   </div>
-                  <h2 className="text-lg font-bold text-white">Experience</h2>
+                  <h2 className="text-lg font-bold text-foreground">Experience</h2>
                 </div>
 
                 <div>
@@ -198,78 +164,67 @@ export default function AboutMe() {
                     title="Full-Stack Developer"
                     period="2026 – Present"
                     description="Developing scalable web applications using React, Laravel, and ASP.NET Core."
-                    dotColor="bg-indigo-500"
                   />
                   <TimelineItem
                     title="Hacktoberfest Bootcamp"
                     period="2025"
                     description="FDA Checker Product — Overall Projects Winner 🏆"
-                    dotColor="bg-amber-400"
                   />
                   <TimelineItem
                     title="Hacktoberfest Bootcamp"
                     period="2024"
                     description="ViCo Spaces — Collaborative co-working space app."
-                    dotColor="bg-violet-400"
                   />
                   <TimelineItem
                     title="Frontend Developer"
                     period="2023 – 2026"
                     description="Built responsive UIs and implemented modern web development practices."
-                    dotColor="bg-sky-400"
                   />
                   <TimelineItem
                     title="Backend Developer"
                     period="2022 – 2026"
                     description="Built secure APIs, managed databases, and optimized server performance."
-                    dotColor="bg-emerald-400"
                   />
                   <TimelineItem
                     title="Java Competition"
                     period="2023"
-                    dotColor="bg-orange-400"
-                    isLast={false}
                   />
                   <TimelineItem
                     title="Web Competition"
                     period="2023"
-                    dotColor="bg-rose-400"
                     isLast
                   />
                 </div>
               </Card>
             </motion.div>
 
-            {/* Education */}
             <motion.div variants={fadeUp}>
               <Card className="education-container">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/20">
-                    <FaRocket className="text-amber-400 text-lg" />
+                <div className="mb-5 flex items-center gap-3">
+                  <div className="rounded-xl border border-border p-2.5">
+                    <FaRocket className="text-lg text-foreground" />
                   </div>
-                  <h2 className="text-lg font-bold text-white">Education</h2>
+                  <h2 className="text-lg font-bold text-foreground">Education</h2>
                 </div>
-                <div className="flex items-start gap-4 p-4 rounded-xl border border-indigo-500/20 bg-indigo-500/5">
-                  <div className="w-10 h-10 rounded-xl bg-indigo-500/15 border border-indigo-500/20 flex items-center justify-center shrink-0">
-                    <span className="text-indigo-400 text-xs font-bold">BS</span>
+                <div className="flex items-start gap-4 rounded-xl border border-border p-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-border bg-background">
+                    <span className="text-xs font-bold text-foreground">BS</span>
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold text-sm">Bachelor's in Computer Science</h3>
-                    <p className="text-gray-500 text-xs mt-0.5">ACLC College of Mandaue</p>
-                    <span className="inline-block mt-2 px-2 py-0.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-[10px] font-semibold">
+                    <h3 className="text-sm font-semibold text-foreground">Bachelor&apos;s in Computer Science</h3>
+                    <p className="mt-0.5 text-xs text-muted">ACLC College of Mandaue</p>
+                    <span className="mt-2 inline-block rounded-full border border-border px-2 py-0.5 font-mono text-[10px] font-medium text-muted">
                       2023 – 2027
                     </span>
                   </div>
                 </div>
               </Card>
             </motion.div>
-
           </div>
         </motion.div>
 
-        {/* Connect */}
         <motion.div
-          className="connect-container mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4"
+          className="connect-container mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
@@ -278,14 +233,14 @@ export default function AboutMe() {
           <motion.a
             variants={fadeUp}
             href="mailto:christiandave120702@gmail.com"
-            className="group flex items-center gap-4 p-5 rounded-2xl border border-white/[0.07] bg-white/[0.03] hover:bg-orange-500/5 hover:border-orange-500/20 transition-all duration-300"
+            className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 hover:border-foreground/20"
           >
-            <div className="p-3 rounded-xl bg-orange-500/10 border border-orange-500/20 group-hover:scale-110 transition-transform duration-300">
-              <FaEnvelope className="text-orange-400 text-lg" />
+            <div className="rounded-xl border border-border p-3 transition-transform duration-300 group-hover:scale-105">
+              <FaEnvelope className="text-lg text-foreground" />
             </div>
             <div>
-              <p className="text-gray-500 text-xs mb-0.5">Email</p>
-              <span className="text-white text-sm font-medium break-all">christiandave120702@gmail.com</span>
+              <p className="mb-0.5 text-xs text-muted">Email</p>
+              <span className="break-all text-sm font-medium text-foreground">christiandave120702@gmail.com</span>
             </div>
           </motion.a>
 
@@ -294,41 +249,40 @@ export default function AboutMe() {
             href="https://github.com/ChristianAlicaba2002"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-4 p-5 rounded-2xl border border-white/[0.07] bg-white/[0.03] hover:bg-white/[0.055] hover:border-white/10 transition-all duration-300"
+            className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 hover:border-foreground/20"
           >
-            <div className="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:scale-110 transition-transform duration-300">
-              <FaGithub className="text-white text-lg" />
+            <div className="rounded-xl border border-border p-3 transition-transform duration-300 group-hover:scale-105">
+              <FaGithub className="text-lg text-foreground" />
             </div>
             <div>
-              <p className="text-gray-500 text-xs mb-0.5">GitHub</p>
-              <span className="text-white text-sm font-medium">github.com/ChristianAlicaba2002</span>
+              <p className="mb-0.5 text-xs text-muted">GitHub</p>
+              <span className="text-sm font-medium text-foreground">github.com/ChristianAlicaba2002</span>
             </div>
           </motion.a>
         </motion.div>
 
-        {/* Beyond Coding */}
         <motion.div
-          className="connect-container mt-6 rounded-2xl p-6 lg:p-8 border border-white/[0.07] bg-white/[0.03]"
+          className="connect-container mt-6 rounded-2xl border border-border bg-card p-6 lg:p-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
           variants={fadeUp}
         >
-          <h2 className="text-lg font-bold text-white mb-6">Beyond Coding</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <h2 className="mb-6 text-lg font-bold text-foreground">Beyond Coding</h2>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             {[
-              { icon: <FaRocket className="text-emerald-400 text-xl" />, bg: "bg-emerald-500/10 border-emerald-500/20", title: "Innovation", desc: "Always exploring new technologies and approaches" },
-              { icon: <FaHeart className="text-rose-400 text-xl" />, bg: "bg-rose-500/10 border-rose-500/20", title: "Open Source", desc: "Contributing to the developer community" },
-              { icon: <FaCode className="text-blue-400 text-xl" />, bg: "bg-blue-500/10 border-blue-500/20", title: "Problem Solving", desc: "Turning complex challenges into elegant solutions" },
+              { icon: <FaRocket className="text-xl text-foreground" />, title: "Innovation", desc: "Always exploring new technologies and approaches" },
+              { icon: <FaHeart className="text-xl text-foreground" />, title: "Open Source", desc: "Contributing to the developer community" },
+              { icon: <FaCode className="text-xl text-foreground" />, title: "Problem Solving", desc: "Turning complex challenges into elegant solutions" },
             ].map((item) => (
               <div
                 key={item.title}
-                className={`group flex items-start gap-4 p-4 rounded-xl border ${item.bg} hover:brightness-125 transition-all duration-300`}
+                className="group flex items-start gap-4 rounded-xl border border-border p-4 hover:border-foreground/20"
               >
-                <div className="shrink-0 group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
+                <div className="shrink-0 transition-transform duration-300 group-hover:scale-105">{item.icon}</div>
                 <div>
-                  <h3 className="text-white font-semibold text-sm mb-1">{item.title}</h3>
-                  <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+                  <h3 className="mb-1 text-sm font-semibold text-foreground">{item.title}</h3>
+                  <p className="text-xs leading-relaxed text-muted">{item.desc}</p>
                 </div>
               </div>
             ))}
