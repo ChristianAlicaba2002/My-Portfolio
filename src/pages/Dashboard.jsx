@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import {
-  FaHtml5, FaCss3Alt, FaLaravel, FaReact, FaPython, FaJava,
+  FaHtml5, FaCss3Alt, FaLaravel, FaReact, FaPython,
   FaSearch, FaPenFancy, FaCode, FaRocket, FaLayerGroup, FaBolt,
   FaHandshake, FaClipboardCheck,
 } from "react-icons/fa";
@@ -8,58 +8,47 @@ import { SiTypescript, SiJavascript, SiPhp, SiFastapi, SiExpo } from "react-icon
 import { RiNextjsFill } from "react-icons/ri";
 import { TbBrandCSharp } from "react-icons/tb";
 import { HiArrowRight } from "react-icons/hi";
+import { SectionLabel } from "../components/ui";
 
 const techStack = [
-  { Icon: FaHtml5,       name: "HTML5",       color: "text-orange-400", bg: "bg-orange-500/10 border-orange-500/20" },
-  { Icon: FaCss3Alt,     name: "CSS3",         color: "text-blue-400",   bg: "bg-blue-500/10 border-blue-500/20" },
-  { Icon: FaLaravel,     name: "Laravel",      color: "text-red-400",    bg: "bg-red-500/10 border-red-500/20" },
-  { Icon: FaReact,       name: "React",        color: "text-sky-400",    bg: "bg-sky-500/10 border-sky-500/20" },
-  { Icon: SiTypescript,  name: "TypeScript",   color: "text-blue-400",   bg: "bg-blue-500/10 border-blue-500/20" },
-  { Icon: SiJavascript,  name: "JavaScript",   color: "text-yellow-400", bg: "bg-yellow-500/10 border-yellow-500/20" },
-  { Icon: FaPython,      name: "Python",       color: "text-green-400",  bg: "bg-green-500/10 border-green-500/20" },
-  { Icon: SiPhp,         name: "PHP",          color: "text-indigo-400", bg: "bg-indigo-500/10 border-indigo-500/20" },
-  { Icon: SiExpo,        name: "React Native Expo",         color: "text-orange-400", bg: "bg-orange-500/10 border-orange-500/20" },
-  { Icon: RiNextjsFill,  name: "Next.js",      color: "text-white",      bg: "bg-white/5 border-white/10" },
-  { Icon: SiFastapi,     name: "FastAPI",      color: "text-teal-400",   bg: "bg-teal-500/10 border-teal-500/20" },
-  { Icon: TbBrandCSharp, name: "C#",           color: "text-violet-400", bg: "bg-violet-500/10 border-violet-500/20" },
+  { Icon: FaHtml5,       name: "HTML5",             color: "text-orange-500" },
+  { Icon: FaCss3Alt,     name: "CSS3",              color: "text-blue-500" },
+  { Icon: FaLaravel,     name: "Laravel",           color: "text-red-500" },
+  { Icon: FaReact,       name: "React",             color: "text-sky-500" },
+  { Icon: SiTypescript,  name: "TypeScript",        color: "text-blue-600" },
+  { Icon: SiJavascript,  name: "JavaScript",        color: "text-yellow-500" },
+  { Icon: FaPython,      name: "Python",            color: "text-green-600" },
+  { Icon: SiPhp,         name: "PHP",               color: "text-indigo-500" },
+  { Icon: SiExpo,        name: "React Native Expo", color: "text-neutral-700 dark:text-neutral-200" },
+  { Icon: RiNextjsFill,  name: "Next.js",           color: "text-foreground" },
+  { Icon: SiFastapi,     name: "FastAPI",           color: "text-teal-600" },
+  { Icon: TbBrandCSharp, name: "C#",                color: "text-violet-500" },
 ];
 
 const workflowSteps = [
   {
     step: "01", icon: FaSearch, title: "Discover",
     description: "Understand the problem, gather requirements, and define scope so we build the right thing.",
-    accent: "from-blue-500/10 to-cyan-500/10 border-blue-500/20",
-    iconBg: "bg-blue-500/15 text-blue-400",
-    stepColor: "text-blue-500/40",
   },
   {
     step: "02", icon: FaPenFancy, title: "Design",
     description: "Plan architecture and UX — wireframes, structure, and tech choices before writing code.",
-    accent: "from-violet-500/10 to-purple-500/10 border-violet-500/20",
-    iconBg: "bg-violet-500/15 text-violet-400",
-    stepColor: "text-violet-500/40",
   },
   {
     step: "03", icon: FaCode, title: "Build",
     description: "Clean, maintainable code with tests and best practices. Iterate with feedback.",
-    accent: "from-emerald-500/10 to-green-500/10 border-emerald-500/20",
-    iconBg: "bg-emerald-500/15 text-emerald-400",
-    stepColor: "text-emerald-500/40",
   },
   {
     step: "04", icon: FaRocket, title: "Ship",
     description: "Deploy, monitor, and support. Keep things running smoothly and improve over time.",
-    accent: "from-amber-500/10 to-orange-500/10 border-amber-500/20",
-    iconBg: "bg-amber-500/15 text-amber-400",
-    stepColor: "text-amber-500/40",
   },
 ];
 
 const focusAreas = [
-  { icon: FaLayerGroup,    title: "Full-Stack",    description: "Frontend to backend — React, Laravel, ASP.NET, and APIs.", color: "text-sky-400",    bg: "bg-sky-500/10 border-sky-500/20" },
-  { icon: FaBolt,          title: "Performance",   description: "Fast, responsive UIs and optimized server-side logic.",      color: "text-amber-400",  bg: "bg-amber-500/10 border-amber-500/20" },
-  { icon: FaHandshake,     title: "Collaboration", description: "Clear communication, Git workflows, and on-time delivery.",  color: "text-emerald-400",bg: "bg-emerald-500/10 border-emerald-500/20" },
-  { icon: FaClipboardCheck,title: "Quality",       description: "Clean code, tests, and maintainable architecture.",           color: "text-rose-400",   bg: "bg-rose-500/10 border-rose-500/20" },
+  { icon: FaLayerGroup,     title: "Full-Stack",    description: "Frontend to backend — React, Laravel, ASP.NET, and APIs." },
+  { icon: FaBolt,           title: "Performance",   description: "Fast, responsive UIs and optimized server-side logic." },
+  { icon: FaHandshake,      title: "Collaboration", description: "Clear communication, Git workflows, and on-time delivery." },
+  { icon: FaClipboardCheck, title: "Quality",       description: "Clean code, tests, and maintainable architecture." },
 ];
 
 const containerVariants = {
@@ -72,28 +61,11 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] } },
 };
 
-function SectionLabel({ children }) {
-  return (
-    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 mb-4">
-      {children}
-    </span>
-  );
-}
-
 export default function Dashboard({ onNavigate }) {
   return (
-    <div className="px-4 sm:px-6 lg:px-8 py-10 lg:py-14 w-full min-h-screen relative overflow-hidden bg-[#020817]">
+    <div className="relative min-h-screen w-full overflow-hidden bg-background px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+      <div className="relative z-10 mx-auto max-w-6xl space-y-16">
 
-      {/* Ambient */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[140px]" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-800/10 rounded-full blur-[100px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:48px_48px]" />
-      </div>
-
-      <div className="relative z-10 max-w-6xl mx-auto space-y-14">
-
-        {/* ── Tech Stack ── */}
         <motion.section
           className="dashbord-container"
           initial="hidden" whileInView="visible"
@@ -102,20 +74,20 @@ export default function Dashboard({ onNavigate }) {
         >
           <motion.div variants={itemVariants}>
             <SectionLabel>Skills</SectionLabel>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-1">Tech Stack</h2>
-            <p className="text-gray-500 text-sm sm:text-base mb-8">Languages &amp; frameworks I work with</p>
+            <h2 className="mb-1 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">Tech Stack</h2>
+            <p className="mb-8 text-sm text-muted sm:text-base">Languages &amp; frameworks I work with</p>
           </motion.div>
 
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+          <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6">
             {techStack.map((item) => (
               <motion.div
                 key={item.name}
                 variants={itemVariants}
-                whileHover={{ scale: 1.06, y: -4 }}
-                className={`group relative rounded-2xl p-4 border ${item.bg} hover:brightness-125 transition-all duration-300 cursor-default`}
+                whileHover={{ scale: 1.04, y: -3 }}
+                className="group cursor-default rounded-2xl border border-border bg-card p-4 hover:border-foreground/20"
               >
-                <item.Icon className={`text-2xl sm:text-3xl ${item.color} mx-auto block mb-2 group-hover:drop-shadow-lg transition-all duration-300`} />
-                <span className="text-gray-500 group-hover:text-gray-300 text-[11px] font-medium block text-center transition-colors duration-300">
+                <item.Icon className={`mx-auto mb-2 block text-2xl sm:text-3xl ${item.color}`} />
+                <span className="block text-center text-[11px] font-medium text-muted transition-colors group-hover:text-foreground">
                   {item.name}
                 </span>
               </motion.div>
@@ -123,7 +95,6 @@ export default function Dashboard({ onNavigate }) {
           </div>
         </motion.section>
 
-        {/* ── How I Work ── */}
         <motion.section
           className="dashbord-container"
           initial="hidden" whileInView="visible"
@@ -132,30 +103,30 @@ export default function Dashboard({ onNavigate }) {
         >
           <motion.div variants={itemVariants}>
             <SectionLabel>Process</SectionLabel>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-1">How I Work</h2>
-            <p className="text-gray-500 text-sm sm:text-base mb-8">My development process from idea to launch</p>
+            <h2 className="mb-1 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">How I Work</h2>
+            <p className="mb-8 text-sm text-muted sm:text-base">My development process from idea to launch</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {workflowSteps.map((item, idx) => (
               <motion.div
                 key={item.step}
                 variants={itemVariants}
-                whileHover={{ y: -5 }}
-                className={`relative rounded-2xl p-5 border bg-gradient-to-br ${item.accent} transition-all duration-300 group`}
+                whileHover={{ y: -4 }}
+                className="group relative rounded-2xl border border-border bg-card p-5 hover:border-foreground/20"
               >
-                <span className={`font-mono text-sm font-bold absolute top-4 right-4 ${item.stepColor} group-hover:opacity-60 transition-opacity`}>
+                <span className="absolute top-4 right-4 font-mono text-xs font-medium text-muted">
                   {item.step}
                 </span>
-                <div className={`p-2.5 rounded-xl ${item.iconBg} w-fit mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                <div className="mb-4 w-fit rounded-xl border border-border p-2.5 text-foreground transition-transform duration-300 group-hover:scale-105">
                   <item.icon className="text-lg sm:text-xl" />
                 </div>
-                <h3 className="text-white font-semibold text-sm sm:text-base mb-2">{item.title}</h3>
-                <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">{item.description}</p>
+                <h3 className="mb-2 text-sm font-semibold text-foreground sm:text-base">{item.title}</h3>
+                <p className="text-xs leading-relaxed text-muted sm:text-sm">{item.description}</p>
                 {idx < workflowSteps.length - 1 && (
-                  <div className="hidden lg:block absolute -right-2 top-1/2 -translate-y-1/2 z-10">
-                    <div className="w-4 h-4 rounded-full bg-white/10 border border-white/10 flex items-center justify-center">
-                      <HiArrowRight className="text-white/30 text-xs" />
+                  <div className="absolute top-1/2 -right-2 z-10 hidden -translate-y-1/2 lg:block">
+                    <div className="flex h-4 w-4 items-center justify-center rounded-full border border-border bg-background">
+                      <HiArrowRight className="text-[10px] text-muted" />
                     </div>
                   </div>
                 )}
@@ -164,7 +135,6 @@ export default function Dashboard({ onNavigate }) {
           </div>
         </motion.section>
 
-        {/* ── Focus Areas ── */}
         <motion.section
           className="dashbord-container"
           initial="hidden" whileInView="visible"
@@ -173,29 +143,28 @@ export default function Dashboard({ onNavigate }) {
         >
           <motion.div variants={itemVariants}>
             <SectionLabel>Values</SectionLabel>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-1">What I Bring</h2>
-            <p className="text-gray-500 text-sm sm:text-base mb-8">Core values I bring to every project</p>
+            <h2 className="mb-1 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">What I Bring</h2>
+            <p className="mb-8 text-sm text-muted sm:text-base">Core values I bring to every project</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {focusAreas.map((item) => (
               <motion.div
                 key={item.title}
                 variants={itemVariants}
-                whileHover={{ y: -5 }}
-                className={`rounded-2xl p-5 border ${item.bg} transition-all duration-300 group hover:brightness-125`}
+                whileHover={{ y: -4 }}
+                className="group rounded-2xl border border-border bg-card p-5 hover:border-foreground/20"
               >
-                <div className={`p-2.5 rounded-xl bg-white/5 w-fit mb-3 ${item.color} group-hover:scale-110 transition-transform duration-300`}>
+                <div className="mb-3 w-fit rounded-xl border border-border p-2.5 text-foreground transition-transform duration-300 group-hover:scale-105">
                   <item.icon className="text-lg sm:text-xl" />
                 </div>
-                <h3 className="text-white font-semibold text-sm mb-1.5">{item.title}</h3>
-                <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">{item.description}</p>
+                <h3 className="mb-1.5 text-sm font-semibold text-foreground">{item.title}</h3>
+                <p className="text-xs leading-relaxed text-muted sm:text-sm">{item.description}</p>
               </motion.div>
             ))}
           </div>
         </motion.section>
 
-        {/* ── CTA ── */}
         <motion.section
           className="dashbord-container"
           initial="hidden" whileInView="visible"
@@ -204,25 +173,23 @@ export default function Dashboard({ onNavigate }) {
         >
           <motion.div
             variants={itemVariants}
-            className="relative rounded-3xl p-8 sm:p-12 text-center overflow-hidden border border-indigo-500/20 bg-gradient-to-br from-indigo-500/10 via-violet-500/5 to-transparent"
+            className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 text-center sm:p-12"
           >
-            <div className="relative z-10">
-              <p className="text-indigo-400 text-xs font-bold tracking-widest uppercase mb-4">Ready to build?</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">Let&apos;s Work Together</h2>
-              <p className="text-gray-500 text-sm sm:text-base mb-8 max-w-xl mx-auto">
-                Have a project in mind or want to chat? I&apos;d love to hear from you.
-              </p>
-              <motion.button
-                type="button"
-                onClick={() => onNavigate?.("contactme")}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm bg-blue-500 hover:bg-blue-600 text-white shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all duration-300"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-              >
-                Get in touch
-                <HiArrowRight />
-              </motion.button>
-            </div>
+            <p className="mb-4 font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-muted">Ready to build?</p>
+            <h2 className="mb-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">Let&apos;s Work Together</h2>
+            <p className="mx-auto mb-8 max-w-xl text-sm text-muted sm:text-base">
+              Have a project in mind or want to chat? I&apos;d love to hear from you.
+            </p>
+            <motion.button
+              type="button"
+              onClick={() => onNavigate?.("contactme")}
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-fg hover:opacity-90"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Get in touch
+              <HiArrowRight />
+            </motion.button>
           </motion.div>
         </motion.section>
 
