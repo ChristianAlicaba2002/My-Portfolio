@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaCode, FaRocket, FaHeart } from "react-icons/fa";
 import { HiArrowRight, HiDownload } from "react-icons/hi";
@@ -22,7 +23,15 @@ const stagger = {
 
 function App() {
   const mainRef = useRef(null);
+  const location = useLocation();
   const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const id = location.hash.replace("#", "");
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [location.hash]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
