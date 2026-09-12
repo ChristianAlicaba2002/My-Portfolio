@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaHome, FaThLarge, FaUser, FaFolderOpen, FaEnvelope } from "react-icons/fa";
-import logo from "../assets/images/myPicture.webp";
 import ThemeToggle from "./ThemeToggle";
 
 const NAV_ITEMS = [
@@ -36,13 +35,8 @@ export default function Navigation({ activeSection, onNavigate }) {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <img
-              src={logo}
-              alt="Christian"
-              className="h-9 w-9 rounded-full border border-border object-cover"
-            />
             <span className="hidden text-sm font-semibold tracking-tight text-foreground sm:block">
-              Christian
+              CA
             </span>
           </motion.button>
 
