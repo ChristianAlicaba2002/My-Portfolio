@@ -110,7 +110,7 @@ export default function Projects() {
       technologies: ["React.js", "TypeScript", "Tailwind CSS"],
       github: "https://github.com/ChristianAlicaba2002/PokeVault",
       featured: true,
-      live: "https://pokevault2024.netlify.app"
+      live: "https://pokevault-ae3.pages.dev"
     },
     {
       id: 10,
