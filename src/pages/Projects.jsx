@@ -9,6 +9,7 @@ import Veteririan from "../assets/images/Veteririan.webp";
 import Accounting from "../assets/images/Accounting.webp";
 import Basketball from "../assets/images/Basketball_Tournament.webp";
 import { FaGithub, FaRocket } from "react-icons/fa";
+import { SectionLabel } from "../components/ui";
 
 export default function Projects() {
   const projects = [
@@ -134,76 +135,63 @@ export default function Projects() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020817] w-full p-4 lg:p-6 relative">
-      {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-[100px]" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-700/10 rounded-full blur-[100px]" />
-        <div className="absolute top-1/2 left-1/2 w-60 h-60 bg-blue-600/5 rounded-full blur-[80px]" />
-      </div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
+    <div className="relative min-h-screen w-full bg-background p-4 lg:p-6">
+      <div className="relative z-10 mx-auto max-w-7xl">
         <motion.div
-          className="projects-container text-center mb-8 lg:mb-12"
+          className="projects-container mb-10 text-center lg:mb-14"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <h1 className="text-3xl lg:text-5xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent mb-6">
+          <SectionLabel>Work</SectionLabel>
+          <h1 className="mb-4 text-3xl font-bold tracking-tight text-foreground lg:text-5xl">
             My Projects
           </h1>
-          <p className="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto px-4 leading-relaxed">
+          <p className="mx-auto max-w-2xl px-4 text-base leading-relaxed text-muted lg:text-lg">
             A collection of projects showcasing my skills in web development,
             from full-stack applications to interactive user interfaces.
           </p>
-          <div className="flex justify-center mt-6">
-            <div className="w-16 h-1 bg-gradient-to-r from-white to-gray-300 rounded-full"></div>
-          </div>
         </motion.div>
 
-        {/* Featured Projects */}
-        <div className="feature-container mb-8 lg:mb-12">
-          <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6 lg:mb-8 px-4 lg:px-0 flex items-center gap-3">
-            <div className="w-1 h-8 bg-gradient-to-b from-white to-gray-300 rounded-full"></div>
+        <div className="feature-container mb-12 lg:mb-16">
+          <h2 className="mb-6 flex items-center gap-3 px-4 text-xl font-bold tracking-tight text-foreground lg:mb-8 lg:px-0 lg:text-2xl">
             Featured Projects
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 px-4 lg:px-0">
+          <div className="grid grid-cols-1 gap-6 px-4 lg:grid-cols-2 lg:gap-8 lg:px-0">
             {projects
               .filter((project) => project.featured)
               .map((project, index) => (
-                <div
+                <motion.div
                   key={project.id}
-                  className="group backdrop-blur-sm bg-white/10 rounded-2xl overflow-hidden border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-500 hover:scale-102 hover:shadow-2xl hover:shadow-white/25"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.06, duration: 0.4 }}
+                  className="group overflow-hidden rounded-2xl border border-border bg-card hover:border-foreground/20"
                 >
-                  <div className="relative h-48 lg:h-56 overflow-hidden">
+                  <div className="relative h-48 overflow-hidden lg:h-56">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    <div className="absolute top-4 right-4">
-                      <span className="bg-gradient-to-r from-white to-gray-300 text-black px-3 py-1 rounded-full text-xs lg:text-sm font-bold shadow-lg">
-                        Featured
-                      </span>
-                    </div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-white text-xl lg:text-2xl font-bold mb-2 drop-shadow-lg">
-                        {project.title}
-                      </h3>
-                    </div>
+                    <span className="absolute top-4 right-4 rounded-full border border-border bg-background/90 px-3 py-1 text-xs font-medium text-foreground backdrop-blur-sm">
+                      Featured
+                    </span>
                   </div>
                   <div className="p-6 lg:p-8">
-                    <p className="text-gray-300 mb-6 text-sm lg:text-base leading-relaxed group-hover:text-white transition-colors duration-300">
+                    <h3 className="mb-2 text-xl font-bold tracking-tight text-foreground lg:text-2xl">
+                      {project.title}
+                    </h3>
+                    <p className="mb-5 text-sm leading-relaxed text-muted lg:text-base">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.technologies.map((tech, techIndex) => (
+                    <div className="mb-6 flex flex-wrap gap-2">
+                      {project.technologies.map((tech) => (
                         <span
-                          key={techIndex}
-                          className="backdrop-blur-sm bg-white/10 text-white px-3 py-1 rounded-full text-xs lg:text-sm font-medium border border-white/20 hover:bg-white/20 transition-all duration-300"
+                          key={tech}
+                          className="rounded-full border border-border px-3 py-1 text-xs font-medium text-muted"
                         >
                           {tech}
                         </span>
@@ -214,82 +202,85 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 bg-gradient-to-r from-white to-gray-300 text-black text-center py-3 px-4 rounded-xl hover:from-gray-200 hover:to-gray-400 transition-all duration-300 text-sm lg:text-base font-semibold shadow-lg hover:shadow-xl group/btn"
+                        className="flex-1 rounded-full bg-accent py-3 text-center text-sm font-semibold text-accent-fg hover:opacity-90"
                       >
-                        <FaGithub className="inline text-lg mr-2 group-hover/btn:scale-110 transition-transform duration-300" />
+                        <FaGithub className="mr-2 inline text-base" />
                         View Code
                       </a>
                       {project.live ? (
-                        <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex-1 bg-gradient-to-r from-white to-gray-300 text-black text-center py-3 px-4 rounded-xl hover:from-gray-200 hover:to-gray-400 transition-all duration-300 text-sm lg:text-base font-semibold shadow-lg hover:shadow-xl group/btn">
-                          <FaRocket className="inline text-lg mr-2 group-hover/btn:scale-110 transition-transform duration-300" />
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 rounded-full border border-border py-3 text-center text-sm font-semibold text-foreground hover:border-foreground/30"
+                        >
+                          <FaRocket className="mr-2 inline text-base" />
                           Live Demo
                         </a>
                       ) : null}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
           </div>
         </div>
 
-        {/* All Projects Grid */}
         <div className="allProjects-container">
-          <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6 lg:mb-8 px-4 lg:px-0 flex items-center gap-3">
-            <div className="w-1 h-8 bg-gradient-to-b from-gray-400 to-gray-600 rounded-full"></div>
+          <h2 className="mb-6 flex items-center gap-3 px-4 text-xl font-bold tracking-tight text-foreground lg:mb-8 lg:px-0 lg:text-2xl">
             All Projects
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 px-4 lg:px-0">
+          <div className="grid grid-cols-1 gap-6 px-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 lg:px-0 xl:grid-cols-4">
             {projects.map((project, index) => (
-              <div
+              <motion.div
                 key={project.id}
-                className="group backdrop-blur-sm bg-white/10 rounded-2xl overflow-hidden border border-white/20 shadow-xl hover:bg-white/15 transition-all duration-500 hover:scale-102 hover:shadow-2xl hover:shadow-gray-500/25"
-                style={{ animationDelay: `${index * 0.05}s` }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.03, duration: 0.35 }}
+                className="group overflow-hidden rounded-2xl border border-border bg-card hover:border-foreground/20"
               >
-                <div className="relative h-40 lg:h-48 overflow-hidden">
+                <div className="relative h-40 overflow-hidden lg:h-44">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                   {project.featured && (
-                    <div className="absolute top-3 right-3">
-                      <span className="bg-gradient-to-r from-gray-500 to-gray-700 text-white px-2 py-1 rounded-full text-xs font-bold shadow-lg">
-                        Featured
-                      </span>
-                    </div>
+                    <span className="absolute top-3 right-3 rounded-full border border-border bg-background/90 px-2 py-0.5 text-[10px] font-medium text-foreground backdrop-blur-sm">
+                      Featured
+                    </span>
                   )}
                 </div>
-                <div className="p-4 lg:p-6">
-                  <h3 className="text-base lg:text-lg font-bold text-white mb-3 group-hover:text-gray-300 transition-colors duration-300">
+                <div className="p-4 lg:p-5">
+                  <h3 className="mb-2 text-base font-bold tracking-tight text-foreground">
                     {project.title}
                   </h3>
-                  <p className="text-gray-300 text-xs lg:text-sm mb-4 line-clamp-2 group-hover:text-white transition-colors duration-300">
+                  <p className="mb-4 line-clamp-2 text-xs text-muted lg:text-sm">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                  <div className="mb-4 flex flex-wrap gap-1.5">
+                    {project.technologies.slice(0, 3).map((tech) => (
                       <span
-                        key={techIndex}
-                        className="backdrop-blur-sm bg-white/10 text-white px-2 py-1 rounded-full text-xs font-medium border border-white/20 hover:bg-white/20 transition-all duration-300"
+                        key={tech}
+                        className="rounded-full border border-border px-2 py-0.5 text-[11px] font-medium text-muted"
                       >
                         {tech}
                       </span>
                     ))}
                     {project.technologies.length > 3 && (
-                      <span className="backdrop-blur-sm bg-white/10 text-white px-2 py-1 rounded-full text-xs font-medium border border-white/20">
+                      <span className="rounded-full border border-border px-2 py-0.5 text-[11px] font-medium text-muted">
                         +{project.technologies.length - 3}
                       </span>
                     )}
                   </div>
-                  <div className="flex justify-center items-center gap-2">
+                  <div className="flex items-center gap-2">
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-gradient-to-r from-gray-500 to-gray-700 text-white text-center py-2 px-3 rounded-xl text-xs lg:text-sm font-semibold hover:from-gray-600 hover:to-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl group/btn"
+                      className="flex-1 rounded-full border border-border py-2 text-center text-xs font-semibold text-foreground hover:border-foreground/30"
                     >
-                      <FaGithub className="inline text-sm mr-1 group-hover/btn:scale-110 transition-transform duration-300" />
+                      <FaGithub className="mr-1 inline text-sm" />
                       Code
                     </a>
                     {project.live ? (
@@ -297,16 +288,15 @@ export default function Projects() {
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 bg-gradient-to-r from-gray-500 to-gray-700 text-white text-center py-2 px-3 rounded-xl text-xs lg:text-sm font-semibold hover:from-gray-600 hover:to-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl group/btn"
+                        className="flex-1 rounded-full bg-accent py-2 text-center text-xs font-semibold text-accent-fg hover:opacity-90"
                       >
-                        <FaRocket className="inline text-sm mr-1 group-hover/btn:scale-110 transition-transform duration-300" />
+                        <FaRocket className="mr-1 inline text-sm" />
                         Demo
                       </a>
                     ) : null}
-
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
