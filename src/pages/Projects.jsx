@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import taskMaster from "../assets/images/TaskMaster.webp";
 import Technical from "../assets/images/aclc_mandaue.webp";
-import poke from "../assets/images/poke.webp";
+import poke from "../assets/images/pokevault.webp";
 import CrustyBytes from "../assets/images/CrustyBytes.webp";
 import QuanTum from "../assets/images/QuantumOrder.webp";
 import Waste from "../assets/images/Waste.webp";
