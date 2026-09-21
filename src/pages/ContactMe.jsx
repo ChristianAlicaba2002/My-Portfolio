@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, Github, MapPin, Send, CheckCircle, XCircle, Loader } from "lucide-react";
+import { Loader } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
 import { SectionLabel } from "../components/ui";
 
@@ -13,123 +13,85 @@ function getFormspreeId(value) {
 const FORMSPREE = getFormspreeId(import.meta.env.VITE_FORMSPREE_ID);
 
 const inputClass =
-  "w-full rounded-xl border border-border bg-background px-4 py-3.5 text-foreground placeholder:text-muted/70 outline-none transition-colors hover:border-foreground/20 focus:border-foreground disabled:opacity-60";
+  "w-full border-0 border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted/70 outline-none transition-colors focus:border-foreground disabled:opacity-60";
+
+const details = [
+  { label: "Email", value: "christiandave120702@gmail.com", href: "mailto:christiandave120702@gmail.com" },
+  { label: "Phone", value: "+63 956 537 6522" },
+  { label: "GitHub", value: "ChristianAlicaba2002", href: "https://github.com/ChristianAlicaba2002" },
+  { label: "Location", value: "Philippines" },
+];
 
 export default function ContactMe() {
   const [state, handleSubmit] = useForm(FORMSPREE);
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-background p-4 lg:p-8">
-      <div className="contact-container relative z-10 mx-auto max-w-6xl">
+    <div className="w-full bg-background px-6 py-24 sm:px-8">
+      <div className="contact-container mx-auto max-w-5xl">
         <motion.div
-          className="mb-10 text-center lg:mb-14"
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           <SectionLabel>Contact</SectionLabel>
-          <h1 className="mb-4 text-3xl font-bold tracking-tight text-foreground lg:text-5xl">
-            Get In Touch
-          </h1>
-          <p className="mx-auto max-w-2xl px-4 text-base leading-relaxed text-muted lg:text-lg">
-            I&apos;m always open to discussing new projects, ideas, or opportunities
-            to collaborate.
+          <h2 className="max-w-xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+            If you have a project or a question, write.
+          </h2>
+          <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted">
+            I usually reply within a day or two. Email is fine if you&apos;d rather skip the form.
           </p>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8"
-          initial={{ opacity: 0, y: 32 }}
+          className="mt-16 grid gap-16 lg:grid-cols-[minmax(0,16rem)_1fr]"
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.45, delay: 0.05, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <div className="rounded-2xl border border-border bg-card p-6 lg:p-8">
-            <h2 className="mb-3 text-xl font-bold tracking-tight text-foreground lg:text-2xl">
-              Where Can You Find Me
-            </h2>
-            <p className="mb-8 text-sm leading-relaxed text-muted lg:text-base">
-              Feel free to reach out through any of these channels. I&apos;ll get
-              back to you as soon as possible.
-            </p>
+          <dl className="space-y-8">
+            {details.map((item) => (
+              <div key={item.label}>
+                <dt className="text-xs text-muted">{item.label}</dt>
+                <dd className="mt-1 text-sm text-foreground">
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target={item.href.startsWith("http") ? "_blank" : undefined}
+                      rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="underline decoration-border underline-offset-4 hover:decoration-foreground"
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    item.value
+                  )}
+                </dd>
+              </div>
+            ))}
+          </dl>
 
-            <div className="space-y-2">
-              {[
-                { Icon: Mail, label: "christiandave120702@gmail.com" },
-                { Icon: Phone, label: "+63 956 537 6522" },
-                {
-                  Icon: Github,
-                  label: "github.com/ChristianAlicaba2002",
-                  href: "https://github.com/ChristianAlicaba2002",
-                },
-                { Icon: MapPin, label: "Philippines" },
-              ].map((item) => {
-                const content = (
-                  <>
-                    <div className="rounded-xl border border-border p-3">
-                      <item.Icon size={18} className="text-foreground" />
-                    </div>
-                    <span className="break-all text-sm font-medium text-foreground">{item.label}</span>
-                  </>
-                );
-                const className =
-                  "flex items-center gap-4 rounded-xl p-3 text-muted transition-colors hover:bg-black/[0.03] hover:text-foreground dark:hover:bg-white/[0.04]";
-                return item.href ? (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={className}
-                  >
-                    {content}
-                  </a>
-                ) : (
-                  <div key={item.label} className={className}>
-                    {content}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-border bg-card p-6 lg:p-8">
-            <h2 className="mb-6 text-xl font-bold tracking-tight text-foreground lg:text-2xl">
-              Send a Message
-            </h2>
-
+          <div>
             {state.succeeded && (
-              <motion.div
-                initial={{ opacity: 0, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mb-6 flex items-center gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-emerald-700 dark:text-emerald-400"
-              >
-                <CheckCircle size={18} className="shrink-0" />
-                <span className="text-sm font-medium">Message sent! I&apos;ll get back to you soon.</span>
-              </motion.div>
+              <p className="mb-8 text-sm text-foreground">Sent. I&apos;ll get back to you soon.</p>
             )}
             {state.errors && state.errors.length > 0 && (
-              <motion.div
-                initial={{ opacity: 0, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mb-6 flex items-center gap-3 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-red-600 dark:text-red-400"
-              >
-                <XCircle size={18} className="shrink-0" />
-                <span className="text-sm font-medium">Failed to send. Please try again or email me directly.</span>
-              </motion.div>
+              <p className="mb-8 text-sm text-red-600 dark:text-red-400">
+                Couldn&apos;t send. Try again or email me directly.
+              </p>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-5" method="post">
+            <form onSubmit={handleSubmit} className="space-y-8" method="post">
               <div>
-                <label htmlFor="name" className="mb-2 block text-sm font-medium text-foreground">
+                <label htmlFor="name" className="block text-xs text-muted">
                   Name
                 </label>
                 <input
                   id="name"
                   name="name"
                   type="text"
-                  placeholder="Your Name"
+                  placeholder="Your name"
                   className={inputClass}
                   required
                   disabled={state.submitting}
@@ -138,7 +100,7 @@ export default function ContactMe() {
               </div>
 
               <div>
-                <label htmlFor="email" className="mb-2 block text-sm font-medium text-foreground">
+                <label htmlFor="email" className="block text-xs text-muted">
                   Email
                 </label>
                 <input
@@ -154,14 +116,14 @@ export default function ContactMe() {
               </div>
 
               <div>
-                <label htmlFor="subject" className="mb-2 block text-sm font-medium text-foreground">
+                <label htmlFor="subject" className="block text-xs text-muted">
                   Subject
                 </label>
                 <input
                   id="subject"
                   name="subject"
                   type="text"
-                  placeholder="What's this about?"
+                  placeholder="What is this about?"
                   className={inputClass}
                   required
                   disabled={state.submitting}
@@ -169,14 +131,14 @@ export default function ContactMe() {
               </div>
 
               <div>
-                <label htmlFor="message" className="mb-2 block text-sm font-medium text-foreground">
+                <label htmlFor="message" className="block text-xs text-muted">
                   Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={5}
-                  placeholder="Your message..."
+                  placeholder="A short note is enough."
                   className={`${inputClass} resize-none`}
                   required
                   disabled={state.submitting}
@@ -187,18 +149,15 @@ export default function ContactMe() {
               <button
                 type="submit"
                 disabled={state.submitting}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-accent py-3.5 font-semibold text-accent-fg hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex h-8 shrink-0 items-center justify-center whitespace-nowrap rounded-md border border-foreground px-3 text-xs font-medium leading-none text-foreground duration-300 hover:bg-foreground hover:text-background disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {state.submitting ? (
-                  <>
-                    <Loader size={18} className="animate-spin" />
-                    Sending…
-                  </>
+                  <span className="inline-flex items-center gap-2">
+                    <Loader size={14} className="animate-spin" />
+                    Sending
+                  </span>
                 ) : (
-                  <>
-                    <Send size={18} />
-                    Send Message
-                  </>
+                  "Send message"
                 )}
               </button>
             </form>
