@@ -68,11 +68,6 @@ body {
 /* ── Selection ── */
 ::selection { background: var(--foreground); color: var(--background); }
 
-/* ── Touch targets ── */
-@media (max-width: 768px) {
-  button, a { min-height: 44px; min-width: 44px; }
-}
-
 /* ── Focus ── */
 button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
   outline: 2px solid var(--foreground);
