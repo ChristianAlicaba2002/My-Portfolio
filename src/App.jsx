@@ -105,9 +105,10 @@ function App() {
                 variants={fadeInUp}
                 className="mt-8 max-w-xl text-[15px] leading-relaxed text-muted sm:text-base"
               >
-                I build web and mobile products with React, Laravel, and ASP.NET Core.
-                Recent work includes a school equipment tracker used at ACLC Mandaue,
-                ordering platforms, and FDA Checker, which won overall at Hacktoberfest 2025.
+                I&apos;m a passionate software developer who loves turning ideas into
+                modern, scalable, and user-friendly applications. I care about the craft —
+                clean interfaces, solid backends, and work that feels good to use.
+                React, React Native, and ASP.NET Core are where I put that energy.
               </motion.p>
 
               <motion.div
