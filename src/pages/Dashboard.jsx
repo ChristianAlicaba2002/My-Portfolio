@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { SectionLabel } from "../components/ui";
+import GithubStats from "../components/GithubStats";
 
 const skillGroups = [
   {
@@ -84,6 +85,16 @@ export default function Dashboard() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          className="mt-24"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fade}
+        >
+          <GithubStats />
+        </motion.div>
 
         <motion.div
           className="mt-24"
