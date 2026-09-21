@@ -8,6 +8,7 @@ import Projects from "./pages/Projects";
 import ContactMe from "./pages/ContactMe";
 import CoderBoy from "./components/CoderBoy";
 import Intro from "./components/Intro";
+import TypeMaster from "./components/TypeMaster";
 
 const SECTION_IDS = ["home", "dashboard", "aboutme", "projects", "contactme"];
 
@@ -75,15 +76,16 @@ function App() {
           className="flex min-h-[calc(100vh-4rem)] w-full scroll-mt-16 items-center bg-background px-6 py-20 sm:px-8 lg:min-h-[calc(100vh-4.5rem)] lg:scroll-mt-[4.5rem]"
         >
           <motion.div
-            className="welcome-container mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-[1fr_auto] lg:gap-20"
+            className="welcome-container mx-auto flex w-full max-w-6xl flex-col gap-16 lg:gap-20"
             variants={stagger}
             initial="initial"
             animate={showIntro ? "initial" : "animate"}
           >
-            <div>
-              <motion.p variants={fadeInUp} className="mb-8 text-sm text-muted">
-                Available for work
-              </motion.p>
+            <div className="grid w-full items-center gap-12 lg:grid-cols-[1fr_auto] lg:gap-20">
+              <div>
+                <motion.p variants={fadeInUp} className="mb-8 text-sm text-muted">
+                  Available for work
+                </motion.p>
 
               <motion.h1
                 variants={fadeInUp}
@@ -141,6 +143,11 @@ function App() {
               className="hidden justify-self-end lg:block"
             >
               <CoderBoy className="h-[22rem] w-[17rem] sm:h-[28rem] sm:w-[22rem] lg:h-[32rem] lg:w-[26rem]" />
+            </motion.div>
+            </div>
+
+            <motion.div variants={fadeInUp}>
+              <TypeMaster />
             </motion.div>
           </motion.div>
         </section>
