@@ -59,7 +59,7 @@ export default function Intro({ onComplete }) {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.1, ease: soft }}
         >
-          2026
+          2024
         </motion.p>
       </div>
 
